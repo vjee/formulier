@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"name": "@formulier/eslint-config",
+	"version": "0.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"packageManager": "pnpm@7.5.2"
+}

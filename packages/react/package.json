@@ -1,0 +1,62 @@
+{
+	"private": false,
+	"name": "@formulier/react",
+	"version": "0.0.0",
+	"license": "MIT",
+	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs",
+			"default": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist"
+	],
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"lint": "eslint src --ext .ts,.tsx",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@formulier/core": "workspace:0.0.0",
+		"use-sync-external-store": "^1.2.0"
+	},
+	"devDependencies": {
+		"@formulier/eslint-config": "workspace:0.0.0",
+		"@formulier/tsconfig": "workspace:0.0.0",
+		"@types/react": "^18.0.18",
+		"@types/use-sync-external-store": "^0.0.3",
+		"eslint": "^7.23.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"tsup": "^6.2.3"
+	},
+	"eslintConfig": {
+		"root": true,
+		"extends": [
+			"@formulier/eslint-config"
+		]
+	},
+	"tsup": {
+		"entry": [
+			"src/index.ts"
+		],
+		"format": [
+			"esm",
+			"cjs"
+		],
+		"external": [
+			"react"
+		],
+		"dts": true,
+		"minify": true,
+		"clean": true
+	},
+	"packageManager": "pnpm@7.5.2"
+}
