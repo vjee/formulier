@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"type": "module",
@@ -35,7 +35,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@formulier/core": "workspace:0.0.2",
+		"@formulier/core": "workspace:0.0.3",
 		"use-sync-external-store": "^1.2.0"
 	},
 	"devDependencies": {

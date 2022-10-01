@@ -1,5 +1,14 @@
 # @formulier/examples-react
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [59f0f7b]
+- Updated dependencies [358e222]
+- Updated dependencies [e3cdc1f]
+  - @formulier/react@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
