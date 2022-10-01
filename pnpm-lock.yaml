@@ -91,9 +91,9 @@ importers:
       tsup: ^6.2.3
       use-sync-external-store: ^1.2.0
     dependencies:
-      '@formulier/core': link:../core
       use-sync-external-store: 1.2.0_react@18.2.0
     devDependencies:
+      '@formulier/core': link:../core
       '@formulier/eslint-config': link:../../config/eslint-config
       '@formulier/tsconfig': link:../../config/tsconfig
       '@types/react': 18.0.21

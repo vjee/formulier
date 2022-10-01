@@ -36,10 +36,10 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@formulier/core": "workspace:0.0.4",
 		"use-sync-external-store": "^1.2.0"
 	},
 	"devDependencies": {
+		"@formulier/core": "workspace:0.0.4",
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@types/react": "^18.0.18",
@@ -50,6 +50,7 @@
 		"tsup": "^6.2.3"
 	},
 	"peerDependencies": {
+		"@formulier/core": "workspace:0.0.4",
 		"react": ">=16.8.0"
 	},
 	"packageManager": "pnpm@7.5.2"
