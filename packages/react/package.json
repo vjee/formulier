@@ -52,20 +52,5 @@
 			"@formulier/eslint-config"
 		]
 	},
-	"tsup": {
-		"entry": [
-			"src/index.ts"
-		],
-		"format": [
-			"esm",
-			"cjs"
-		],
-		"external": [
-			"react"
-		],
-		"dts": true,
-		"minify": true,
-		"clean": true
-	},
 	"packageManager": "pnpm@7.5.2"
 }
