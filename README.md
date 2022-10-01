@@ -4,10 +4,6 @@
 	</a>
 </p>
 
-<p align="center">
-	<img src="https://img.shields.io/github/license/vjee/formulier?style=flat-square" alt="License">
-</p>
-
 ## Packages
 
 | Package                                                                        | Details                                                                                                                                                                                                                                               |
