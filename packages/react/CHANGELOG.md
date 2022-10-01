@@ -1,5 +1,13 @@
 # @formulier/react
 
+## 0.0.7
+
+### Patch Changes
+
+- Update package.json and README
+- Updated dependencies
+  - @formulier/core@0.0.6
+
 ## 0.0.6
 
 ### Patch Changes

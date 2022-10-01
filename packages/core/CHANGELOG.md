@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.0.6
+
+### Patch Changes
+
+- Update package.json and README
+
 ## 0.0.5
 
 ### Patch Changes
