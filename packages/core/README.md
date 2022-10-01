@@ -11,3 +11,5 @@
 </p>
 
 # @formulier/core
+
+> Simple, performant form library

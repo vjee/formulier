@@ -11,3 +11,5 @@
 </p>
 
 # @formulier/react
+
+> Simple, performant form library for React

@@ -4,6 +4,7 @@
 	"version": "0.0.6",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
+	"description": "Simple, performant form library for React",
 	"keywords": [
 		"formulier",
 		"@formulier/core",
