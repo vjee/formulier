@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"type": "module",
+	"main": "./src/index.ts",
 	"exports": {
 		".": {
 			"import": "./src/index.ts"
@@ -16,6 +17,7 @@
 	],
 	"publishConfig": {
 		"access": "public",
+		"main": "./dist/index.js",
 		"exports": {
 			".": {
 				"import": "./dist/index.js",
