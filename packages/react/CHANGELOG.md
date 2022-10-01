@@ -1,5 +1,14 @@
 # @formulier/react
 
+## 0.0.6
+
+### Patch Changes
+
+- 9a31c36: Override module field in publishConfig
+- Updated dependencies [9a31c36]
+- Updated dependencies [216fa81]
+  - @formulier/core@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes

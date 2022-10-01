@@ -1,5 +1,12 @@
 # @formulier/core
 
+## 0.0.5
+
+### Patch Changes
+
+- 9a31c36: Override module field in publishConfig
+- 216fa81: Move shallow-clone module augmentation out of source file
+
 ## 0.0.4
 
 ### Patch Changes

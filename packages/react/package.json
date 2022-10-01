@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"type": "module",
@@ -40,7 +40,7 @@
 		"use-sync-external-store": "^1.2.0"
 	},
 	"devDependencies": {
-		"@formulier/core": "workspace:0.0.4",
+		"@formulier/core": "workspace:0.0.5",
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@types/react": "^18.0.18",
@@ -51,7 +51,7 @@
 		"tsup": "^6.2.3"
 	},
 	"peerDependencies": {
-		"@formulier/core": "workspace:0.0.4",
+		"@formulier/core": "workspace:0.0.5",
 		"react": ">=16.8.0"
 	},
 	"packageManager": "pnpm@7.5.2"
