@@ -1,7 +1,3 @@
-declare module 'shallow-clone' {
-	export default function clone<T>(val: T): T
-}
-
 import clone from 'shallow-clone'
 import isEqual from 'fast-deep-equal'
 
