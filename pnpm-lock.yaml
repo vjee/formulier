@@ -36,7 +36,7 @@ importers:
 
   examples/react:
     specifiers:
-      '@formulier/react': workspace:0.0.4
+      '@formulier/react': workspace:0.0.5
       '@types/react': ^18.0.18
       '@types/react-dom': ^18.0.6
       '@vitejs/plugin-react': ^2.1.0

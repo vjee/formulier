@@ -1,5 +1,11 @@
 # @formulier/react
 
+## 0.0.5
+
+### Patch Changes
+
+- eeb3831: Specify @formulier/core as peer dependency
+
 ## 0.0.4
 
 ### Patch Changes
