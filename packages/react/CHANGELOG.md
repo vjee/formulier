@@ -1,5 +1,14 @@
 # @formulier/react
 
+## 0.0.4
+
+### Patch Changes
+
+- 2ce88f1: Specify peer dependency on react
+- 27e22ed: Add module field to package.json
+- Updated dependencies [27e22ed]
+  - @formulier/core@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

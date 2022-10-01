@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.0.4
+
+### Patch Changes
+
+- 27e22ed: Add module field to package.json
+
 ## 0.0.3
 
 ### Patch Changes
