@@ -1,12 +1,12 @@
 {
 	"private": true,
 	"name": "@formulier/examples-react",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "vite dev"
 	},
 	"dependencies": {
-		"@formulier/react": "workspace:0.0.1",
+		"@formulier/react": "workspace:0.0.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router": "^6.4.1",

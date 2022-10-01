@@ -1,22 +1,31 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs",
-			"default": "./dist/index.js"
+			"import": "./src/index.ts"
 		},
 		"./package.json": "./package.json"
 	},
 	"files": [
 		"dist"
 	],
-	"types": "./dist/index.d.ts",
+	"publishConfig": {
+		"access": "public",
+		"exports": {
+			".": {
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package.json": "./package.json"
+		},
+		"types": "./dist/index.d.ts"
+	},
 	"scripts": {
 		"build": "tsup",
 		"dev": "tsup --watch",
@@ -24,7 +33,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@formulier/core": "workspace:0.0.1",
+		"@formulier/core": "workspace:0.0.2",
 		"use-sync-external-store": "^1.2.0"
 	},
 	"devDependencies": {
