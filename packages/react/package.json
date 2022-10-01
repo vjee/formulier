@@ -6,6 +6,7 @@
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"type": "module",
 	"main": "./src/index.ts",
+	"module": "./src/index.ts",
 	"exports": {
 		".": {
 			"import": "./src/index.ts"
