@@ -11,6 +11,10 @@
 
 > Simple, performant form library for React
 
+## Docs
+
+Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/formulier/).
+
 ## Packages
 
 | Package                                                                        | Details                                                                                                                                                                                                                                                                                                                          |

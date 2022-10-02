@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.0.9
+
+### Patch Changes
+
+- Add link to docs in READMEs
+
 ## 0.0.8
 
 ### Patch Changes

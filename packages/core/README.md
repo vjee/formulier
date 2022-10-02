@@ -16,3 +16,7 @@
 # @formulier/core
 
 > Simple, performant form library
+
+## Docs
+
+Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/formulier/).
