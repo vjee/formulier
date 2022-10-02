@@ -1,0 +1,25 @@
+/* Colors */
+:root {
+	--vp-c-brand: #4466d6;
+	--vp-c-brand-light: #587aea;
+	--vp-c-brand-lighter: #6c8efe;
+	--vp-c-brand-dark: #3052c2;
+	--vp-c-brand-darker: #1c3eae;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--vp-c-brand: #6c8efe;
+		--vp-c-brand-light: #80a2ff;
+		--vp-c-brand-lighter: #94b6ff;
+		--vp-c-brand-dark: #587aea;
+		--vp-c-brand-darker: #4466d6;
+	}
+}
+
+/* Home */
+:root {
+	--vp-home-hero-name-color: transparent;
+	--vp-home-hero-image-background-image: conic-gradient(#6c8efe, #f500ff, #ff0028, #ff5f00, #ffd600);
+	--vp-home-hero-image-filter: blur(40px) opacity(20%);
+}
