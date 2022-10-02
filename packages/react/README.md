@@ -1,6 +1,9 @@
 <p align="center">
 	<a href="https://github.com/vjee/formulier" target="_blank" rel="noopener noreferrer">
-		<img width="384" src="https://raw.githubusercontent.com/vjee/formulier/main/.github/formulier-logo.svg" alt="Formulier logo">
+		<picture>
+  		<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/vjee/formulier/main/.github/formulier-logotype-color-dark.svg">
+  		<img width="384" src="https://raw.githubusercontent.com/vjee/formulier/main/.github/formulier-logotype-color-light.svg" alt="Formulier logo">
+		</picture>
 	</a>
 </p>
 
