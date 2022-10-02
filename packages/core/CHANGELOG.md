@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.0.8
+
+### Patch Changes
+
+- Update READMEs
+
 ## 0.0.7
 
 ### Patch Changes
