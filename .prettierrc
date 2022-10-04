@@ -8,5 +8,14 @@
 	"jsxSingleQuote": false,
 	"bracketSpacing": true,
 	"bracketSameLine": false,
-	"arrowParens": "avoid"
+	"arrowParens": "avoid",
+	"overrides": [
+		{
+			"files": ["*.md", "*.yml", "*.yaml"],
+			"options": {
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		}
+	]
 }
