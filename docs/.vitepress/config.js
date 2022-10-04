@@ -45,4 +45,12 @@ export default defineConfig({
 	markdown: {
 		theme: tokyoNightStorm,
 	},
+
+	vite: {
+		server: {
+			fs: {
+				allow: ['..'],
+			},
+		},
+	},
 })

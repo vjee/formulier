@@ -15,8 +15,6 @@ importers:
       prettier: ^2.7.1
       turbo: ^1.4.5
       typescript: ^4.8.2
-      vitepress: 1.0.0-alpha.18
-      vue: ^3.2.40
     devDependencies:
       '@changesets/cli': 2.25.0
       '@formulier/eslint-config': link:config/eslint-config
@@ -29,14 +27,20 @@ importers:
       prettier: 2.7.1
       turbo: 1.5.5
       typescript: 4.8.4
-      vitepress: 1.0.0-alpha.18
-      vue: 3.2.40
 
   config/eslint-config:
     specifiers: {}
 
   config/tsconfig:
     specifiers: {}
+
+  docs:
+    specifiers:
+      vitepress: 1.0.0-alpha.18
+      vue: ^3.2.40
+    devDependencies:
+      vitepress: 1.0.0-alpha.18
+      vue: 3.2.40
 
   examples/react:
     specifiers:
