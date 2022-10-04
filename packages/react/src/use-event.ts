@@ -1,11 +1,11 @@
-import { useCallback, useLayoutEffect, useRef } from 'react'
+import * as React from 'react'
 
 export function useEvent<Handler extends CallableFunction>(handler: Handler) {
-	const handlerRef = useRef(handler)
-	useLayoutEffect(() => {
+	const handlerRef = React.useRef(handler)
+	React.useLayoutEffect(() => {
 		handlerRef.current = handler
 	})
-	return useCallback((...args: any[]) => {
+	return React.useCallback((...args: any[]) => {
 		const fn = handlerRef.current
 		return fn(...args)
 	}, []) as unknown as Handler

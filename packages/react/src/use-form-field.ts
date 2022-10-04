@@ -1,12 +1,12 @@
+import * as React from 'react'
 import { FieldValidator, GetFieldType, Primitives, Values } from '@formulier/core'
-import { RefCallback, useCallback, useEffect } from 'react'
 import { ReactFormulier } from './use-form'
 import { useEvent } from './use-event'
 import { useFormFieldValue } from './use-form-field-value'
 import { useFormSelector } from './use-form-selector'
 
 export interface FieldInputProps<V extends Values, F extends string> {
-	ref: RefCallback<Element>
+	ref: React.RefCallback<Element>
 	id: string
 	value: GetFieldType<V, F> | null | undefined
 	onChange: (event: { target: { value: any } }) => void
@@ -29,7 +29,7 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 	const touched = useFormSelector(form, state => state.touched[name]) ?? false
 	const hasSubmitted = useFormSelector(form, state => state.submitCount > 0)
 
-	const ref: RefCallback<Element> = useCallback(
+	const ref: React.RefCallback<Element> = React.useCallback(
 		element => {
 			form.withoutNotify(() => {
 				element ? form.registerElement(name, element) : form.unregisterElement(name)
@@ -38,7 +38,7 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 		[form, name],
 	)
 
-	useEffect(() => {
+	React.useEffect(() => {
 		form.registerField(name, validate)
 
 		return () => {

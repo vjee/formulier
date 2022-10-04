@@ -1,15 +1,15 @@
+import * as React from 'react'
 import { Formulier, FormulierState, Nullable, Primitives, Values, stateUtils } from '@formulier/core'
-import { useEffect, useState } from 'react'
 import { useFormSelector } from './use-form-selector'
 
 export function useForm<V extends Values, P extends Primitives = Primitives>(
 	initialValues: Nullable<V, P>,
 ): ReactFormulier<V, P> {
-	const [form] = useState(() => new ReactFormulier(initialValues))
+	const [form] = React.useState(() => new ReactFormulier(initialValues))
 
 	const unregisterList = useFormSelector(form, state => state.unregisterList, stateUtils.isEqual)
 
-	useEffect(() => {
+	React.useEffect(() => {
 		if (unregisterList.length) {
 			unregisterList.forEach(fieldName => {
 				const element = form.getState().fieldElements[fieldName]
