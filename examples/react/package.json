@@ -3,7 +3,9 @@
 	"name": "@formulier/examples-react",
 	"version": "0.0.10",
 	"scripts": {
-		"dev": "vite dev"
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
 	},
 	"dependencies": {
 		"@formulier/react": "workspace:0.0.10",

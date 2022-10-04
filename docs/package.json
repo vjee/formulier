@@ -2,7 +2,6 @@
 	"private": true,
 	"name": "@formulier/docs",
 	"version": "0.0.0",
-	"packageManager": "pnpm@7.5.2",
 	"scripts": {
 		"dev": "vitepress dev .",
 		"build": "vitepress build .",
@@ -16,5 +15,6 @@
 		"react-dom": "^18.2.0",
 		"vitepress": "1.0.0-alpha.18",
 		"vue": "^3.2.40"
-	}
+	},
+	"packageManager": "pnpm@7.5.2"
 }
