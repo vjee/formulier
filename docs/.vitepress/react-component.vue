@@ -25,6 +25,8 @@ const props = defineProps({
 	},
 })
 
+const components = import.meta.glob('./react-components/*.tsx', { eager: true })
+
 const ROOT_ID = 'react-root'
 
 const reactRootRef = ref()
@@ -38,8 +40,8 @@ onBeforeUnmount(() => {
 	unmountComponent()
 })
 
-async function mountComponent() {
-	const { default: Component } = await import(`./react-components/${props.name}`)
+function mountComponent() {
+	const Component = components[`./react-components/${props.name}.tsx`].default
 	const rootElement = document.querySelector('#' + ROOT_ID)
 	reactRootRef.value = ReactDOMClient.createRoot(rootElement)
 	reactRootRef.value.render(React.createElement(Component))
@@ -49,7 +51,7 @@ function unmountComponent() {
 	reactRootRef.value?.unmount()
 }
 
-async function refresh() {
+function refresh() {
 	if (containerRef.value) {
 		const { height } = containerRef.value.getBoundingClientRect()
 		containerRef.value.style.setProperty('height', `${height}px`)
