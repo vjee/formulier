@@ -36,10 +36,20 @@ importers:
 
   docs:
     specifiers:
+      '@formulier/react': workspace:0.0.10
+      '@types/react': ^18.0.18
+      '@types/react-dom': ^18.0.6
+      react: ^18.2.0
+      react-dom: ^18.2.0
       vitepress: 1.0.0-alpha.18
       vue: ^3.2.40
     devDependencies:
-      vitepress: 1.0.0-alpha.18
+      '@formulier/react': link:../packages/react
+      '@types/react': 18.0.21
+      '@types/react-dom': 18.0.6
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      vitepress: 1.0.0-alpha.18_rj7ozvcq3uehdlnj3cbwzbi5ce
       vue: 3.2.40
 
   examples/react:
@@ -690,10 +700,10 @@ packages:
     resolution: {integrity: sha512-gaP6TxxwQC+K8D6TRx5WULUWKrcbzECOPA2KCVMuI+6C7dNiGUk5yXXzVhc5sld79XKYLnO9DRTI4mjXDYkh+g==}
     dev: true
 
-  /@docsearch/js/3.2.1:
+  /@docsearch/js/3.2.1_rj7ozvcq3uehdlnj3cbwzbi5ce:
     resolution: {integrity: sha512-H1PekEtSeS0msetR2YGGey2w7jQ2wAKfGODJvQTygSwMgUZ+2DHpzUgeDyEBIXRIfaBcoQneqrzsljM62pm6Xg==}
     dependencies:
-      '@docsearch/react': 3.2.1
+      '@docsearch/react': 3.2.1_rj7ozvcq3uehdlnj3cbwzbi5ce
       preact: 10.11.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -702,7 +712,7 @@ packages:
       - react-dom
     dev: true
 
-  /@docsearch/react/3.2.1:
+  /@docsearch/react/3.2.1_rj7ozvcq3uehdlnj3cbwzbi5ce:
     resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
@@ -719,7 +729,10 @@ packages:
       '@algolia/autocomplete-core': 1.7.1
       '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.14.2
       '@docsearch/css': 3.2.1
+      '@types/react': 18.0.21
       algoliasearch: 4.14.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     transitivePeerDependencies:
       - '@algolia/client-search'
     dev: true
@@ -4085,12 +4098,12 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.18:
+  /vitepress/1.0.0-alpha.18_rj7ozvcq3uehdlnj3cbwzbi5ce:
     resolution: {integrity: sha512-6Co3/t+oeF6vxJxG7/uy5/wIr+P/8szeFjn3gu/dpJ1aOGA0gnQ+61P8J52b2VTFSDpFC63adLvUFacdCJXywg==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.2.1
-      '@docsearch/js': 3.2.1
+      '@docsearch/js': 3.2.1_rj7ozvcq3uehdlnj3cbwzbi5ce
       '@vitejs/plugin-vue': 3.1.0_vite@3.1.4+vue@3.2.40
       '@vue/devtools-api': 6.4.2
       '@vueuse/core': 9.3.0_vue@3.2.40
