@@ -25,7 +25,7 @@ export interface StoreListener {
 }
 
 export type GetFieldType<T, P extends string> = string extends P
-	? unknown
+	? any
 	: P extends `${infer Left}.${infer Right}`
 	? Left extends keyof T
 		? FieldWithPossiblyUndefined<T[Left], Right>
