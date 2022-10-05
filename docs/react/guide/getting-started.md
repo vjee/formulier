@@ -40,4 +40,4 @@ function InputField({ name, label, type = 'text' }) {
 }
 ```
 
-<react-component name="example" />
+<ReactComponent name="example" />

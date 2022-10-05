@@ -6,6 +6,6 @@ import ReactComponent from '../react-component.vue'
 export default {
 	...Theme,
 	enhanceApp({ app }) {
-		app.component('react-component', ReactComponent)
+		app.component('ReactComponent', ReactComponent)
 	},
 }

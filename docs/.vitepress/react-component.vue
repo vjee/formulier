@@ -3,7 +3,7 @@
 		<div class="header">
 			<span class="title">Live Result:</span>
 
-			<button type="button" class="button" title="Reload" @click="refresh">
+			<button type="button" class="button" title="Reload" @click="onRefresh">
 				<refresh-icon />
 			</button>
 		</div>
@@ -15,7 +15,7 @@
 <script setup>
 import * as React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { defineProps, ref, onMounted, onBeforeUnmount } from 'vue'
+import { defineProps, ref, onMounted, onBeforeUnmount, markRaw } from 'vue'
 import RefreshIcon from './refresh-icon.vue'
 
 const props = defineProps({
@@ -43,15 +43,16 @@ onBeforeUnmount(() => {
 function mountComponent() {
 	const Component = components[`./react-components/${props.name}.tsx`].default
 	const rootElement = document.querySelector('#' + ROOT_ID)
-	reactRootRef.value = ReactDOMClient.createRoot(rootElement)
-	reactRootRef.value.render(React.createElement(Component))
+	const reactRoot = ReactDOMClient.createRoot(rootElement)
+	reactRoot.render(React.createElement(Component))
+	reactRootRef.value = markRaw(reactRoot)
 }
 
 function unmountComponent() {
 	reactRootRef.value?.unmount()
 }
 
-function refresh() {
+function onRefresh() {
 	if (containerRef.value) {
 		const { height } = containerRef.value.getBoundingClientRect()
 		containerRef.value.style.setProperty('height', `${height}px`)
