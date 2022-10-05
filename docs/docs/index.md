@@ -4,7 +4,7 @@ hero:
   name: Formulier
   text: Simple, performant form library for React
   image:
-    src: /formulier-logo-space.svg
+    src: /formulier-logo-hero.svg
     alt: Logo
   actions:
     - theme: brand

@@ -15,7 +15,7 @@
 <script setup>
 import * as React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { defineProps, ref, onMounted, onBeforeUnmount, markRaw } from 'vue'
+import { ref, onMounted, onBeforeUnmount, markRaw } from 'vue'
 import RefreshIcon from './refresh-icon.vue'
 
 const props = defineProps({
@@ -25,7 +25,7 @@ const props = defineProps({
 	},
 })
 
-const components = import.meta.glob('./react-components/*.tsx', { eager: true })
+const components = import.meta.glob('../docs/react-components/*.tsx', { eager: true })
 
 const ROOT_ID = 'react-root'
 
@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
 })
 
 function mountComponent() {
-	const Component = components[`./react-components/${props.name}.tsx`].default
+	const Component = components[`../docs/react-components/${props.name}.tsx`].default
 	const rootElement = document.querySelector('#' + ROOT_ID)
 	const reactRoot = ReactDOMClient.createRoot(rootElement)
 	reactRoot.render(React.createElement(Component))
@@ -106,11 +106,12 @@ function onRefresh() {
 .container {
 	background-color: var(--vp-c-bg-alt);
 	border-radius: 8px;
-	padding: 16px;
+	padding: 24px;
 }
 
 .container :deep() {
 	color: var(--vp-c-text-1);
+	font-size: 14px;
 }
 
 .container :deep(label) {
@@ -118,14 +119,19 @@ function onRefresh() {
 	width: 128px;
 }
 
+.container :deep(label)::after {
+	content: ':';
+}
+
 .container :deep(input) {
-	border: 1px solid;
+	all: revert;
 	margin-bottom: 8px;
-	padding: 4px 8px;
+	font-size: 14px;
 }
 
 .container :deep(button) {
-	border: 1px solid;
-	padding: 4px 8px;
+	all: revert;
+	margin-left: 128px;
+	font-size: 14px;
 }
 </style>

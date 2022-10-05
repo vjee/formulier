@@ -13,7 +13,31 @@ export default defineConfig({
 
 		socialLinks: [{ icon: 'github', link: 'https://github.com/vjee/formulier' }],
 
+		nav: [
+			{
+				text: 'Core',
+				link: '/core/guide/getting-started',
+			},
+			{
+				text: 'React',
+				link: '/react/guide/getting-started',
+				activeMatch: '/react/',
+			},
+		],
+
 		sidebar: {
+			'/core/': [
+				{
+					text: 'Guide',
+					items: [
+						{
+							text: 'Getting Started',
+							link: '/core/guide/getting-started',
+						},
+					],
+				},
+			],
+
 			'/react/': [
 				{
 					text: 'Guide',
@@ -46,10 +70,12 @@ export default defineConfig({
 		theme: tokyoNightStorm,
 	},
 
+	srcDir: 'docs',
+
 	vite: {
 		server: {
 			fs: {
-				allow: ['..'],
+				allow: ['../..'],
 			},
 		},
 	},
