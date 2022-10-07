@@ -46,6 +46,10 @@ export default defineConfig({
 							text: 'Getting Started',
 							link: '/react/guide/getting-started',
 						},
+						{
+							text: 'Validation',
+							link: '/react/guide/validation',
+						},
 					],
 				},
 				{

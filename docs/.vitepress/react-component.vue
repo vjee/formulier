@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
 		<div class="header">
-			<span class="title">Try out:</span>
+			<span class="title">{{ $props.title }}</span>
 
 			<button type="button" class="button" title="Reload" @click="onRefresh">
 				<refresh-icon />
@@ -19,6 +19,10 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import RefreshIcon from './refresh-icon.vue'
 
 const props = defineProps({
+	title: {
+		type: String,
+		default: () => 'Try out',
+	},
 	name: {
 		type: String,
 		required: true,
@@ -33,12 +37,12 @@ onBeforeUnmount(() => {
 	unmountComponent()
 })
 
-const components = import.meta.glob('../docs/react-components/*.tsx', { eager: true })
+const components = import.meta.glob('../docs/react-components/*', { eager: true })
 const containerRef = ref()
 let reactRoot = null
 
 function mountComponent() {
-	const Component = components[`../docs/react-components/${props.name}.tsx`].default
+	const Component = components[`../docs/${props.name}`].default
 	const rootElement = document.querySelector('#react-root')
 	reactRoot = ReactDOMClient.createRoot(rootElement)
 	reactRoot.render(React.createElement(Component))
@@ -110,24 +114,38 @@ function onRefresh() {
 	font-size: 14px;
 }
 
-.container :deep(label) {
+.container :deep(.field) {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.container :deep(.label) {
 	display: inline-block;
 	width: 128px;
 }
 
-.container :deep(label)::after {
+.container :deep(.label)::after {
 	content: ':';
 }
 
-.container :deep(input) {
+.container :deep(.input) {
 	all: revert;
-	margin-bottom: 8px;
 	font-size: 14px;
+}
+
+.container :deep(.error) {
+	display: block;
+	margin-top: 4px;
+	margin-left: 128px;
+	color: var(--vp-custom-block-danger-text);
 }
 
 .container :deep(button) {
 	all: revert;
-	margin-left: 128px;
 	font-size: 14px;
+}
+
+.container :deep(button[type='submit']) {
+	margin-top: 8px;
 }
 </style>

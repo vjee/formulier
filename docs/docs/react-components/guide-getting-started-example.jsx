@@ -25,9 +25,11 @@ function InputField({ name, label, type = 'text' }) {
 	const [field] = useFormField(form, { name })
 
 	return (
-		<div>
-			<label htmlFor={name}>{label}</label>
-			<input {...field} type={type} />
+		<div className="field">
+			<label className="label" htmlFor={name}>
+				{label}
+			</label>
+			<input className="input" {...field} type={type} />
 		</div>
 	)
 }
