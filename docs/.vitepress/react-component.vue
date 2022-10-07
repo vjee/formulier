@@ -1,21 +1,21 @@
 <template>
 	<div class="wrapper">
 		<div class="header">
-			<span class="title">Live Result:</span>
+			<span class="title">Try out:</span>
 
 			<button type="button" class="button" title="Reload" @click="onRefresh">
 				<refresh-icon />
 			</button>
 		</div>
 
-		<div ref="containerRef" class="container" :id="ROOT_ID" />
+		<div ref="containerRef" class="container" id="react-root" />
 	</div>
 </template>
 
 <script setup>
 import * as React from 'react'
 import * as ReactDOMClient from 'react-dom/client'
-import { ref, onMounted, onBeforeUnmount, markRaw } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import RefreshIcon from './refresh-icon.vue'
 
 const props = defineProps({
@@ -25,13 +25,6 @@ const props = defineProps({
 	},
 })
 
-const components = import.meta.glob('../docs/react-components/*.tsx', { eager: true })
-
-const ROOT_ID = 'react-root'
-
-const reactRootRef = ref()
-const containerRef = ref()
-
 onMounted(() => {
 	mountComponent()
 })
@@ -40,16 +33,19 @@ onBeforeUnmount(() => {
 	unmountComponent()
 })
 
+const components = import.meta.glob('../docs/react-components/*.tsx', { eager: true })
+const containerRef = ref()
+let reactRoot = null
+
 function mountComponent() {
 	const Component = components[`../docs/react-components/${props.name}.tsx`].default
-	const rootElement = document.querySelector('#' + ROOT_ID)
-	const reactRoot = ReactDOMClient.createRoot(rootElement)
+	const rootElement = document.querySelector('#react-root')
+	reactRoot = ReactDOMClient.createRoot(rootElement)
 	reactRoot.render(React.createElement(Component))
-	reactRootRef.value = markRaw(reactRoot)
 }
 
 function unmountComponent() {
-	reactRootRef.value?.unmount()
+	reactRoot?.unmount()
 }
 
 function onRefresh() {
