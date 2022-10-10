@@ -36,7 +36,7 @@ importers:
 
   docs:
     specifiers:
-      '@formulier/react': workspace:0.0.10
+      '@formulier/react': workspace:0.0.11
       '@types/react': ^18.0.18
       '@types/react-dom': ^18.0.6
       react: ^18.2.0
@@ -54,7 +54,7 @@ importers:
 
   examples/react:
     specifiers:
-      '@formulier/react': workspace:0.0.10
+      '@formulier/react': workspace:0.0.11
       '@types/react': ^18.0.18
       '@types/react-dom': ^18.0.6
       '@vitejs/plugin-react': ^2.1.0
@@ -102,7 +102,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@formulier/core': workspace:0.0.9
+      '@formulier/core': workspace:0.0.10
       '@formulier/eslint-config': workspace:0.0.0
       '@formulier/tsconfig': workspace:0.0.0
       '@types/react': ^18.0.18
