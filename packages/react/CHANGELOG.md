@@ -1,5 +1,12 @@
 # @formulier/react
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [e5532bf]
+  - @formulier/core@0.0.10
+
 ## 0.0.10
 
 ### Patch Changes

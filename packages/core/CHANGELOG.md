@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.0.10
+
+### Patch Changes
+
+- e5532bf: Update `GetFieldType` to fall back to `any` instead of `unknown` when passing a `string` instead of a string literal
+
 ## 0.0.9
 
 ### Patch Changes
