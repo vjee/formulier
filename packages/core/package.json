@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library",
+	"homepage": "https://vjee.github.io/formulier/",
 	"keywords": [
 		"formulier",
 		"@formulier/core",

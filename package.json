@@ -4,6 +4,7 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
+	"homepage": "https://vjee.github.io/formulier/",
 	"scripts": {
 		"build": "turbo run build",
 		"dev": "turbo run dev --parallel",
