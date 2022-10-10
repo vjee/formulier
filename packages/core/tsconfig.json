@@ -1,3 +1,6 @@
 {
-	"extends": "@formulier/tsconfig/base"
+	"extends": "@formulier/tsconfig/base",
+	"compilerOptions": {
+		"types": ["vitest/importMeta"]
+	}
 }
