@@ -47,10 +47,4 @@ export class ReactFormulier<
 		}
 		this.notify()
 	}
-
-	withoutNotify(callback: CallableFunction): void {
-		this.notifyEnabled = false
-		callback()
-		this.notifyEnabled = true
-	}
 }

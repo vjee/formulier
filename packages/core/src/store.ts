@@ -116,6 +116,12 @@ export class Formulier<
 		}
 		this.notify()
 	}
+
+	withoutNotify(callback: CallableFunction): void {
+		this.notifyEnabled = false
+		callback()
+		this.notifyEnabled = true
+	}
 }
 
 if (import.meta.vitest) {
@@ -244,9 +250,9 @@ if (import.meta.vitest) {
 			instance.subscribe(listener)
 			instance.notify()
 			expect(listener).toHaveBeenCalledTimes(1)
-			instance.notifyEnabled = false
-			instance.notify()
-			instance.notifyEnabled = true
+			instance.withoutNotify(() => {
+				instance.notify()
+			})
 			expect(listener).toHaveBeenCalledTimes(1)
 		})
 	})
