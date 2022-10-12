@@ -7,4 +7,7 @@ export default defineConfig({
 	dts: true,
 	minify: true,
 	clean: true,
+	define: {
+		'import.meta.vitest': 'undefined',
+	},
 })

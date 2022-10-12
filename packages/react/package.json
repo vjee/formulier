@@ -51,7 +51,9 @@
 		"build": "tsup",
 		"dev": "tsup --watch",
 		"lint": "eslint src --ext .ts,.tsx",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"use-sync-external-store": "^1.2.0"
@@ -62,10 +64,13 @@
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@types/react": "^18.0.18",
 		"@types/use-sync-external-store": "^0.0.3",
+		"@vitest/coverage-istanbul": "^0.24.1",
 		"eslint": "^7.23.0",
+		"jsdom": "^20.0.1",
 		"react": ">=16.8.0",
 		"react-dom": "^18.2.0",
-		"tsup": "^6.2.3"
+		"tsup": "^6.2.3",
+		"vitest": "^0.24.1"
 	},
 	"peerDependencies": {
 		"@formulier/core": "workspace:0.0.10",
