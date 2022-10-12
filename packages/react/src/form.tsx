@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Nullable, Primitives, Values } from '@formulier/core'
-import { ReactFormulier } from './use-form'
+import { ReactFormulier } from './store'
 import { createError } from './error'
 
 interface FormContextT<V extends Values> {

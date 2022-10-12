@@ -1,5 +1,5 @@
 import { Primitives, Values } from '@formulier/core'
-import { ReactFormulier, ReactFormulierState } from './use-form'
+import { ReactFormulier, ReactFormulierState } from './store'
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/with-selector'
 
 export interface Selector<V extends Values, P extends Primitives, S extends ReactFormulierState<V, P>, Result> {

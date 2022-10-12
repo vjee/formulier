@@ -1,5 +1,5 @@
 import { GetFieldType, Primitives, Values, stateUtils } from '@formulier/core'
-import { ReactFormulier } from './use-form'
+import { ReactFormulier } from './store'
 import { useFormSelector } from './use-form-selector'
 
 export function useFormFieldValue<V extends Values, P extends Primitives, F extends string>(
