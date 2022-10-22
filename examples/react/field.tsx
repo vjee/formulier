@@ -1,5 +1,5 @@
 import { useFormContext, useFormField } from '@formulier/react'
-import { ReactNode } from 'react'
+import * as React from 'react'
 
 export function TextField({ name, label }: { name: string; label: string }) {
 	const form = useFormContext()
@@ -23,7 +23,7 @@ export function IntegerField({ name, label }: { name: string; label: string }) {
 	)
 }
 
-export function SelectField({ name, label, children }: { name: string; label: string; children: ReactNode }) {
+export function SelectField({ name, label, children }: { name: string; label: string; children: React.ReactNode }) {
 	const form = useFormContext()
 	const [field, meta] = useFormField(form, { name })
 
@@ -63,7 +63,7 @@ export function Field({
 	name: string
 	label: string
 	error: string | null
-	children: ReactNode
+	children: React.ReactNode
 	displayHorizontal?: boolean
 }) {
 	return (

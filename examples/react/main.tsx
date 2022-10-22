@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import * as React from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, NavLink, Outlet, Navigate, RouteObject } from 'react-router-dom'
 import { PersonForm } from './forms/person-form'
@@ -37,9 +37,9 @@ const router = createBrowserRouter(routes)
 
 function App() {
 	return (
-		<StrictMode>
+		<React.StrictMode>
 			<RouterProvider router={router}></RouterProvider>
-		</StrictMode>
+		</React.StrictMode>
 	)
 }
 

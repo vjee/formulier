@@ -1,5 +1,5 @@
 import { Form, useForm } from '@formulier/react'
-import { useState } from 'react'
+import * as React from 'react'
 import * as Field from '../field'
 
 interface FormState {
@@ -14,7 +14,7 @@ export function PersonForm() {
 		lastName: null,
 		age: 20,
 	})
-	const [showLastName, setShowLastName] = useState(true)
+	const [showLastName, setShowLastName] = React.useState(true)
 
 	return (
 		<div>

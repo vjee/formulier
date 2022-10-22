@@ -1,5 +1,5 @@
 import { Form, useForm } from '@formulier/react'
-import { useState } from 'react'
+import * as React from 'react'
 import * as Field from '../field'
 
 interface FormState {
@@ -11,7 +11,7 @@ export function SwitchFieldTypeForm() {
 		field: 7,
 	})
 
-	const [type, setType] = useState<'text' | 'integer' | null>('integer')
+	const [type, setType] = React.useState<'text' | 'integer' | null>('integer')
 
 	const toggleType = () => {
 		form.setFieldValue('field', null)
