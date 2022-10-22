@@ -55,6 +55,7 @@ importers:
   examples/react:
     specifiers:
       '@formulier/react': workspace:0.0.11
+      '@formulier/tsconfig': workspace:0.0.0
       '@types/react': ^18.0.18
       '@types/react-dom': ^18.0.6
       '@vitejs/plugin-react': ^2.1.0
@@ -71,6 +72,7 @@ importers:
       react-router: 6.4.1_react@18.2.0
       react-router-dom: 6.4.1_biqbaboplfbrettd7655fr4n2y
     devDependencies:
+      '@formulier/tsconfig': link:../../config/tsconfig
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
       '@vitejs/plugin-react': 2.1.0_vite@3.1.4

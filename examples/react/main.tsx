@@ -22,7 +22,7 @@ const routes: RouteObject[] = [
 		children: [
 			{
 				path: '/',
-				element: <Navigate to={formRoutes[0].path} />,
+				element: <Navigate to={formRoutes[0].path!} />,
 			},
 			...formRoutes,
 		],
@@ -46,11 +46,11 @@ function Root() {
 				<ul>
 					{formRoutes.map(route => (
 						<li key={route.path}>
-							<NavLink to={route.path}>
+							<NavLink to={route.path!}>
 								{({ isActive }) => (
 									<>
 										{isActive && '➡️ '}
-										{route.path.split('-').join(' ')}
+										{route.path!.split('-').join(' ')}
 									</>
 								)}
 							</NavLink>
