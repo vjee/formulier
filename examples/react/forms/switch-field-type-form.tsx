@@ -1,6 +1,6 @@
 import { Form, useForm } from '@formulier/react'
 import { useState } from 'react'
-import * as Field from '../Field'
+import * as Field from '../field'
 
 interface FormState {
 	field: string | number

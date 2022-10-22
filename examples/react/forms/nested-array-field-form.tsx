@@ -1,5 +1,5 @@
 import { Form, useForm, useFormFieldArray, useFormFieldValue, useFormContext } from '@formulier/react'
-import * as Field from '../Field'
+import * as Field from '../field'
 
 interface Fiend {
 	name: string
