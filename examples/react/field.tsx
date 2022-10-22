@@ -23,6 +23,19 @@ export function IntegerField({ name, label }: { name: string; label: string }) {
 	)
 }
 
+export function SelectField({ name, label, children }: { name: string; label: string; children: ReactNode }) {
+	const form = useFormContext()
+	const [field, meta] = useFormField(form, { name })
+
+	return (
+		<Field name={name} label={label} error={meta.error}>
+			<select {...field} value={(field.value as any) || ''}>
+				{children}
+			</select>
+		</Field>
+	)
+}
+
 export function CheckboxField({ name, label }: { name: string; label: string }) {
 	const form = useFormContext()
 	const [field, meta] = useFormField(form, { name })

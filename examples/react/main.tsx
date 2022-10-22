@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider, NavLink, Outlet, Navigate, RouteOb
 import { PersonForm } from './forms/person-form'
 import { SwitchFieldTypeForm } from './forms/switch-field-type-form'
 import { CheckboxForm } from './forms/checkbox-form'
+import { SelectForm } from './forms/select-form'
 import { ArrayFieldForm } from './forms/array-field-form'
 import { NestedArrayFieldForm } from './forms/nested-array-field-form'
 
@@ -13,6 +14,7 @@ const formRoutes: RouteObject[] = [
 	{ path: 'person-form', element: <PersonForm /> },
 	{ path: 'switch-field-type-form', element: <SwitchFieldTypeForm /> },
 	{ path: 'checkbox-form', element: <CheckboxForm /> },
+	{ path: 'select-form', element: <SelectForm /> },
 	{ path: 'array-field-form', element: <ArrayFieldForm /> },
 	{ path: 'nested-array-field-form', element: <NestedArrayFieldForm /> },
 ]
