@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, NavLink, Outlet, Navigate, RouteObject } from 'react-router-dom'
-import { PersonForm } from './forms/PersonForm'
-import { SwitchFieldTypeForm } from './forms/SwitchFieldTypeForm'
-import { ArrayFieldForm } from './forms/ArrayFieldForm'
-import { NestedArrayFieldForm } from './forms/NestedArrayFieldForm'
+import { PersonForm } from './forms/person-form'
+import { SwitchFieldTypeForm } from './forms/switch-field-type-form'
+import { ArrayFieldForm } from './forms/array-field-form'
+import { NestedArrayFieldForm } from './forms/nested-array-field-form'
 
 createRoot(document.querySelector('#root')!).render(<App />)
 
