@@ -23,19 +23,38 @@ export function IntegerField({ name, label }: { name: string; label: string }) {
 	)
 }
 
+export function CheckboxField({ name, label }: { name: string; label: string }) {
+	const form = useFormContext()
+	const [field, meta] = useFormField(form, { name })
+
+	return (
+		<Field name={name} label={label} error={meta.error} displayHorizontal>
+			<input
+				type="checkbox"
+				{...field}
+				value={undefined}
+				checked={field.value || false}
+				onChange={event => field.onChange({ target: { value: event.target.checked } })}
+			/>
+		</Field>
+	)
+}
+
 export function Field({
 	name,
 	label,
 	error,
 	children,
+	displayHorizontal = false,
 }: {
 	name: string
 	label: string
 	error: string | null
 	children: ReactNode
+	displayHorizontal?: boolean
 }) {
 	return (
-		<div className="field">
+		<div className={`field ${displayHorizontal ? 'horizontal' : ''}`}>
 			<label className="field-label" htmlFor={name}>
 				{label}
 			</label>

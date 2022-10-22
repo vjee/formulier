@@ -36,3 +36,8 @@ ul {
 .field {
 	margin-bottom: 16px;
 }
+
+.field.horizontal {
+	display: flex;
+	align-items: center;
+}
