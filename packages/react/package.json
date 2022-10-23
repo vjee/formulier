@@ -62,6 +62,7 @@
 		"@formulier/core": "workspace:0.0.10",
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
+		"@testing-library/react": "^13.4.0",
 		"@types/react": "^18.0.18",
 		"@types/use-sync-external-store": "^0.0.3",
 		"@vitest/coverage-istanbul": "^0.24.1",
