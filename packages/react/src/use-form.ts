@@ -30,12 +30,13 @@ export function useForm<V extends Values, P extends Primitives = Primitives>(
 
 if (import.meta.vitest) {
 	const { describe, it, expect } = import.meta.vitest
-	const { renderHook } = await import('@testing-library/react')
-	const { useFormField } = await import('.')
 
-	const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
+	describe('useForm', async () => {
+		const { renderHook } = await import('@testing-library/react')
+		const { useFormField } = await import('.')
 
-	describe('useForm', () => {
+		const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
+
 		const { result } = renderHook(() => useForm(INITIAL_VALUES))
 
 		it('renders hook', () => {

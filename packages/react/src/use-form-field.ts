@@ -69,17 +69,18 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 
 if (import.meta.vitest) {
 	const { describe, it, expect } = import.meta.vitest
-	const { useForm } = await import('.')
-	const { renderHook } = await import('@testing-library/react')
 
-	const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
-	const FORM = renderHook(() => useForm(INITIAL_VALUES)).result.current
-	const INITIAL_PROPS = {
-		name: 'a.b.c',
-		validate: value => (value !== 'c' ? 'Value should be "c"' : null),
-	} as FieldOptions<string>
+	describe('useFormField', async () => {
+		const { renderHook } = await import('@testing-library/react')
+		const { useForm } = await import('.')
 
-	describe('useFormField', () => {
+		const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
+		const FORM = renderHook(() => useForm(INITIAL_VALUES)).result.current
+		const INITIAL_PROPS = {
+			name: 'a.b.c',
+			validate: value => (value !== 'c' ? 'Value should be "c"' : null),
+		} as FieldOptions<string>
+
 		const { result, rerender } = renderHook((options: FieldOptions<string>) => useFormField(FORM, options), {
 			initialProps: INITIAL_PROPS,
 		})
