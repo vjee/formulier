@@ -8,6 +8,7 @@ importers:
       '@formulier/eslint-config': workspace:0.0.0
       '@typescript-eslint/eslint-plugin': ^5.36.2
       '@typescript-eslint/parser': ^5.36.2
+      cypress: ^10.10.0
       eslint: ^8.23.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-react: 7.31.0
@@ -20,6 +21,7 @@ importers:
       '@formulier/eslint-config': link:config/eslint-config
       '@typescript-eslint/eslint-plugin': 5.38.1_c7qepppml3d4ahu5cnfwqe6ltq
       '@typescript-eslint/parser': 5.38.1_ypn2ylkkyfa5i233caldtndbqa
+      cypress: 10.10.0
       eslint: 8.24.0
       eslint-config-prettier: 8.5.0_eslint@8.24.0
       eslint-plugin-react: 7.31.0_eslint@8.24.0
