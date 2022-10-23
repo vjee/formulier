@@ -12,6 +12,7 @@
 		"lint": "turbo run lint",
 		"typecheck": "turbo run typecheck",
 		"test": "turbo run test",
+		"e2e": "turbo run e2e",
 		"docs:dev": "pnpm run --filter docs dev",
 		"docs:build": "pnpm run --filter docs build",
 		"docs:serve": "pnpm run --filter docs serve"
