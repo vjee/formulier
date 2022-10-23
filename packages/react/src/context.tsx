@@ -14,11 +14,14 @@ interface FormProviderProps<V extends Values, P extends Primitives> {
 	children: React.ReactNode
 }
 
-export function FormProvider<V extends Values, P extends Primitives>({ form, children }: FormProviderProps<V, P>) {
+export function FormProvider<V extends Values, P extends Primitives = Primitives>({
+	form,
+	children,
+}: FormProviderProps<V, P>) {
 	return <FormContext.Provider value={{ store: form as ReactFormulier<Values> }}>{children}</FormContext.Provider>
 }
 
-export function useFormContext<V extends Values, P extends Primitives>() {
+export function useFormContext<V extends Values, P extends Primitives = Primitives>() {
 	const value = React.useContext(FormContext) as FormContextT<V, P> | undefined
 	if (!value) {
 		throw createError('useFormContext()', 'Cannot use `useFormContext` outside of `Form` or `FormProvider` component.')
