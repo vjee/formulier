@@ -27,3 +27,32 @@ export function useForm<V extends Values, P extends Primitives = Primitives>(
 
 	return form
 }
+
+if (import.meta.vitest) {
+	const { describe, it, expect } = import.meta.vitest
+	const { renderHook } = await import('@testing-library/react')
+	const { useFormField } = await import('.')
+
+	const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
+
+	describe('useForm', () => {
+		const { result } = renderHook(() => useForm(INITIAL_VALUES))
+
+		it('renders hook', () => {
+			expect(result.current.getState).toBeDefined()
+		})
+
+		it('unregisters field values when unmounted', () => {
+			const { rerender: fieldRerender, unmount: fieldUnmount } = renderHook(
+				options => useFormField(result.current, options),
+				{ initialProps: { name: 'a.b.c' } },
+			)
+			expect(result.current.getState().values.a.b.c).toBe('c')
+			fieldRerender({ name: 'a.b.d' })
+			expect(result.current.getState().values.a.b.c).toBe(undefined)
+			expect(result.current.getState().values.a.b.d).toBe('d')
+			fieldUnmount()
+			expect(result.current.getState().values.a.b.d).toBe(undefined)
+		})
+	})
+}
