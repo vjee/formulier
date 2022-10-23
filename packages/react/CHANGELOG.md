@@ -1,5 +1,12 @@
 # @formulier/react
 
+## 0.0.12
+
+### Patch Changes
+
+- 44e92dd: Use default value for 2nd generic argument to `useFormContext` and `FormProvider`
+- 4243ec9: FormProvider is now exported and can be used separately from Form component
+
 ## 0.0.11
 
 ### Patch Changes
