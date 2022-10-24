@@ -1,8 +1,8 @@
+import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
 import { GetFieldType, Values, arrayUtils } from '@formulier/core'
 import { ReactFormulier } from './store'
 import { createError } from './error'
 import { useEvent } from './use-event'
-import { useFormFieldValue } from './use-form-field-value'
 
 type FieldArrayItem<V extends Values, F extends string> = GetFieldType<V, F> extends (infer T)[] ? T : never
 
@@ -14,11 +14,17 @@ export interface FieldArrayMethods<Item> {
 	swap: (fromIndex: number, toIndex: number) => void
 }
 
+export interface FormFieldArrayOptions<V extends Values, F extends string> {
+	valueOptions?: FormFieldValueOptions<V, F>
+}
+
 export function useFormFieldArray<V extends Values, F extends string>(
 	form: ReactFormulier<V>,
 	name: F,
+	options?: FormFieldArrayOptions<V, F>,
 ): [items: FieldArrayItem<V, F>[], arrayMethods: FieldArrayMethods<FieldArrayItem<V, F>>] {
-	const items = useFormFieldValue(form, name) as FieldArrayItem<V, F>[]
+	const { valueOptions } = options || {}
+	const items = useFormFieldValue(form, name, valueOptions) as FieldArrayItem<V, F>[]
 
 	if (!Array.isArray(items)) {
 		throw createError('useFormFieldArray()', 'The provided field is not an array.')

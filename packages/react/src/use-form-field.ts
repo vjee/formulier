@@ -18,18 +18,20 @@ export interface FieldMeta {
 	touched: boolean
 }
 
-export interface FieldOptions<F extends string> {
+export interface FieldOptions<V extends Values, F extends string> {
 	name: F
 	validate?: FieldValidator
+	valueOptions?: FormFieldValueOptions<V, F>
 }
 
 export function useFormField<V extends Values, P extends Primitives, F extends string>(
 	form: ReactFormulier<V, P>,
-	{ name, validate }: FieldOptions<F>,
+	options: FieldOptions<V, F>,
 ): [FieldInputProps<V, F>, FieldMeta] {
+	const { name, validate, valueOptions } = options
 	const id = name
 
-	const value = useFormFieldValue(form, name)
+	const value = useFormFieldValue(form, name, valueOptions)
 	const error = useFormSelector(form, state => state.errors[name]) || null
 	const touched = useFormSelector(form, state => state.touched[name]) ?? false
 	const hasSubmitted = useFormSelector(form, state => state.submitCount > 0)
