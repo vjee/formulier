@@ -20,3 +20,60 @@
 ## Docs
 
 Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/formulier/).
+
+## Example
+
+```jsx
+import { Form, useForm, useFormContext, useFormField } from '@formulier/react'
+
+function MyForm() {
+  const form = useForm({
+    firstName: 'Nico',
+    age: 26,
+  })
+
+  const handleSubmit = values => {
+    // handle form submission
+    console.log(`${values.firstName} is ${values.age} years old.`)
+  }
+
+  return (
+    <Form form={form} onSubmit={handleSubmit}>
+      <TextField name="firstName" placeholder="First name" />
+      <IntegerField name="age" placeholder="Age" />
+
+      <button type="submit">Submit</button>
+    </Form>
+  )
+}
+
+function TextField({ name, placeholder }) {
+  const form = useFormContext()
+  const [field] = useFormField(form, { name })
+
+  return (
+    <input
+      type="text"
+      placeholder={placeholder}
+      {...field}
+      value={field.value || ''}
+      onChange={event => field.onChange(event.target.value)}
+    />
+  )
+}
+
+function IntegerField({ name, placeholder }) {
+  const form = useFormContext()
+  const [field] = useFormField(form, { name })
+
+  return (
+    <input
+      type="number"
+      placeholder={placeholder}
+      {...field}
+      value={field.value || ''}
+      onChange={event => field.onChange(parseInt(event.target.value, 10))}
+    />
+  )
+}
+```

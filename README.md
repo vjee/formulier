@@ -21,3 +21,60 @@ Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/form
 | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [@formulier/core](https://github.com/vjee/formulier/tree/main/packages/core)   | [![version](https://img.shields.io/npm/v/@formulier/core?style=flat-square)](https://github.com/vjee/formulier/blob/main/packages/core/CHANGELOG.md) ![bundle size](https://img.shields.io/bundlephobia/minzip/@formulier/core?style=flat-square) ![license](https://img.shields.io/npm/l/@formulier/core?style=flat-square)     |
 | [@formulier/react](https://github.com/vjee/formulier/tree/main/packages/react) | [![version](https://img.shields.io/npm/v/@formulier/react?style=flat-square)](https://github.com/vjee/formulier/blob/main/packages/react/CHANGELOG.md) ![bundle size](https://img.shields.io/bundlephobia/minzip/@formulier/react?style=flat-square) ![license](https://img.shields.io/npm/l/@formulier/react?style=flat-square) |
+
+## React example
+
+```jsx
+import { Form, useForm, useFormContext, useFormField } from '@formulier/react'
+
+function MyForm() {
+  const form = useForm({
+    firstName: 'Nico',
+    age: 26,
+  })
+
+  const handleSubmit = values => {
+    // handle form submission
+    console.log(`${values.firstName} is ${values.age} years old.`)
+  }
+
+  return (
+    <Form form={form} onSubmit={handleSubmit}>
+      <TextField name="firstName" placeholder="First name" />
+      <IntegerField name="age" placeholder="Age" />
+
+      <button type="submit">Submit</button>
+    </Form>
+  )
+}
+
+function TextField({ name, placeholder }) {
+  const form = useFormContext()
+  const [field] = useFormField(form, { name })
+
+  return (
+    <input
+      type="text"
+      placeholder={placeholder}
+      {...field}
+      value={field.value || ''}
+      onChange={event => field.onChange(event.target.value)}
+    />
+  )
+}
+
+function IntegerField({ name, placeholder }) {
+  const form = useFormContext()
+  const [field] = useFormField(form, { name })
+
+  return (
+    <input
+      type="number"
+      placeholder={placeholder}
+      {...field}
+      value={field.value || ''}
+      onChange={event => field.onChange(parseInt(event.target.value, 10))}
+    />
+  )
+}
+```
