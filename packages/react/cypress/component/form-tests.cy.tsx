@@ -13,7 +13,12 @@ function Field({ name, validate }: { name: string; validate?: (value: unknown) =
 
 	return (
 		<>
-			<input data-testid="input" {...field} value={field.value || ''} />
+			<input
+				data-testid="input"
+				{...field}
+				value={field.value || ''}
+				onChange={event => field.onChange(event.target.value)}
+			/>
 			{meta.error ? <span data-testid="error">{meta.error}</span> : null}
 		</>
 	)

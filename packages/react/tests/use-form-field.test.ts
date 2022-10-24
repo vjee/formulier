@@ -1,5 +1,6 @@
 import { FieldOptions, useFormField } from '../src/use-form-field'
 import { expect, it } from 'vitest'
+import { Values } from '@formulier/core'
 import { renderHook } from '@testing-library/react'
 import { useForm } from '../src/use-form'
 
@@ -8,9 +9,9 @@ const FORM = renderHook(() => useForm(INITIAL_VALUES)).result.current
 const INITIAL_PROPS = {
 	name: 'a.b.c',
 	validate: value => (value !== 'c' ? 'Value should be "c"' : null),
-} as FieldOptions<string>
+} as FieldOptions<Values, string>
 
-const { result, rerender } = renderHook((options: FieldOptions<string>) => useFormField(FORM, options), {
+const { result, rerender } = renderHook((options: FieldOptions<Values, string>) => useFormField(FORM, options), {
 	initialProps: INITIAL_PROPS,
 })
 
@@ -22,7 +23,7 @@ it('renders hook', () => {
 })
 
 it('runs onChange correctly', () => {
-	result.current[0].onChange({ target: { value: 'd' } })
+	result.current[0].onChange('d')
 	rerender(INITIAL_PROPS)
 	expect(result.current[0].value).toBe('d')
 	expect(result.current[1].error).toBe(null)
@@ -37,7 +38,7 @@ it('runs onBlur correctly', () => {
 })
 
 it('runs validation during onChange if touched', () => {
-	result.current[0].onChange({ target: { value: 'c' } })
+	result.current[0].onChange('c')
 	rerender(INITIAL_PROPS)
 	expect(result.current[1].error).toBe(null)
 })
