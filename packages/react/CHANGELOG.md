@@ -1,5 +1,12 @@
 # @formulier/react
 
+## 0.0.13
+
+### Patch Changes
+
+- 31695ae: Expect direct value in `onChange` instead of fake change event
+- b033082: Allow passing value fallback to `useFormField`, `useFormFieldValue` and `formFieldArray`
+
 ## 0.0.12
 
 ### Patch Changes
