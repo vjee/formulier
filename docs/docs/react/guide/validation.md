@@ -9,7 +9,7 @@ This makes it easy to validate when the form has conditional fields or requires 
 Let's validate that the `firstName` and `lastName` are at least 2 characters long.\
 We start with the form we made on the [Getting Started](./getting-started) page.
 
-<<< @/react-components/guide-validation-min-length.jsx{14,15,23,26-36,38,46}
+<<< @/react-components/guide-validation-min-length.jsx{14,15,23,26-36,38,52}
 
 ## Example: Required
 

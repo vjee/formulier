@@ -47,7 +47,13 @@ function InputField({ name, label, type = 'text', minLength, required }) {
 			<label className="label" htmlFor={name}>
 				{label}
 			</label>
-			<input className="input" {...field} type={type} />
+			<input
+				className="input"
+				type={type}
+				{...field}
+				value={field.value || ''}
+				onChange={event => field.onChange(event.target.value)}
+			/>
 			{meta.error && <span className="error">{meta.error}</span>}
 		</div>
 	)
