@@ -21,7 +21,7 @@ import RefreshIcon from './refresh-icon.vue'
 const props = defineProps({
 	title: {
 		type: String,
-		default: () => 'Try out',
+		default: () => 'Try it out',
 	},
 	name: {
 		type: String,
