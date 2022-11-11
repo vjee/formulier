@@ -20,7 +20,7 @@ export interface FormulierState<V extends Values, P extends Primitives = Primiti
 	submitCount: number
 }
 
-export interface StoreListener {
+export interface FormListener {
 	(): void
 }
 

@@ -1,6 +1,6 @@
 import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
 import { GetFieldType, Values, arrayUtils } from '@formulier/core'
-import { ReactFormulier } from './store'
+import { ReactFormulier } from './form'
 import { createError } from './error'
 import { useEvent } from './use-event'
 

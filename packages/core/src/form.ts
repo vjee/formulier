@@ -1,4 +1,4 @@
-import { FieldValidator, FormulierState, Nullable, Primitives, StoreListener, Values } from './types'
+import { FieldValidator, FormListener, FormulierState, Nullable, Primitives, Values } from './types'
 import { getPath, isEqual, removeKey, setKey, setPath } from './state-utils'
 
 export class Formulier<
@@ -7,7 +7,7 @@ export class Formulier<
 	S extends FormulierState<V, P> = FormulierState<V, P>,
 > {
 	notifyEnabled: boolean
-	listeners: Set<StoreListener>
+	listeners: Set<FormListener>
 	state: S
 
 	constructor(initialValues: Nullable<V, P>) {
@@ -29,7 +29,7 @@ export class Formulier<
 		return this.state
 	}
 
-	subscribe(listener: StoreListener): () => void {
+	subscribe(listener: FormListener): () => void {
 		this.listeners.add(listener)
 		return () => {
 			this.listeners.delete(listener)

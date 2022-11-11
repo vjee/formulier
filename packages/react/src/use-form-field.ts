@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { FieldValidator, GetFieldType, Primitives, Values } from '@formulier/core'
 import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
-import { ReactFormulier } from './store'
+import { ReactFormulier } from './form'
 import { useEvent } from './use-event'
 import { useFormSelector } from './use-form-selector'
 

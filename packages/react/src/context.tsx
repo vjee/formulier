@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Primitives, Values } from '@formulier/core'
-import { ReactFormulier } from './store'
+import { ReactFormulier } from './form'
 import { createError } from './error'
 
 interface FormContextT<V extends Values, P extends Primitives> {
-	store: ReactFormulier<V, P>
+	form: ReactFormulier<V, P>
 }
 
 const FormContext = React.createContext<FormContextT<Values, Primitives> | undefined>(undefined)
@@ -18,7 +18,7 @@ export function FormProvider<V extends Values, P extends Primitives = Primitives
 	form,
 	children,
 }: FormProviderProps<V, P>) {
-	return <FormContext.Provider value={{ store: form as ReactFormulier<Values> }}>{children}</FormContext.Provider>
+	return <FormContext.Provider value={{ form: form as ReactFormulier<Values> }}>{children}</FormContext.Provider>
 }
 
 export function useFormContext<V extends Values, P extends Primitives = Primitives>() {
@@ -26,5 +26,5 @@ export function useFormContext<V extends Values, P extends Primitives = Primitiv
 	if (!value) {
 		throw createError('useFormContext()', 'Cannot use `useFormContext` outside of `Form` or `FormProvider` component.')
 	}
-	return value.store
+	return value.form
 }

@@ -1,6 +1,6 @@
 export * from '@formulier/core'
 export * from './context'
-export * from './form'
+export * from './form-component'
 export * from './use-form-field-array'
 export * from './use-form-field-value'
 export * from './use-form-field'

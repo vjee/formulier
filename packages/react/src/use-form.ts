@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Nullable, Primitives, Values, stateUtils } from '@formulier/core'
-import { ReactFormulier } from './store'
+import { ReactFormulier } from './form'
 import { useFormSelector } from './use-form-selector'
 
 export function useForm<V extends Values, P extends Primitives = Primitives>(
