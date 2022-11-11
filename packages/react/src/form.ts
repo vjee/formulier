@@ -1,8 +1,8 @@
 import { Formulier, FormulierState, Nullable, Primitives, Values, stateUtils } from '@formulier/core'
 
 export interface ReactFormulierState<V extends Values, P extends Primitives = Primitives> extends FormulierState<V, P> {
-	fieldElements: Record<string, Element | null>
-	unregisterList: string[]
+	fieldElementRegistry: Record<string, Element | null>
+	unregisterQueue: string[]
 }
 
 export class ReactFormulier<
@@ -12,22 +12,22 @@ export class ReactFormulier<
 > extends Formulier<V, P, S> {
 	constructor(initialValues: Nullable<V, P>) {
 		super(initialValues)
-		this.state.fieldElements = {}
-		this.state.unregisterList = []
+		this.state.fieldElementRegistry = {}
+		this.state.unregisterQueue = []
 	}
 
-	addToUnregisterList(name: string): void {
+	queueForUnregistration(name: string): void {
 		this.state = {
 			...this.state,
-			unregisterList: [...this.state.unregisterList, name],
+			unregisterQueue: [...this.state.unregisterQueue, name],
 		}
 		this.notify()
 	}
 
-	clearUnregisterList(): void {
+	clearUnregisterQueue(): void {
 		this.state = {
 			...this.state,
-			unregisterList: [],
+			unregisterQueue: [],
 		}
 		this.notify()
 	}
@@ -35,7 +35,7 @@ export class ReactFormulier<
 	registerElement(name: string, element: Element): void {
 		this.state = {
 			...this.state,
-			fieldElements: stateUtils.setKey(this.state.fieldElements, name, element),
+			fieldElementRegistry: stateUtils.setKey(this.state.fieldElementRegistry, name, element),
 		}
 		this.notify()
 	}
@@ -43,7 +43,7 @@ export class ReactFormulier<
 	unregisterElement(name: string): void {
 		this.state = {
 			...this.state,
-			fieldElements: stateUtils.removeKey(this.state.fieldElements, name),
+			fieldElementRegistry: stateUtils.removeKey(this.state.fieldElementRegistry, name),
 		}
 		this.notify()
 	}

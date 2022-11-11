@@ -8,12 +8,12 @@ export function useForm<V extends Values, P extends Primitives = Primitives>(
 ): ReactFormulier<V, P> {
 	const [form] = React.useState(() => new ReactFormulier(initialValues))
 
-	const unregisterList = useFormSelector(form, state => state.unregisterList, stateUtils.isEqual)
+	const unregisterQueue = useFormSelector(form, state => state.unregisterQueue, stateUtils.isEqual)
 
 	React.useEffect(() => {
-		if (unregisterList.length) {
-			unregisterList.forEach(fieldName => {
-				const element = form.getState().fieldElements[fieldName]
+		if (unregisterQueue.length) {
+			unregisterQueue.forEach(fieldName => {
+				const element = form.getState().fieldElementRegistry[fieldName]
 				const isMounted = !!element && element.isConnected
 
 				if (!isMounted) {
@@ -21,9 +21,9 @@ export function useForm<V extends Values, P extends Primitives = Primitives>(
 				}
 			})
 
-			form.clearUnregisterList()
+			form.clearUnregisterQueue()
 		}
-	}, [form, unregisterList])
+	}, [form, unregisterQueue])
 
 	return form
 }

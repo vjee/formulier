@@ -7,24 +7,24 @@ it('adds to unregister list', () => {
 	const form = new ReactFormulier(INITIAL_VALUES)
 	const listener = vi.fn(() => undefined)
 	form.subscribe(listener)
-	form.addToUnregisterList('a.b.c')
+	form.queueForUnregistration('a.b.c')
 	expect(listener).toHaveBeenCalledTimes(1)
-	expect(form.getState().unregisterList).toContain('a.b.c')
+	expect(form.getState().unregisterQueue).toContain('a.b.c')
 })
 
 it('clears unregister list', () => {
 	const form = new ReactFormulier(INITIAL_VALUES)
-	form.addToUnregisterList('a.b.c')
-	form.clearUnregisterList()
-	expect(form.getState().unregisterList).toHaveLength(0)
+	form.queueForUnregistration('a.b.c')
+	form.clearUnregisterQueue()
+	expect(form.getState().unregisterQueue).toHaveLength(0)
 })
 
 it('registers elements', () => {
 	const form = new ReactFormulier(INITIAL_VALUES)
 	const element = document.createElement('input')
 	form.registerElement('a.b.c', element)
-	expect(form.getState().fieldElements['a.b.c']).toBeDefined()
-	expect(form.getState().fieldElements['a.b.c']).toBe(element)
+	expect(form.getState().fieldElementRegistry['a.b.c']).toBeDefined()
+	expect(form.getState().fieldElementRegistry['a.b.c']).toBe(element)
 })
 
 it('unregisters elements', () => {
@@ -32,5 +32,5 @@ it('unregisters elements', () => {
 	const element = document.createElement('input')
 	form.registerElement('a.b.c', element)
 	form.unregisterElement('a.b.c')
-	expect(form.getState().fieldElements['a.b.c']).toBeUndefined()
+	expect(form.getState().fieldElementRegistry['a.b.c']).toBeUndefined()
 })

@@ -49,7 +49,7 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 		form.registerField(name, validate)
 
 		return () => {
-			form.addToUnregisterList(name)
+			form.queueForUnregistration(name)
 		}
 	}, [form, name, validate])
 
