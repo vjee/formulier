@@ -10,7 +10,14 @@ export function TextField({ name, label }: { name: string; label: string }) {
 
 	return (
 		<Field name={name} label={label} error={error}>
-			<input type="text" ref={ref} id={id} value={value || ''} onChange={onChange} onBlur={onBlur} />
+			<input
+				type="text"
+				ref={ref}
+				id={id}
+				value={value || ''}
+				onChange={event => onChange(event.target.value)}
+				onBlur={onBlur}
+			/>
 		</Field>
 	)
 }
@@ -46,7 +53,7 @@ export function SelectField({ name, label, children }: { name: string; label: st
 
 	return (
 		<Field name={name} label={label} error={error}>
-			<select ref={ref} id={id} value={value || ''} onChange={onChange} onBlur={onBlur}>
+			<select ref={ref} id={id} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur}>
 				{children}
 			</select>
 		</Field>
