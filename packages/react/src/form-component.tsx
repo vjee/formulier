@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { Nullable, Primitives, Values } from '@formulier/core'
+import { Formulier, Nullable, Primitives, Values } from '@formulier/core'
 import { FormProvider } from './context'
-import { ReactFormulier } from './form'
 
 interface FormProps<V extends Values, P extends Primitives>
 	extends Omit<JSX.IntrinsicElements['form'], 'ref' | 'onSubmit'> {
-	form: ReactFormulier<V, P>
+	form: Formulier<V, P>
 	onSubmit: (values: Nullable<V, P>) => void
 }
 

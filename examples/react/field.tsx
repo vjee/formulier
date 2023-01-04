@@ -5,19 +5,12 @@ export function TextField({ name, label }: { name: string; label: string }) {
 	const form = useFormContext()
 	const [field, meta] = useFormField(form, { name })
 
-	const { ref, id, value, onChange, onBlur } = field
+	const { id, value, onChange, onBlur } = field
 	const { error } = meta
 
 	return (
 		<Field name={name} label={label} error={error}>
-			<input
-				type="text"
-				ref={ref}
-				id={id}
-				value={value || ''}
-				onChange={event => onChange(event.target.value)}
-				onBlur={onBlur}
-			/>
+			<input type="text" id={id} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur} />
 		</Field>
 	)
 }
@@ -26,7 +19,7 @@ export function IntegerField({ name, label }: { name: string; label: string }) {
 	const form = useFormContext()
 	const [field, meta] = useFormField(form, { name })
 
-	const { ref, id, value, onChange, onBlur } = field
+	const { id, value, onChange, onBlur } = field
 	const { error } = meta
 
 	return (
@@ -34,7 +27,6 @@ export function IntegerField({ name, label }: { name: string; label: string }) {
 			<input
 				type="number"
 				step="1"
-				ref={ref}
 				id={id}
 				value={value || ''}
 				onChange={event => onChange(parseInt(event.target.value, 10))}
@@ -48,12 +40,12 @@ export function SelectField({ name, label, children }: { name: string; label: st
 	const form = useFormContext()
 	const [field, meta] = useFormField(form, { name })
 
-	const { ref, id, value, onChange, onBlur } = field
+	const { id, value, onChange, onBlur } = field
 	const { error } = meta
 
 	return (
 		<Field name={name} label={label} error={error}>
-			<select ref={ref} id={id} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur}>
+			<select id={id} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur}>
 				{children}
 			</select>
 		</Field>
@@ -64,14 +56,13 @@ export function CheckboxField({ name, label }: { name: string; label: string }) 
 	const form = useFormContext()
 	const [field, meta] = useFormField(form, { name })
 
-	const { ref, id, value, onChange, onBlur } = field
+	const { id, value, onChange, onBlur } = field
 	const { error } = meta
 
 	return (
 		<Field name={name} label={label} error={error} displayHorizontal>
 			<input
 				type="checkbox"
-				ref={ref}
 				id={id}
 				checked={value || false}
 				onChange={event => onChange(event.target.checked)}

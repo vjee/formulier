@@ -1,12 +1,10 @@
 import * as React from 'react'
-import { FieldValidator, GetFieldType, Primitives, Values } from '@formulier/core'
+import { FieldValidator, Formulier, GetFieldType, Primitives, Values, stateUtils } from '@formulier/core'
 import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
-import { ReactFormulier } from './form'
 import { useEvent } from './use-event'
 import { useFormSelector } from './use-form-selector'
 
 export interface FieldInputProps<V extends Values, F extends string> {
-	ref: React.RefCallback<Element>
 	id: string
 	value: GetFieldType<V, F> | null | undefined
 	onChange: (value: GetFieldType<V, F> | null | undefined) => void
@@ -24,8 +22,10 @@ export interface FieldOptions<V extends Values, F extends string> {
 	valueOptions?: FormFieldValueOptions<V, F>
 }
 
+const NO_VALUE = Symbol()
+
 export function useFormField<V extends Values, P extends Primitives, F extends string>(
-	form: ReactFormulier<V, P>,
+	form: Formulier<V, P>,
 	options: FieldOptions<V, F>,
 ): [FieldInputProps<V, F>, FieldMeta] {
 	const { name, validate, valueOptions } = options
@@ -36,20 +36,18 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 	const touched = useFormSelector(form, state => state.touched[name]) ?? false
 	const hasSubmitted = useFormSelector(form, state => state.submitCount > 0)
 
-	const ref: React.RefCallback<Element> = React.useCallback(
-		element => {
-			form.withoutNotify(() => {
-				element ? form.registerElement(name, element) : form.unregisterElement(name)
-			})
-		},
-		[form, name],
-	)
+	const valueBeforeCleanupRef = React.useRef<any>(NO_VALUE)
 
 	React.useEffect(() => {
 		form.registerField(name, validate)
 
+		if (valueBeforeCleanupRef.current !== NO_VALUE) {
+			form.setFieldValue(name, valueBeforeCleanupRef.current)
+		}
+
 		return () => {
-			form.queueForUnregistration(name)
+			valueBeforeCleanupRef.current = stateUtils.getPath(form.getState().values, name)
+			form.unregisterField(name)
 		}
 	}, [form, name, validate])
 
@@ -63,7 +61,7 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 		form.touchField(name)
 	})
 
-	const field: FieldInputProps<V, F> = { ref, id, value, onChange, onBlur }
+	const field: FieldInputProps<V, F> = { id, value, onChange, onBlur }
 	const meta: FieldMeta = { error, touched }
 
 	return [field, meta]

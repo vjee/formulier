@@ -1,6 +1,5 @@
 import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
-import { GetFieldType, Values, arrayUtils } from '@formulier/core'
-import { ReactFormulier } from './form'
+import { Formulier, GetFieldType, Values, arrayUtils } from '@formulier/core'
 import { createError } from './error'
 import { useEvent } from './use-event'
 
@@ -19,7 +18,7 @@ export interface FormFieldArrayOptions<V extends Values, F extends string> {
 }
 
 export function useFormFieldArray<V extends Values, F extends string>(
-	form: ReactFormulier<V>,
+	form: Formulier<V>,
 	name: F,
 	options?: FormFieldArrayOptions<V, F>,
 ): [items: FieldArrayItem<V, F>[], arrayMethods: FieldArrayMethods<FieldArrayItem<V, F>>] {
