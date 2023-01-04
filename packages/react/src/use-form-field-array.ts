@@ -17,11 +17,16 @@ export interface FormFieldArrayOptions<V extends Values, F extends string> {
 	valueOptions?: FormFieldValueOptions<V, F>
 }
 
+export type UseFormFieldArrayResult<V extends Values, F extends string> = [
+	items: FieldArrayItem<V, F>[],
+	arrayMethods: FieldArrayMethods<FieldArrayItem<V, F>>,
+]
+
 export function useFormFieldArray<V extends Values, F extends string>(
 	form: Formulier<V>,
 	name: F,
 	options?: FormFieldArrayOptions<V, F>,
-): [items: FieldArrayItem<V, F>[], arrayMethods: FieldArrayMethods<FieldArrayItem<V, F>>] {
+): UseFormFieldArrayResult<V, F> {
 	const { valueOptions } = options || {}
 	const items = useFormFieldValue(form, name, valueOptions) as FieldArrayItem<V, F>[]
 
