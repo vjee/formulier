@@ -37,7 +37,7 @@ function InputField({ name, label, type = 'text', minLength, required }) {
 			}
 			return null
 		},
-		[minLength],
+		[required, minLength],
 	)
 
 	const [field, meta] = useFormField(form, { name, validate })
