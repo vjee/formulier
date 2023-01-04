@@ -24,7 +24,7 @@ export interface FieldMeta {
 	touched: boolean
 }
 
-const NO_VALUE = Symbol()
+type StateBeforeCleanup = { name: string; value: any } | undefined
 
 export function useFormField<V extends Values, P extends Primitives, F extends string>(
 	form: Formulier<V, P>,
@@ -38,17 +38,19 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 	const touched = useFormSelector(form, state => state.touched[name]) ?? false
 	const hasSubmitted = useFormSelector(form, state => state.submitCount > 0)
 
-	const valueBeforeCleanupRef = React.useRef<any>(NO_VALUE)
+	const stateBeforeCleanupRef = React.useRef<StateBeforeCleanup>(undefined)
 
 	React.useEffect(() => {
 		form.registerField(name, validate)
 
-		if (valueBeforeCleanupRef.current !== NO_VALUE) {
-			form.setFieldValue(name, valueBeforeCleanupRef.current)
+		const state = stateBeforeCleanupRef.current
+		if (state !== undefined && state.value !== undefined && state.name === name) {
+			form.setFieldValue(state.name, state.value)
 		}
 
 		return () => {
-			valueBeforeCleanupRef.current = stateUtils.getPath(form.getState().values, name)
+			const value = stateUtils.getPath(form.getState().values, name)
+			stateBeforeCleanupRef.current = { name, value }
 			form.unregisterField(name)
 		}
 	}, [form, name, validate])
