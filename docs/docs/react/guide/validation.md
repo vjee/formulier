@@ -16,7 +16,7 @@ We start with the form we made on the [Getting Started](./getting-started) page.
 Let's also make sure that all our fields are always filled out.\
 Continuing on where we left off:
 
-<<< @/react-components/guide-validation-required.jsx{14-16,23,28-32}
+<<< @/react-components/guide-validation-required.jsx{14-16,23,28-32,40}
 
 ## Example: Results
 
