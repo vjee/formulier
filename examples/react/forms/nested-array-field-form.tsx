@@ -17,10 +17,12 @@ interface FormState {
 
 export function NestedArrayFieldForm() {
 	const form = useForm<FormState>({
-		friends: [
-			{ name: 'Peter', age: null, pets: [] },
-			{ name: 'Freddy', age: 20, pets: [{ name: 'Alfred' }] },
-		],
+		initialValues: {
+			friends: [
+				{ name: 'Peter', age: null, pets: [] },
+				{ name: 'Freddy', age: 20, pets: [{ name: 'Alfred' }] },
+			],
+		},
 	})
 
 	return (
@@ -78,6 +80,7 @@ function Friends() {
 				)
 			})}
 
+			{/* @ts-expect-error TODO: fix type */}
 			<button type="button" onClick={() => push({ name: '', age: null, pets: [] })}>
 				➕ Add galaxy
 			</button>

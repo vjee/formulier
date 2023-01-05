@@ -7,7 +7,9 @@ interface FormState {
 
 export function SelectForm() {
 	const form = useForm<FormState>({
-		color: '',
+		initialValues: {
+			color: '',
+		},
 	})
 
 	return (

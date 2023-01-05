@@ -9,8 +9,10 @@ interface FormState {
 
 export function ToggleFieldsForm() {
 	const form = useForm<FormState>({
-		fieldA: 'Value A',
-		fieldB: 'Value B',
+		initialValues: {
+			fieldA: 'Value A',
+			fieldB: 'Value B',
+		},
 	})
 
 	const [renderFieldA, setRenderFieldA] = React.useState(true)

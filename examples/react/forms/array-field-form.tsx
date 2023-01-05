@@ -11,7 +11,9 @@ interface FormState {
 
 export function ArrayFieldForm() {
 	const form = useForm<FormState>({
-		galaxies: [{ name: 'Andromeda Galaxy' }, { name: 'Butterfly Galaxies' }],
+		initialValues: {
+			galaxies: [{ name: 'Andromeda Galaxy' }, { name: 'Butterfly Galaxies' }],
+		},
 	})
 
 	return (

@@ -10,9 +10,11 @@ interface FormState {
 
 export function PersonForm() {
 	const form = useForm<FormState>({
-		firstName: 'John',
-		lastName: null,
-		age: 20,
+		initialValues: {
+			firstName: 'John',
+			lastName: null,
+			age: 20,
+		},
 	})
 	const [showLastName, setShowLastName] = React.useState(true)
 

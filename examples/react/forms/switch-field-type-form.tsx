@@ -8,7 +8,9 @@ interface FormState {
 
 export function SwitchFieldTypeForm() {
 	const form = useForm<FormState>({
-		field: 7,
+		initialValues: {
+			field: 7,
+		},
 	})
 
 	const [type, setType] = React.useState<'text' | 'integer' | null>('integer')

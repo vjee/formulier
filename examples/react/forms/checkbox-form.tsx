@@ -8,8 +8,10 @@ interface FormState {
 
 export function CheckboxForm() {
 	const form = useForm<FormState>({
-		optionsAsObject: { a: false, b: true, c: true },
-		optionsAsArray: [true, false, false],
+		initialValues: {
+			optionsAsObject: { a: false, b: true, c: true },
+			optionsAsArray: [true, false, false],
+		},
 	})
 
 	return (
