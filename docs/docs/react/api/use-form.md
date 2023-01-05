@@ -1,7 +1,7 @@
 # `useForm()`
 
 ```tsx
-import { useForm } from '@formulier/react'
+import {useForm} from '@formulier/react'
 
 interface FormState {
   name: string
@@ -9,7 +9,7 @@ interface FormState {
 
 function Component() {
   const form = useForm({
-    initialValues: { name: 'Jeff' },
+    initialValues: {name: 'Jeff'},
   })
 }
 ```

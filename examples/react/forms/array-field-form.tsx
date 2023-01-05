@@ -1,4 +1,4 @@
-import { Form, useForm, useFormFieldArray, useFormContext } from '@formulier/react'
+import {Form, useForm, useFormFieldArray, useFormContext} from '@formulier/react'
 import * as Field from '../field'
 
 interface Galaxy {
@@ -12,7 +12,7 @@ interface FormState {
 export function ArrayFieldForm() {
 	const form = useForm<FormState>({
 		initialValues: {
-			galaxies: [{ name: 'Andromeda Galaxy' }, { name: 'Butterfly Galaxies' }],
+			galaxies: [{name: 'Andromeda Galaxy'}, {name: 'Butterfly Galaxies'}],
 		},
 	})
 
@@ -31,7 +31,7 @@ export function ArrayFieldForm() {
 
 function Galaxies() {
 	const form = useFormContext<FormState>()
-	const [galaxies, { push, remove, move }] = useFormFieldArray(form, 'galaxies')
+	const [galaxies, {push, remove, move}] = useFormFieldArray(form, 'galaxies')
 
 	return (
 		<div className="column">
@@ -68,7 +68,7 @@ function Galaxies() {
 				)
 			})}
 
-			<button type="button" onClick={() => push({ name: '' })}>
+			<button type="button" onClick={() => push({name: ''})}>
 				➕ Add galaxy
 			</button>
 		</div>

@@ -1,17 +1,17 @@
-import { FieldOptions, useFormField } from '../src/use-form-field'
-import { expect, it } from 'vitest'
-import { Values } from '@formulier/core'
-import { renderHook } from '@testing-library/react'
-import { useForm } from '../src/use-form'
+import {FieldOptions, useFormField} from '../src/use-form-field'
+import {expect, it} from 'vitest'
+import {Values} from '@formulier/core'
+import {renderHook} from '@testing-library/react'
+import {useForm} from '../src/use-form'
 
-const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
-const FORM = renderHook(() => useForm({ initialValues: INITIAL_VALUES })).result.current
+const INITIAL_VALUES = {a: {b: {c: 'c', d: 'd'}}}
+const FORM = renderHook(() => useForm({initialValues: INITIAL_VALUES})).result.current
 const INITIAL_PROPS = {
 	name: 'a.b.c',
 	validate: value => (value !== 'c' ? 'Value should be "c"' : null),
 } as FieldOptions<Values, string>
 
-const { result, rerender } = renderHook((options: FieldOptions<Values, string>) => useFormField(FORM, options), {
+const {result, rerender} = renderHook((options: FieldOptions<Values, string>) => useFormField(FORM, options), {
 	initialProps: INITIAL_PROPS,
 })
 
@@ -44,7 +44,7 @@ it('runs validation during onChange if touched', () => {
 })
 
 it('can change field name', () => {
-	rerender({ name: 'a.b.d' })
+	rerender({name: 'a.b.d'})
 	expect(result.current[0].id).toBe('a.b.d')
 	expect(result.current[0].value).toBe('d')
 	expect(result.current[1].error).toBe(null)

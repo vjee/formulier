@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Formulier, Nullable, Primitives, Values } from '@formulier/core'
-import { FormProvider } from './context'
+import {Formulier, Nullable, Primitives, Values} from '@formulier/core'
+import {FormProvider} from './context'
 
 interface FormProps<V extends Values, P extends Primitives>
 	extends Omit<JSX.IntrinsicElements['form'], 'ref' | 'onSubmit'> {
@@ -12,7 +12,7 @@ const Form = React.forwardRef(function Form<V extends Values, P extends Primitiv
 	props: FormProps<V, P>,
 	forwardedRef: React.Ref<HTMLFormElement>,
 ) {
-	const { form, onSubmit, ...formProps } = props
+	const {form, onSubmit, ...formProps} = props
 
 	return (
 		<FormProvider form={form}>
@@ -40,4 +40,4 @@ const TypedForm = Form as <V extends Values, P extends Primitives>(
 	props: FormProps<V, P> & React.RefAttributes<HTMLFormElement>,
 ) => React.ReactElement
 
-export { TypedForm as Form }
+export {TypedForm as Form}

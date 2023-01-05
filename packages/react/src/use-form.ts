@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Formulier, FormulierOptions, Primitives, Values } from '@formulier/core'
+import {Formulier, FormulierOptions, Primitives, Values} from '@formulier/core'
 
 export function useForm<V extends Values, P extends Primitives = Primitives>(
 	options: FormulierOptions<V, P>,

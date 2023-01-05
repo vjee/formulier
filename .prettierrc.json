@@ -6,7 +6,7 @@
 	"printWidth": 120,
 	"quoteProps": "consistent",
 	"jsxSingleQuote": false,
-	"bracketSpacing": true,
+	"bracketSpacing": false,
 	"bracketSameLine": false,
 	"arrowParens": "avoid",
 	"overrides": [

@@ -1,5 +1,5 @@
-import { Formulier, GetFieldType, Primitives, Values, stateUtils } from '@formulier/core'
-import { useFormSelector } from './use-form-selector'
+import {Formulier, GetFieldType, Primitives, Values, stateUtils} from '@formulier/core'
+import {useFormSelector} from './use-form-selector'
 
 export interface FormFieldValueOptions<V extends Values, F extends string> {
 	fallback?: GetFieldType<V, F> | null | undefined
@@ -13,6 +13,6 @@ export function useFormFieldValue<V extends Values, P extends Primitives, F exte
 	name: F,
 	options?: FormFieldValueOptions<V, F>,
 ): UseFormFieldValueResult<V, F> {
-	const { fallback, equalityFn = stateUtils.isEqual } = options || {}
+	const {fallback, equalityFn = stateUtils.isEqual} = options || {}
 	return useFormSelector(form, state => stateUtils.getPath(state.values, name, fallback), equalityFn)
 }

@@ -1,7 +1,7 @@
-import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
-import { Formulier, GetFieldType, Values, arrayUtils } from '@formulier/core'
-import { createError } from './error'
-import { useEvent } from './use-event'
+import {FormFieldValueOptions, useFormFieldValue} from './use-form-field-value'
+import {Formulier, GetFieldType, Values, arrayUtils} from '@formulier/core'
+import {createError} from './error'
+import {useEvent} from './use-event'
 
 type FieldArrayItem<V extends Values, F extends string> = GetFieldType<V, F> extends (infer T)[] ? T : never
 
@@ -27,7 +27,7 @@ export function useFormFieldArray<V extends Values, F extends string>(
 	name: F,
 	options?: FormFieldArrayOptions<V, F>,
 ): UseFormFieldArrayResult<V, F> {
-	const { valueOptions } = options || {}
+	const {valueOptions} = options || {}
 	const items = useFormFieldValue(form, name, valueOptions) as FieldArrayItem<V, F>[]
 
 	if (!Array.isArray(items)) {

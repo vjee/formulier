@@ -1,8 +1,8 @@
-import { describe, expect, it } from 'vitest'
-import { getPath, isInteger, isObject, removeKey, setKey, setPath, toPath } from '../src/state-utils'
+import {describe, expect, it} from 'vitest'
+import {getPath, isInteger, isObject, removeKey, setKey, setPath, toPath} from '../src/state-utils'
 
 const SOURCE = {
-	a: { b: { c: 'c' } },
+	a: {b: {c: 'c'}},
 	y: 'test',
 	z: 1,
 }
@@ -30,22 +30,22 @@ describe('setPath', () => {
 
 	it('unsets if value is undefined', () => {
 		expect(setPath(SOURCE, 'a.b.c', undefined).a.b).toStrictEqual({})
-		expect(setPath(SOURCE, 'a', undefined)).toStrictEqual({ y: 'test', z: 1 })
+		expect(setPath(SOURCE, 'a', undefined)).toStrictEqual({y: 'test', z: 1})
 	})
 
 	it('creates objects and arrays', () => {
-		expect(setPath(SOURCE, 'z[0].a', 1).z).toStrictEqual([{ a: 1 }])
+		expect(setPath(SOURCE, 'z[0].a', 1).z).toStrictEqual([{a: 1}])
 	})
 })
 
 it('setKey', () => {
 	expect(setKey(SOURCE, 'z', 1)).toBe(SOURCE)
-	expect(setKey(SOURCE, 'z', 2)).toStrictEqual({ a: { b: { c: 'c' } }, y: 'test', z: 2 })
+	expect(setKey(SOURCE, 'z', 2)).toStrictEqual({a: {b: {c: 'c'}}, y: 'test', z: 2})
 })
 
 it('removeKey', () => {
 	expect(removeKey(SOURCE, 'x')).toBe(SOURCE)
-	expect(removeKey(SOURCE, 'a')).toStrictEqual({ y: 'test', z: 1 })
+	expect(removeKey(SOURCE, 'a')).toStrictEqual({y: 'test', z: 1})
 })
 
 it('toPath', () => {

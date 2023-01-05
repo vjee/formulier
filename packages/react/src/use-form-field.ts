@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { FieldValidator, Formulier, GetFieldType, Primitives, Values, stateUtils } from '@formulier/core'
-import { FormFieldValueOptions, useFormFieldValue } from './use-form-field-value'
-import { useEvent } from './use-event'
-import { useFormSelector } from './use-form-selector'
+import {FieldValidator, Formulier, GetFieldType, Primitives, Values, stateUtils} from '@formulier/core'
+import {FormFieldValueOptions, useFormFieldValue} from './use-form-field-value'
+import {useEvent} from './use-event'
+import {useFormSelector} from './use-form-selector'
 
 export interface FieldOptions<V extends Values, F extends string> {
 	name: F
@@ -24,13 +24,13 @@ export interface FieldMeta {
 	touched: boolean
 }
 
-type StateBeforeCleanup = { name: string; value: any } | undefined
+type StateBeforeCleanup = {name: string; value: any} | undefined
 
 export function useFormField<V extends Values, P extends Primitives, F extends string>(
 	form: Formulier<V, P>,
 	options: FieldOptions<V, F>,
 ): UseFormFieldResult<V, F> {
-	const { name, validate, valueOptions } = options
+	const {name, validate, valueOptions} = options
 	const id = name
 
 	const value = useFormFieldValue(form, name, valueOptions)
@@ -50,7 +50,7 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 
 		return () => {
 			const value = stateUtils.getPath(form.getState().values, name)
-			stateBeforeCleanupRef.current = { name, value }
+			stateBeforeCleanupRef.current = {name, value}
 			form.unregisterField(name)
 		}
 	}, [form, name, validate])
@@ -65,8 +65,8 @@ export function useFormField<V extends Values, P extends Primitives, F extends s
 		form.touchField(name)
 	})
 
-	const field: FieldInputProps<V, F> = { id, value, onChange, onBlur }
-	const meta: FieldMeta = { error, touched }
+	const field: FieldInputProps<V, F> = {id, value, onChange, onBlur}
+	const meta: FieldMeta = {error, touched}
 
 	return [field, meta]
 }

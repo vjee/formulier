@@ -1,12 +1,12 @@
-import { useFormContext, useFormField } from '@formulier/react'
+import {useFormContext, useFormField} from '@formulier/react'
 import * as React from 'react'
 
-export function TextField({ name, label }: { name: string; label: string }) {
+export function TextField({name, label}: {name: string; label: string}) {
 	const form = useFormContext()
-	const [field, meta] = useFormField(form, { name })
+	const [field, meta] = useFormField(form, {name})
 
-	const { id, value, onChange, onBlur } = field
-	const { error } = meta
+	const {id, value, onChange, onBlur} = field
+	const {error} = meta
 
 	return (
 		<Field name={name} label={label} error={error}>
@@ -15,12 +15,12 @@ export function TextField({ name, label }: { name: string; label: string }) {
 	)
 }
 
-export function IntegerField({ name, label }: { name: string; label: string }) {
+export function IntegerField({name, label}: {name: string; label: string}) {
 	const form = useFormContext()
-	const [field, meta] = useFormField(form, { name })
+	const [field, meta] = useFormField(form, {name})
 
-	const { id, value, onChange, onBlur } = field
-	const { error } = meta
+	const {id, value, onChange, onBlur} = field
+	const {error} = meta
 
 	return (
 		<Field name={name} label={label} error={error}>
@@ -36,12 +36,12 @@ export function IntegerField({ name, label }: { name: string; label: string }) {
 	)
 }
 
-export function SelectField({ name, label, children }: { name: string; label: string; children: React.ReactNode }) {
+export function SelectField({name, label, children}: {name: string; label: string; children: React.ReactNode}) {
 	const form = useFormContext()
-	const [field, meta] = useFormField(form, { name })
+	const [field, meta] = useFormField(form, {name})
 
-	const { id, value, onChange, onBlur } = field
-	const { error } = meta
+	const {id, value, onChange, onBlur} = field
+	const {error} = meta
 
 	return (
 		<Field name={name} label={label} error={error}>
@@ -52,12 +52,12 @@ export function SelectField({ name, label, children }: { name: string; label: st
 	)
 }
 
-export function CheckboxField({ name, label }: { name: string; label: string }) {
+export function CheckboxField({name, label}: {name: string; label: string}) {
 	const form = useFormContext()
-	const [field, meta] = useFormField(form, { name })
+	const [field, meta] = useFormField(form, {name})
 
-	const { id, value, onChange, onBlur } = field
-	const { error } = meta
+	const {id, value, onChange, onBlur} = field
+	const {error} = meta
 
 	return (
 		<Field name={name} label={label} error={error} displayHorizontal>

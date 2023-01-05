@@ -1,5 +1,5 @@
-import { FieldValidator, FormListener, FormulierState, Nullable, Primitives, Values } from './types'
-import { getPath, isEqual, removeKey, setKey, setPath } from './state-utils'
+import {FieldValidator, FormListener, FormulierState, Nullable, Primitives, Values} from './types'
+import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils'
 
 export interface FormulierOptions<V extends Values, P extends Primitives> {
 	initialValues: Nullable<V, P>
@@ -14,7 +14,7 @@ export class Formulier<
 	listeners: Set<FormListener>
 	state: S
 
-	constructor({ initialValues }: FormulierOptions<V, P>) {
+	constructor({initialValues}: FormulierOptions<V, P>) {
 		this.notifyEnabled = true
 		this.listeners = new Set()
 		this.state = {
@@ -46,11 +46,11 @@ export class Formulier<
 	}
 
 	validateFields(): boolean {
-		this.state = { ...this.state, errors: {} }
+		this.state = {...this.state, errors: {}}
 		Object.entries(this.state.validators).forEach(([name, validate]) => {
 			const value = getPath(this.state.values, name, null)
 			const error = validate?.(value) || null
-			this.state = { ...this.state, errors: setKey(this.state.errors, name, error) }
+			this.state = {...this.state, errors: setKey(this.state.errors, name, error)}
 		})
 		this.notify()
 		const noErrors = !Object.values(this.state.errors).some(value => value !== null)
@@ -61,7 +61,7 @@ export class Formulier<
 		const validate = this.state.validators[name]
 		const value = getPath(this.state.values, name, null)
 		const error = validate?.(value) || null
-		this.state = { ...this.state, errors: setKey(this.state.errors, name, error) }
+		this.state = {...this.state, errors: setKey(this.state.errors, name, error)}
 		this.notify()
 		return !!validate && !error
 	}
@@ -76,10 +76,10 @@ export class Formulier<
 			validators: setKey(this.state.validators, name, validate || null),
 		}
 		if (errors === undefined) {
-			this.state = { ...this.state, errors: setKey(this.state.errors, name, null) }
+			this.state = {...this.state, errors: setKey(this.state.errors, name, null)}
 		}
 		if (touched === undefined) {
-			this.state = { ...this.state, touched: setKey(this.state.touched, name, false) }
+			this.state = {...this.state, touched: setKey(this.state.touched, name, false)}
 		}
 		this.notify()
 	}

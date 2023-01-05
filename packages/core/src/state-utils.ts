@@ -1,7 +1,7 @@
 import clone from 'shallow-clone'
 import isEqual from 'fast-deep-equal'
 
-export { clone, isEqual }
+export {clone, isEqual}
 
 // Originally taken from https://github.com/jaredpalmer/formik/blob/master/packages/formik/src/utils.ts
 export function getPath(source: any, path: string | string[], fallback?: any) {
@@ -57,7 +57,7 @@ export function setKey<T extends Record<string, unknown>>(source: T, key: string
 		return source
 	}
 
-	return { ...source, [key]: value }
+	return {...source, [key]: value}
 }
 
 export function removeKey<T extends Record<string, unknown>>(source: T, key: string): T {

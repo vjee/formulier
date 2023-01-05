@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Formulier, Primitives, Values } from '@formulier/core'
-import { createError } from './error'
+import {Formulier, Primitives, Values} from '@formulier/core'
+import {createError} from './error'
 
 interface FormContextT<V extends Values, P extends Primitives> {
 	form: Formulier<V, P>
@@ -17,7 +17,7 @@ export function FormProvider<V extends Values, P extends Primitives = Primitives
 	form,
 	children,
 }: FormProviderProps<V, P>) {
-	return <FormContext.Provider value={{ form: form as Formulier<Values> }}>{children}</FormContext.Provider>
+	return <FormContext.Provider value={{form: form as Formulier<Values>}}>{children}</FormContext.Provider>
 }
 
 export function useFormContext<V extends Values, P extends Primitives = Primitives>() {

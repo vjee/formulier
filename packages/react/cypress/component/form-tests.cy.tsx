@@ -1,17 +1,17 @@
 import * as React from 'react'
-import { FormProvider, useForm, useFormContext, useFormField } from '../../src'
+import {FormProvider, useForm, useFormContext, useFormField} from '../../src'
 
-function Form({ children }: { children: React.ReactNode }) {
+function Form({children}: {children: React.ReactNode}) {
 	const form = useForm({
-		initialValues: { field: 'value' },
+		initialValues: {field: 'value'},
 	})
 
 	return <FormProvider form={form}>{children}</FormProvider>
 }
 
-function Field({ name, validate }: { name: string; validate?: (value: unknown) => string | null }) {
+function Field({name, validate}: {name: string; validate?: (value: unknown) => string | null}) {
 	const form = useFormContext()
-	const [field, meta] = useFormField(form, { name, validate })
+	const [field, meta] = useFormField(form, {name, validate})
 
 	return (
 		<>

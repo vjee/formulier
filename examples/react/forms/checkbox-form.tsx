@@ -1,15 +1,15 @@
-import { Form, useForm } from '@formulier/react'
+import {Form, useForm} from '@formulier/react'
 import * as Field from '../field'
 
 interface FormState {
-	optionsAsObject: { a: Boolean; b: Boolean; c: boolean }
+	optionsAsObject: {a: Boolean; b: Boolean; c: boolean}
 	optionsAsArray: [a: boolean, c: boolean, d: boolean]
 }
 
 export function CheckboxForm() {
 	const form = useForm<FormState>({
 		initialValues: {
-			optionsAsObject: { a: false, b: true, c: true },
+			optionsAsObject: {a: false, b: true, c: true},
 			optionsAsArray: [true, false, false],
 		},
 	})

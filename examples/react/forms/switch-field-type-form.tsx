@@ -1,4 +1,4 @@
-import { Form, useForm } from '@formulier/react'
+import {Form, useForm} from '@formulier/react'
 import * as React from 'react'
 import * as Field from '../field'
 

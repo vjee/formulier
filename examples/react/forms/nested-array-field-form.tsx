@@ -1,4 +1,4 @@
-import { Form, useForm, useFormFieldArray, useFormContext } from '@formulier/react'
+import {Form, useForm, useFormFieldArray, useFormContext} from '@formulier/react'
 import * as Field from '../field'
 
 interface Friend {
@@ -19,8 +19,8 @@ export function NestedArrayFieldForm() {
 	const form = useForm<FormState>({
 		initialValues: {
 			friends: [
-				{ name: 'Peter', age: null, pets: [] },
-				{ name: 'Freddy', age: 20, pets: [{ name: 'Alfred' }] },
+				{name: 'Peter', age: null, pets: []},
+				{name: 'Freddy', age: 20, pets: [{name: 'Alfred'}]},
 			],
 		},
 	})
@@ -40,7 +40,7 @@ export function NestedArrayFieldForm() {
 
 function Friends() {
 	const form = useFormContext<FormState>()
-	const [friends, { push, remove, move }] = useFormFieldArray(form, 'friends')
+	const [friends, {push, remove, move}] = useFormFieldArray(form, 'friends')
 
 	return (
 		<div className="column">
@@ -81,16 +81,16 @@ function Friends() {
 			})}
 
 			{/* @ts-expect-error TODO: fix type */}
-			<button type="button" onClick={() => push({ name: '', age: null, pets: [] })}>
+			<button type="button" onClick={() => push({name: '', age: null, pets: []})}>
 				➕ Add galaxy
 			</button>
 		</div>
 	)
 }
 
-function Pets({ friendIndex }: { friendIndex: number }) {
+function Pets({friendIndex}: {friendIndex: number}) {
 	const form = useFormContext<FormState>()
-	const [pets, { push, remove, move }] = useFormFieldArray(form, `friends[${friendIndex}].pets`)
+	const [pets, {push, remove, move}] = useFormFieldArray(form, `friends[${friendIndex}].pets`)
 
 	return (
 		<div className="column">
@@ -127,7 +127,7 @@ function Pets({ friendIndex }: { friendIndex: number }) {
 				)
 			})}
 
-			<button type="button" onClick={() => push({ name: '' })}>
+			<button type="button" onClick={() => push({name: ''})}>
 				➕ Add pet
 			</button>
 		</div>

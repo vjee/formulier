@@ -1,16 +1,16 @@
-import { expect, it, vi } from 'vitest'
-import { Formulier } from '../src/form'
-import { getPath } from '../src/state-utils'
+import {expect, it, vi} from 'vitest'
+import {Formulier} from '../src/form'
+import {getPath} from '../src/state-utils'
 
-const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
+const INITIAL_VALUES = {a: {b: {c: 'c', d: 'd'}}}
 
 it('copies initial values', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	expect(form.getState().values).toBe(INITIAL_VALUES)
 })
 
 it('calls listeners', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const listener = vi.fn(() => undefined)
 	form.subscribe(listener)
 	form.setFieldValue('a.b.c', 'd')
@@ -18,7 +18,7 @@ it('calls listeners', () => {
 })
 
 it('removes listeners', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const listener = vi.fn(() => undefined)
 	const cancel = form.subscribe(listener)
 	cancel()
@@ -28,14 +28,14 @@ it('removes listeners', () => {
 })
 
 it('touches fields', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	expect(form.getState().touched['a.b.c']).toBe(undefined)
 	form.touchField('a.b.c')
 	expect(form.getState().touched['a.b.c']).toBe(true)
 })
 
 it('increments submit count', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	expect(form.getState().submitCount).toBe(0)
 	form.incrementSubmitCount()
 	form.incrementSubmitCount()
@@ -43,7 +43,7 @@ it('increments submit count', () => {
 })
 
 it('should not call listeners if setFieldValue does nothing', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const listener = vi.fn(() => undefined)
 	form.subscribe(listener)
 	expect(listener).toHaveBeenCalledTimes(0)
@@ -54,7 +54,7 @@ it('should not call listeners if setFieldValue does nothing', () => {
 })
 
 it('should not call listeners if touchField does nothing', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const listener = vi.fn(() => undefined)
 	form.subscribe(listener)
 	expect(listener).toHaveBeenCalledTimes(0)
@@ -65,7 +65,7 @@ it('should not call listeners if touchField does nothing', () => {
 })
 
 it('registers and unregisters fields', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const validator = () => null
 	expect((form.getState().values as any).b).toBe(undefined)
 	expect(form.getState().touched['b']).toBe(undefined)
@@ -94,7 +94,7 @@ it('registers and unregisters fields', () => {
 })
 
 it('validates field', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const validator = (value: unknown) => (value === 1 ? null : 'Error!')
 	form.registerField('a.b.c', validator)
 	expect(form.validateField('a.b.c')).toBe(false)
@@ -105,7 +105,7 @@ it('validates field', () => {
 })
 
 it('validates fields', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const validator = (value: unknown) => (value === 1 ? null : 'Error!')
 	form.registerField('a.b.c', validator)
 	form.registerField('a.b.d', validator)
@@ -120,7 +120,7 @@ it('validates fields', () => {
 })
 
 it('skips calling listeners', () => {
-	const form = new Formulier({ initialValues: INITIAL_VALUES })
+	const form = new Formulier({initialValues: INITIAL_VALUES})
 	const listener = vi.fn(() => undefined)
 	form.subscribe(listener)
 	form.notify()
