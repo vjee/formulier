@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@formulier/react": "workspace:0.0.13",
