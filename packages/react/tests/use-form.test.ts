@@ -5,7 +5,7 @@ import { useFormField } from '../src/use-form-field'
 
 const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
 
-const { result } = renderHook(() => useForm(INITIAL_VALUES))
+const { result } = renderHook(() => useForm({ initialValues: INITIAL_VALUES }))
 
 it('renders hook', () => {
 	expect(result.current.getState).toBeDefined()

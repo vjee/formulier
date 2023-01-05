@@ -8,6 +8,8 @@ interface FormState {
 }
 
 function Component() {
-  const form = useForm({ name: 'Jeff' })
+  const form = useForm({
+    initialValues: { name: 'Jeff' },
+  })
 }
 ```

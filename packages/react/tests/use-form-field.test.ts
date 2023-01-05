@@ -5,7 +5,7 @@ import { renderHook } from '@testing-library/react'
 import { useForm } from '../src/use-form'
 
 const INITIAL_VALUES = { a: { b: { c: 'c', d: 'd' } } }
-const FORM = renderHook(() => useForm(INITIAL_VALUES)).result.current
+const FORM = renderHook(() => useForm({ initialValues: INITIAL_VALUES })).result.current
 const INITIAL_PROPS = {
 	name: 'a.b.c',
 	validate: value => (value !== 'c' ? 'Value should be "c"' : null),

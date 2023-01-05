@@ -29,8 +29,10 @@ import { Form, useForm, useFormContext, useFormField } from '@formulier/react'
 
 function MyForm() {
   const form = useForm({
-    firstName: 'Nico',
-    age: 26,
+    initialValues: {
+      firstName: 'Nico',
+      age: 26,
+    },
   })
 
   const handleSubmit = values => {

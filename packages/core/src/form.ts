@@ -1,6 +1,10 @@
 import { FieldValidator, FormListener, FormulierState, Nullable, Primitives, Values } from './types'
 import { getPath, isEqual, removeKey, setKey, setPath } from './state-utils'
 
+export interface FormulierOptions<V extends Values, P extends Primitives> {
+	initialValues: Nullable<V, P>
+}
+
 export class Formulier<
 	V extends Values = Values,
 	P extends Primitives = Primitives,
@@ -10,7 +14,7 @@ export class Formulier<
 	listeners: Set<FormListener>
 	state: S
 
-	constructor(initialValues: Nullable<V, P>) {
+	constructor({ initialValues }: FormulierOptions<V, P>) {
 		this.notifyEnabled = true
 		this.listeners = new Set()
 		this.state = {
