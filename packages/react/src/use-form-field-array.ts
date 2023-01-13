@@ -1,9 +1,10 @@
 import {FormFieldValueOptions, useFormFieldValue} from './use-form-field-value'
-import {Formulier, GetFieldType, Values, arrayUtils} from '@formulier/core'
+import {Formulier, GetFieldType, Nullable, Primitives, Values, arrayUtils} from '@formulier/core'
 import {createError} from './error'
 import {useEvent} from './use-event'
 
 type FieldArrayItem<V extends Values, F extends string> = GetFieldType<V, F> extends (infer T)[] ? T : never
+type IsNever<T> = [T] extends [never] ? true : false
 
 export interface FieldArrayMethods<Item> {
 	push: (item: Item) => void
@@ -17,28 +18,31 @@ export interface FormFieldArrayOptions<V extends Values, F extends string> {
 	valueOptions?: FormFieldValueOptions<V, F>
 }
 
-export type UseFormFieldArrayResult<V extends Values, F extends string> = [
-	items: FieldArrayItem<V, F>[],
-	arrayMethods: FieldArrayMethods<FieldArrayItem<V, F>>,
-]
+export type UseFormFieldArrayResult<Item, P extends Primitives = Primitives> = IsNever<Item> extends true
+	? [Items: never, arrayMethods: FieldArrayMethods<never>]
+	: Item extends P
+	? [Items: Item[], arrayMethods: FieldArrayMethods<Item>]
+	: Item extends Record<string, any>
+	? [Items: Item[], arrayMethods: FieldArrayMethods<Nullable<Item, P>>]
+	: [items: Item[], arrayMethods: FieldArrayMethods<Item>]
 
-export function useFormFieldArray<V extends Values, F extends string>(
+export function useFormFieldArray<V extends Values, F extends string, P extends Primitives>(
 	form: Formulier<V>,
 	name: F,
 	options?: FormFieldArrayOptions<V, F>,
-): UseFormFieldArrayResult<V, F> {
+): UseFormFieldArrayResult<FieldArrayItem<V, F>, P> {
 	const {valueOptions} = options || {}
-	const items = useFormFieldValue(form, name, valueOptions) as FieldArrayItem<V, F>[]
+	const items = useFormFieldValue(form, name, valueOptions) as unknown[]
 
 	if (!Array.isArray(items)) {
 		throw createError('useFormFieldArray()', 'The provided field is not an array.')
 	}
 
-	const push = useEvent((item: FieldArrayItem<V, F>) => {
+	const push = useEvent((item: unknown) => {
 		form.setFieldValue(name, arrayUtils.push(items, item))
 	})
 
-	const insert = useEvent((item: FieldArrayItem<V, F>, index: number) => {
+	const insert = useEvent((item: unknown, index: number) => {
 		form.setFieldValue(name, arrayUtils.insert(items, item, index))
 	})
 
@@ -54,7 +58,7 @@ export function useFormFieldArray<V extends Values, F extends string>(
 		form.setFieldValue(name, arrayUtils.swap(items, fromIndex, toIndex))
 	})
 
-	const arrayMethods: FieldArrayMethods<FieldArrayItem<V, F>> = {
+	const arrayMethods: FieldArrayMethods<unknown> = {
 		push,
 		insert,
 		remove,
@@ -62,5 +66,5 @@ export function useFormFieldArray<V extends Values, F extends string>(
 		swap,
 	}
 
-	return [items, arrayMethods]
+	return [items, arrayMethods] as any
 }

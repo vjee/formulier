@@ -80,7 +80,6 @@ function Friends() {
 				)
 			})}
 
-			{/* @ts-expect-error TODO: fix type */}
 			<button type="button" onClick={() => push({name: '', age: null, pets: []})}>
 				➕ Add galaxy
 			</button>
