@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.0.11
+
+### Patch Changes
+
+- f0c13d5: Pass `initialValues` via options object instead of directly
+
 ## 0.0.10
 
 ### Patch Changes

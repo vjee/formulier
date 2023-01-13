@@ -1,5 +1,15 @@
 # @formulier/react
 
+## 0.0.14
+
+### Patch Changes
+
+- f0c13d5: Pass `initialValues` via options object instead of directly
+- fdd32ef: Export more TypeScript types and interfaces
+- 486c588: Enhance `UseFormFieldArrayResult` type
+- Updated dependencies [f0c13d5]
+  - @formulier/core@0.0.11
+
 ## 0.0.13
 
 ### Patch Changes

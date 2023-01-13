@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.0.13",
+	"version": "0.0.14",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library for React",
@@ -60,7 +60,7 @@
 		"use-sync-external-store": "^1.2.0"
 	},
 	"devDependencies": {
-		"@formulier/core": "workspace:0.0.10",
+		"@formulier/core": "workspace:0.0.11",
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@testing-library/react": "^13.4.0",
@@ -77,7 +77,7 @@
 		"vitest": "^0.24.5"
 	},
 	"peerDependencies": {
-		"@formulier/core": "workspace:0.0.10",
+		"@formulier/core": "workspace:0.0.11",
 		"react": ">=16.8.0"
 	},
 	"packageManager": "pnpm@7.5.2"
