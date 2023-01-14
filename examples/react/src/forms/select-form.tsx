@@ -1,5 +1,5 @@
 import {Form, useCreateForm} from '@formulier/react'
-import * as Field from '../field'
+import * as Field from '../fields'
 
 interface FormState {
 	color: string
