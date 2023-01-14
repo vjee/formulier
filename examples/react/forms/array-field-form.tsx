@@ -1,4 +1,4 @@
-import {Form, useForm, useFormFieldArray, useFormInstance} from '@formulier/react'
+import {Form, useCreateForm, useFormFieldArray, useFormInstance} from '@formulier/react'
 import * as Field from '../field'
 
 interface Galaxy {
@@ -10,7 +10,7 @@ interface FormState {
 }
 
 export function ArrayFieldForm() {
-	const form = useForm<FormState>({
+	const form = useCreateForm<FormState>({
 		initialValues: {
 			galaxies: [{name: 'Andromeda Galaxy'}, {name: 'Butterfly Galaxies'}],
 		},

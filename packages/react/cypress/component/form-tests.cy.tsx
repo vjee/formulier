@@ -1,8 +1,8 @@
 import * as React from 'react'
-import {FormProvider, useForm, useFormInstance, useFormField} from '../../src'
+import {FormProvider, useCreateForm, useFormInstance, useFormField} from '../../src'
 
 function Form({children}: {children: React.ReactNode}) {
-	const form = useForm({
+	const form = useCreateForm({
 		initialValues: {field: 'value'},
 	})
 

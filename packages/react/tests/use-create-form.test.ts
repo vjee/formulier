@@ -1,11 +1,11 @@
 import {expect, it} from 'vitest'
 import {renderHook} from '@testing-library/react'
-import {useForm} from '../src/use-form'
+import {useCreateForm} from '../src/use-create-form'
 import {useFormField} from '../src/use-form-field'
 
 const INITIAL_VALUES = {a: {b: {c: 'c', d: 'd'}}}
 
-const {result} = renderHook(() => useForm({initialValues: INITIAL_VALUES}))
+const {result} = renderHook(() => useCreateForm({initialValues: INITIAL_VALUES}))
 
 it('renders hook', () => {
 	expect(result.current.getState).toBeDefined()

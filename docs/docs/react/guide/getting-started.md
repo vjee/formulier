@@ -10,7 +10,7 @@ Below is a form that asks for a first name, last name and email address.
 
 ## Quick Explination
 
-The first thing we need to set up a form is the `useForm` hook.
+The first thing we need to set up a form is the `useCreateForm` hook.
 This hook creates a form store with initial values for its form fields.
 This form store contains all the form's data and usefull methods to set values and more.
 

@@ -25,10 +25,15 @@ Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/form
 ## React example
 
 ```jsx
-import {Form, useForm, useFormInstance, useFormField} from '@formulier/react'
+import {
+  Form,
+  useCreateForm,
+  useFormInstance,
+  useFormField,
+} from '@formulier/react'
 
 function MyForm() {
-  const form = useForm({
+  const form = useCreateForm({
     initialValues: {
       firstName: 'Nico',
       age: 26,

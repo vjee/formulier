@@ -1,4 +1,4 @@
-import {Form, useForm} from '@formulier/react'
+import {Form, useCreateForm} from '@formulier/react'
 import * as Field from '../field'
 
 interface FormState {
@@ -6,7 +6,7 @@ interface FormState {
 }
 
 export function SelectForm() {
-	const form = useForm<FormState>({
+	const form = useCreateForm<FormState>({
 		initialValues: {
 			color: '',
 		},

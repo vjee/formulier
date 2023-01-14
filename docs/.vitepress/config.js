@@ -56,8 +56,8 @@ export default defineConfig({
 					text: 'API',
 					items: [
 						{
-							text: 'useForm()',
-							link: '/react/api/use-form',
+							text: 'useCreateForm()',
+							link: '/react/api/use-create-form',
 						},
 					],
 				},

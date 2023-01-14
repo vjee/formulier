@@ -12,7 +12,7 @@ hero:
       link: /react/guide/getting-started
     - theme: alt
       text: API
-      link: /react/api/use-form
+      link: /react/api/use-create-form
     - theme: alt
       text: View on GitHub
       link: https://github.com/vjee/formulier

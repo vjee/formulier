@@ -1,14 +1,14 @@
-# `useForm()`
+# `useCreateForm()`
 
 ```tsx
-import {useForm} from '@formulier/react'
+import {useCreateForm} from '@formulier/react'
 
 interface FormState {
   name: string
 }
 
 function Component() {
-  const form = useForm({
+  const form = useCreateForm({
     initialValues: {name: 'Jeff'},
   })
 }

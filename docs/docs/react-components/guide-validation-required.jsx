@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Form, useForm, useFormField, useFormInstance } from '@formulier/react'
+import { Form, useCreateForm, useFormField, useFormInstance } from '@formulier/react'
 
 export default function Example() {
-	const form = useForm({
+	const form = useCreateForm({
 		initialValues: {
 			firstName: '',
 			lastName: '',

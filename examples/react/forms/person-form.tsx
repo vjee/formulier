@@ -1,4 +1,4 @@
-import {Form, useForm} from '@formulier/react'
+import {Form, useCreateForm} from '@formulier/react'
 import * as React from 'react'
 import * as Field from '../field'
 
@@ -9,7 +9,7 @@ interface FormState {
 }
 
 export function PersonForm() {
-	const form = useForm<FormState>({
+	const form = useCreateForm<FormState>({
 		initialValues: {
 			firstName: 'John',
 			lastName: null,
