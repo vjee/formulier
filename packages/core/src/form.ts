@@ -7,7 +7,7 @@ export interface FormulierOptions<V extends Values, P extends Primitives> {
 
 export class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 	notifyEnabled: boolean
-	listeners: Set<FormListener>
+	listeners: Set<FormListener<V, P>>
 	state: FormulierState<V, P>
 
 	constructor({initialValues}: FormulierOptions<V, P>) {
@@ -29,7 +29,7 @@ export class Formulier<V extends Values = Values, P extends Primitives = Primiti
 		return this.state
 	}
 
-	subscribe(listener: FormListener): () => void {
+	subscribe(listener: FormListener<V, P>): () => void {
 		this.listeners.add(listener)
 		return () => {
 			this.listeners.delete(listener)
@@ -38,7 +38,8 @@ export class Formulier<V extends Values = Values, P extends Primitives = Primiti
 
 	notify(): void {
 		if (this.notifyEnabled === false) return
-		this.listeners.forEach(listener => listener())
+		const state = this.getState()
+		this.listeners.forEach(listener => listener(state))
 	}
 
 	validateFields(): boolean {

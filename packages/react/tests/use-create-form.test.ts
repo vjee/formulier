@@ -3,9 +3,11 @@ import {renderHook} from '@testing-library/react'
 import {useCreateForm} from '../src/use-create-form'
 import {useFormField} from '../src/use-form-field'
 
-const INITIAL_VALUES = {a: {b: {c: 'c', d: 'd'}}}
+interface FormState {
+	a: {b: {c: string; d: string}}
+}
 
-const {result} = renderHook(() => useCreateForm({initialValues: INITIAL_VALUES}))
+const {result} = renderHook(() => useCreateForm<FormState>({initialValues: {a: {b: {c: 'c', d: 'd'}}}}))
 
 it('renders hook', () => {
 	expect(result.current.getState).toBeDefined()

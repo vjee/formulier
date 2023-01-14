@@ -1,17 +1,19 @@
 import {FieldOptions, useFormField} from '../src/use-form-field'
 import {expect, it} from 'vitest'
-import {Values} from '@formulier/core'
 import {renderHook} from '@testing-library/react'
 import {useCreateForm} from '../src/use-create-form'
 
-const INITIAL_VALUES = {a: {b: {c: 'c', d: 'd'}}}
-const FORM = renderHook(() => useCreateForm({initialValues: INITIAL_VALUES})).result.current
+interface FormState {
+	a: {b: {c: string; d: string}}
+}
+
+const FORM = renderHook(() => useCreateForm<FormState>({initialValues: {a: {b: {c: 'c', d: 'd'}}}})).result.current
 const INITIAL_PROPS = {
 	name: 'a.b.c',
 	validate: value => (value !== 'c' ? 'Value should be "c"' : null),
-} as FieldOptions<Values, string>
+} as FieldOptions<FormState, string>
 
-const {result, rerender} = renderHook((options: FieldOptions<Values, string>) => useFormField(FORM, options), {
+const {result, rerender} = renderHook((options: FieldOptions<FormState, string>) => useFormField(FORM, options), {
 	initialProps: INITIAL_PROPS,
 })
 
