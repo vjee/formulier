@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,d as o}from"./app.fea2eb22.js";const B=JSON.parse('{"title":"useCreateForm()","description":"","frontmatter":{},"headers":[],"relativePath":"react/api/use-create-form.md"}'),p={name:"react/api/use-create-form.md"},e=o("",2),l=[e];function t(r,c,D,F,y,A){return n(),a("div",null,l)}const _=s(p,[["render",t]]);export{B as __pageData,_ as default};
