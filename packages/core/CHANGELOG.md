@@ -1,5 +1,12 @@
 # @formulier/core
 
+## 0.0.12
+
+### Patch Changes
+
+- 7f9cf3b: Pass state as argument to `Formulier.subscribe` listener
+- bde41cb: Remove unneeded `S` (state) generic
+
 ## 0.0.11
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/vue",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library for Vue",
@@ -51,7 +51,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@formulier/core": "workspace:0.0.11",
+		"@formulier/core": "workspace:0.0.12",
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"eslint": "^7.32.0",
@@ -60,7 +60,7 @@
 		"vue": "^3.2.45"
 	},
 	"peerDependencies": {
-		"@formulier/core": "workspace:0.0.11",
+		"@formulier/core": "workspace:0.0.12",
 		"vue": ">=3.0.0"
 	},
 	"packageManager": "pnpm@7.5.2"

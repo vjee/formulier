@@ -1,5 +1,18 @@
 # @formulier/react
 
+## 0.0.15
+
+### Patch Changes
+
+- d2c07f1: Rename `useForm` to `useCreateForm`
+- 05cde19: Move `use-sync-external-store` from `dependencies` to `devDependencies`
+- 0a56a3f: Rename `useFormContext` to `useFormInstance`
+- e80f6ff: Change type of `values` in `onSubmit` prop
+- bde41cb: Remove unneeded `S` (state) generic
+- Updated dependencies [7f9cf3b]
+- Updated dependencies [bde41cb]
+  - @formulier/core@0.0.12
+
 ## 0.0.14
 
 ### Patch Changes
