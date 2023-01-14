@@ -84,7 +84,7 @@ importers:
   examples/vue:
     specifiers:
       '@formulier/tsconfig': workspace:0.0.0
-      '@formulier/vue': workspace:0.0.1
+      '@formulier/vue': workspace:0.0.2
       '@vitejs/plugin-vue': ^3.2.0
       typescript: ^4.9.4
       vite: ^3.2.5
