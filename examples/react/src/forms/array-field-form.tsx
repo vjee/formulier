@@ -1,12 +1,12 @@
 import {Form, useCreateForm, useFormFieldArray, useFormInstance} from '@formulier/react'
 import * as Field from '../fields'
 
-interface Galaxy {
-	name: string
-}
-
 interface FormState {
 	galaxies: Galaxy[]
+}
+
+interface Galaxy {
+	name: string
 }
 
 export function ArrayFieldForm() {

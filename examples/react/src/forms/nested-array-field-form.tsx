@@ -1,6 +1,10 @@
 import {Form, useCreateForm, useFormFieldArray, useFormInstance} from '@formulier/react'
 import * as Field from '../fields'
 
+interface FormState {
+	friends: Friend[]
+}
+
 interface Friend {
 	name: string
 	age: number
@@ -9,10 +13,6 @@ interface Friend {
 
 interface Pet {
 	name: string
-}
-
-interface FormState {
-	friends: Friend[]
 }
 
 export function NestedArrayFieldForm() {
