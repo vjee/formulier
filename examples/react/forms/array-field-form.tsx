@@ -1,4 +1,4 @@
-import {Form, useForm, useFormFieldArray, useFormContext} from '@formulier/react'
+import {Form, useForm, useFormFieldArray, useFormInstance} from '@formulier/react'
 import * as Field from '../field'
 
 interface Galaxy {
@@ -30,7 +30,7 @@ export function ArrayFieldForm() {
 }
 
 function Galaxies() {
-	const form = useFormContext<FormState>()
+	const form = useFormInstance<FormState>()
 	const [galaxies, {push, remove, move}] = useFormFieldArray(form, 'galaxies')
 
 	return (

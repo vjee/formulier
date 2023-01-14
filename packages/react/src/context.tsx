@@ -20,10 +20,13 @@ export function FormProvider<V extends Values, P extends Primitives = Primitives
 	return <FormContext.Provider value={{form: form as Formulier<Values>}}>{children}</FormContext.Provider>
 }
 
-export function useFormContext<V extends Values, P extends Primitives = Primitives>() {
+export function useFormInstance<V extends Values, P extends Primitives = Primitives>() {
 	const value = React.useContext(FormContext) as FormContextT<V, P> | undefined
 	if (!value) {
-		throw createError('useFormContext()', 'Cannot use `useFormContext` outside of `Form` or `FormProvider` component.')
+		throw createError(
+			'useFormInstance()',
+			'Cannot use `useFormInstance` outside of `Form` or `FormProvider` component.',
+		)
 	}
 	return value.form
 }

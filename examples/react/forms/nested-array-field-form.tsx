@@ -1,4 +1,4 @@
-import {Form, useForm, useFormFieldArray, useFormContext} from '@formulier/react'
+import {Form, useForm, useFormFieldArray, useFormInstance} from '@formulier/react'
 import * as Field from '../field'
 
 interface Friend {
@@ -39,7 +39,7 @@ export function NestedArrayFieldForm() {
 }
 
 function Friends() {
-	const form = useFormContext<FormState>()
+	const form = useFormInstance<FormState>()
 	const [friends, {push, remove, move}] = useFormFieldArray(form, 'friends')
 
 	return (
@@ -88,7 +88,7 @@ function Friends() {
 }
 
 function Pets({friendIndex}: {friendIndex: number}) {
-	const form = useFormContext<FormState>()
+	const form = useFormInstance<FormState>()
 	const [pets, {push, remove, move}] = useFormFieldArray(form, `friends[${friendIndex}].pets`)
 
 	return (

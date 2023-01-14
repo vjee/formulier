@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Form, useForm, useFormField, useFormContext } from '@formulier/react'
+import { Form, useForm, useFormField, useFormInstance } from '@formulier/react'
 
 export default function Example() {
 	const form = useForm({
@@ -27,7 +27,7 @@ export default function Example() {
 }
 
 function InputField({ name, label, type = 'text', minLength, required }) {
-	const form = useFormContext()
+	const form = useFormInstance()
 
 	const validate = React.useCallback(
 		value => {

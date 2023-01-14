@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {FormProvider, useForm, useFormContext, useFormField} from '../../src'
+import {FormProvider, useForm, useFormInstance, useFormField} from '../../src'
 
 function Form({children}: {children: React.ReactNode}) {
 	const form = useForm({
@@ -10,7 +10,7 @@ function Form({children}: {children: React.ReactNode}) {
 }
 
 function Field({name, validate}: {name: string; validate?: (value: unknown) => string | null}) {
-	const form = useFormContext()
+	const form = useFormInstance()
 	const [field, meta] = useFormField(form, {name, validate})
 
 	return (

@@ -24,7 +24,7 @@ Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/form
 ## Example
 
 ```jsx
-import {Form, useForm, useFormContext, useFormField} from '@formulier/react'
+import {Form, useForm, useFormInstance, useFormField} from '@formulier/react'
 
 function MyForm() {
   const form = useForm({
@@ -50,7 +50,7 @@ function MyForm() {
 }
 
 function TextField({name, placeholder}) {
-  const form = useFormContext()
+  const form = useFormInstance()
   const [field] = useFormField(form, {name})
 
   return (
@@ -65,7 +65,7 @@ function TextField({name, placeholder}) {
 }
 
 function IntegerField({name, placeholder}) {
-  const form = useFormContext()
+  const form = useFormInstance()
   const [field] = useFormField(form, {name})
 
   return (

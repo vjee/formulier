@@ -1,8 +1,8 @@
-import {useFormContext, useFormField} from '@formulier/react'
+import {useFormInstance, useFormField} from '@formulier/react'
 import * as React from 'react'
 
 export function TextField({name, label}: {name: string; label: string}) {
-	const form = useFormContext()
+	const form = useFormInstance()
 	const [field, meta] = useFormField(form, {name})
 
 	const {id, value, onChange, onBlur} = field
@@ -16,7 +16,7 @@ export function TextField({name, label}: {name: string; label: string}) {
 }
 
 export function IntegerField({name, label}: {name: string; label: string}) {
-	const form = useFormContext()
+	const form = useFormInstance()
 	const [field, meta] = useFormField(form, {name})
 
 	const {id, value, onChange, onBlur} = field
@@ -37,7 +37,7 @@ export function IntegerField({name, label}: {name: string; label: string}) {
 }
 
 export function SelectField({name, label, children}: {name: string; label: string; children: React.ReactNode}) {
-	const form = useFormContext()
+	const form = useFormInstance()
 	const [field, meta] = useFormField(form, {name})
 
 	const {id, value, onChange, onBlur} = field
@@ -53,7 +53,7 @@ export function SelectField({name, label, children}: {name: string; label: strin
 }
 
 export function CheckboxField({name, label}: {name: string; label: string}) {
-	const form = useFormContext()
+	const form = useFormInstance()
 	const [field, meta] = useFormField(form, {name})
 
 	const {id, value, onChange, onBlur} = field
