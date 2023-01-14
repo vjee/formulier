@@ -5,14 +5,10 @@ export interface FormulierOptions<V extends Values, P extends Primitives> {
 	initialValues: Nullable<V, P>
 }
 
-export class Formulier<
-	V extends Values = Values,
-	P extends Primitives = Primitives,
-	S extends FormulierState<V, P> = FormulierState<V, P>,
-> {
+export class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 	notifyEnabled: boolean
 	listeners: Set<FormListener>
-	state: S
+	state: FormulierState<V, P>
 
 	constructor({initialValues}: FormulierOptions<V, P>) {
 		this.notifyEnabled = true
@@ -23,13 +19,13 @@ export class Formulier<
 			errors: {},
 			touched: {},
 			submitCount: 0,
-		} as S
+		} as FormulierState<V, P>
 
 		this.getState = this.getState.bind(this)
 		this.subscribe = this.subscribe.bind(this)
 	}
 
-	getState(): S {
+	getState(): FormulierState<V, P> {
 		return this.state
 	}
 
