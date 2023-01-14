@@ -1,11 +1,11 @@
 import * as React from 'react'
-import {Formulier, Nullable, Primitives, Values} from '@formulier/core'
+import {Formulier, Primitives, Values} from '@formulier/core'
 import {FormProvider} from './context'
 
 interface FormProps<V extends Values, P extends Primitives>
 	extends Omit<JSX.IntrinsicElements['form'], 'ref' | 'onSubmit'> {
 	form: Formulier<V, P>
-	onSubmit: (values: Nullable<V, P>) => void
+	onSubmit: (values: V) => void
 }
 
 const Form = React.forwardRef(function Form<V extends Values, P extends Primitives>(
@@ -24,7 +24,7 @@ const Form = React.forwardRef(function Form<V extends Values, P extends Primitiv
 
 					const valid = form.validateFields()
 					if (valid) {
-						onSubmit(form.getState().values)
+						onSubmit(form.getState().values as V)
 					}
 
 					form.incrementSubmitCount()
