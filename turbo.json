@@ -17,6 +17,9 @@
 		"test": {
 			"outputs": []
 		},
+		"coverage": {
+			"outputs": []
+		},
 		"e2e": {
 			"outputs": []
 		}
