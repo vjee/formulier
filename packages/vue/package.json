@@ -1,0 +1,67 @@
+{
+	"private": false,
+	"name": "@formulier/vue",
+	"version": "0.0.0",
+	"license": "MIT",
+	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
+	"description": "Simple, performant form library for Vue",
+	"homepage": "https://vjee.github.io/formulier/",
+	"keywords": [
+		"formulier",
+		"@formulier/core",
+		"@formulier/vue",
+		"form",
+		"forms",
+		"conditional",
+		"validation",
+		"vue",
+		"composable",
+		"composables"
+	],
+	"type": "module",
+	"main": "./src/index.ts",
+	"module": "./src/index.ts",
+	"exports": {
+		".": {
+			"import": "./src/index.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public",
+		"main": "./dist/index.js",
+		"module": "./dist/index.js",
+		"exports": {
+			".": {
+				"import": "./dist/index.js",
+				"require": "./dist/index.cjs",
+				"default": "./dist/index.js"
+			},
+			"./package.json": "./package.json"
+		},
+		"types": "./dist/index.d.ts"
+	},
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"lint": "eslint src --ext .ts,.tsx",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@formulier/core": "workspace:0.0.11",
+		"@formulier/eslint-config": "workspace:0.0.0",
+		"@formulier/tsconfig": "workspace:0.0.0",
+		"eslint": "^7.32.0",
+		"tsup": "^6.5.0",
+		"vite": "^3.2.5",
+		"vue": "^3.2.45"
+	},
+	"peerDependencies": {
+		"@formulier/core": "workspace:0.0.11",
+		"vue": ">=3.0.0"
+	},
+	"packageManager": "pnpm@7.5.2"
+}

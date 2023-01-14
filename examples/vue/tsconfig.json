@@ -1,0 +1,3 @@
+{
+	"extends": "@formulier/tsconfig/base"
+}
