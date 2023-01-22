@@ -5,7 +5,7 @@ import ReactComponent from '../react-component.vue'
 
 export default {
 	...Theme,
-	enhanceApp({ app }) {
+	enhanceApp({app}) {
 		app.component('ReactComponent', ReactComponent)
 	},
 }

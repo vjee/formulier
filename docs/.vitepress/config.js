@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import {defineConfig} from 'vitepress'
 import tokyoNightStorm from './tokyo-night-storm.json'
 
 export default defineConfig({
@@ -11,7 +11,7 @@ export default defineConfig({
 	themeConfig: {
 		logo: '/formulier-logo.svg',
 
-		socialLinks: [{ icon: 'github', link: 'https://github.com/vjee/formulier' }],
+		socialLinks: [{icon: 'github', link: 'https://github.com/vjee/formulier'}],
 
 		nav: [
 			{

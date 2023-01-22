@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Form, useCreateForm, useFormField, useFormInstance } from '@formulier/react'
+import {Form, useCreateForm, useFormField, useFormInstance} from '@formulier/react'
 
 export default function Example() {
 	const form = useCreateForm({
@@ -26,9 +26,9 @@ export default function Example() {
 	)
 }
 
-function InputField({ name, label, type = 'text' }) {
+function InputField({name, label, type = 'text'}) {
 	const form = useFormInstance()
-	const [field] = useFormField(form, { name })
+	const [field] = useFormField(form, {name})
 
 	return (
 		<div className="field">
