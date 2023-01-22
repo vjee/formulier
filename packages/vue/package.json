@@ -50,6 +50,9 @@
 		"lint": "eslint src --ext .ts,.tsx",
 		"typecheck": "tsc --noEmit"
 	},
+	"dependencies": {
+		"@formulier/core": "workspace:0.0.12"
+	},
 	"devDependencies": {
 		"@formulier/core": "workspace:0.0.12",
 		"@formulier/eslint-config": "workspace:0.0.0",
@@ -60,7 +63,6 @@
 		"vue": "^3.2.45"
 	},
 	"peerDependencies": {
-		"@formulier/core": "workspace:0.0.12",
 		"vue": ">=3.0.0"
 	},
 	"packageManager": "pnpm@7.5.2"

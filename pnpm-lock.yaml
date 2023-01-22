@@ -167,8 +167,9 @@ importers:
       tsup: ^6.5.0
       vite: ^3.2.5
       vue: ^3.2.45
-    devDependencies:
+    dependencies:
       '@formulier/core': link:../core
+    devDependencies:
       '@formulier/eslint-config': link:../../config/eslint-config
       '@formulier/tsconfig': link:../../config/tsconfig
       eslint: 7.32.0
