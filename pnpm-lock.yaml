@@ -139,8 +139,10 @@ importers:
       use-sync-external-store: ^1.2.0
       vite: ^3.2.5
       vitest: ^0.24.5
-    devDependencies:
+    dependencies:
       '@formulier/core': link:../core
+      use-sync-external-store: 1.2.0_react@18.2.0
+    devDependencies:
       '@formulier/eslint-config': link:../../config/eslint-config
       '@formulier/tsconfig': link:../../config/tsconfig
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
@@ -153,7 +155,6 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tsup: 6.5.0
-      use-sync-external-store: 1.2.0_react@18.2.0
       vite: 3.2.5
       vitest: 0.24.5_jsdom@20.0.3
 
@@ -5523,7 +5524,7 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
-    dev: true
+    dev: false
 
   /uuid/8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}

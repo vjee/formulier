@@ -56,6 +56,10 @@
 		"coverage": "vitest run --coverage",
 		"e2e": "cypress run --component"
 	},
+	"dependencies": {
+		"@formulier/core": "workspace:0.0.12",
+		"use-sync-external-store": "^1.2.0"
+	},
 	"devDependencies": {
 		"@formulier/core": "workspace:0.0.12",
 		"@formulier/eslint-config": "workspace:0.0.0",
@@ -70,12 +74,10 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"tsup": "^6.5.0",
-		"use-sync-external-store": "^1.2.0",
 		"vite": "^3.2.5",
 		"vitest": "^0.24.5"
 	},
 	"peerDependencies": {
-		"@formulier/core": "workspace:0.0.12",
 		"react": ">=16.8.0"
 	},
 	"packageManager": "pnpm@7.5.2"
