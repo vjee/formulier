@@ -1,5 +1,11 @@
 # @formulier/vue
 
+## 0.0.3
+
+### Patch Changes
+
+- 2ce7ee2: Move @formulier/core to dependencies
+
 ## 0.0.2
 
 ### Patch Changes

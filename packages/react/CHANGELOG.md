@@ -1,5 +1,12 @@
 # @formulier/react
 
+## 0.0.16
+
+### Patch Changes
+
+- 79883f0: Move @formulier/core and use-sync-external-store to dependencies
+- d14e1bb: Provide `getServerSnapshot`
+
 ## 0.0.15
 
 ### Patch Changes
