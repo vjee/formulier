@@ -59,7 +59,7 @@
 		"@vitest/coverage-istanbul": "^0.24.5",
 		"eslint": "^7.32.0",
 		"react": "^18.2.0",
-		"tsup": "^6.5.0",
+		"tsup": "^6.7.0",
 		"vitest": "^0.24.5"
 	},
 	"packageManager": "pnpm@7.5.2"

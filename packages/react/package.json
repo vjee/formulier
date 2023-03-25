@@ -65,7 +65,7 @@
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@testing-library/react": "^13.4.0",
-		"@types/react": "^18.0.27",
+		"@types/react": "^18.0.29",
 		"@types/use-sync-external-store": "^0.0.3",
 		"@vitest/coverage-istanbul": "^0.24.5",
 		"cypress": "^10.11.0",
@@ -73,7 +73,7 @@
 		"jsdom": "^20.0.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"tsup": "^6.5.0",
+		"tsup": "^6.7.0",
 		"vite": "^3.2.5",
 		"vitest": "^0.24.5"
 	},
