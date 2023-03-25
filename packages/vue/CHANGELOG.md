@@ -1,5 +1,13 @@
 # @formulier/vue
 
+## 0.0.4
+
+### Patch Changes
+
+- Republish
+- Updated dependencies
+  - @formulier/core@0.0.13
+
 ## 0.0.3
 
 ### Patch Changes

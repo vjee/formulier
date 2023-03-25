@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.0.16",
+	"version": "0.0.17",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library for React",
@@ -57,11 +57,11 @@
 		"e2e": "cypress run --component"
 	},
 	"dependencies": {
-		"@formulier/core": "workspace:0.0.12",
+		"@formulier/core": "workspace:0.0.13",
 		"use-sync-external-store": "^1.2.0"
 	},
 	"devDependencies": {
-		"@formulier/core": "workspace:0.0.12",
+		"@formulier/core": "workspace:0.0.13",
 		"@formulier/eslint-config": "workspace:0.0.0",
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@testing-library/react": "^13.4.0",

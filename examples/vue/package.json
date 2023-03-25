@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "@formulier/examples-vue",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -9,7 +9,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@formulier/vue": "workspace:0.0.3",
+		"@formulier/vue": "workspace:0.0.4",
 		"vue": "^3.2.47"
 	},
 	"devDependencies": {
