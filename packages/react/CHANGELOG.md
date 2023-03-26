@@ -1,5 +1,12 @@
 # @formulier/react
 
+## 0.0.19
+
+### Patch Changes
+
+- eb6909a: Remove Form component, add useSubmitHandler hook
+- dd9a227: Add useMaybeFormInstance hook
+
 ## 0.0.18
 
 ### Patch Changes
