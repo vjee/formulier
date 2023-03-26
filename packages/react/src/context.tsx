@@ -30,3 +30,8 @@ export function useFormInstance<V extends Values, P extends Primitives = Primiti
 	}
 	return value.form
 }
+
+export function useMaybeFormInstance<V extends Values, P extends Primitives = Primitives>() {
+	const value = React.useContext(FormContext) as FormContextT<V, P> | undefined
+	return value?.form
+}
