@@ -44,7 +44,7 @@
 	"scripts": {
 		"build": "tsup",
 		"dev": "tsup --watch",
-		"lint": "eslint src --ext .ts,.tsx",
+		"lint": "eslint src tests --ext .ts,.tsx --fix",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage"
