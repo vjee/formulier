@@ -59,7 +59,7 @@ describe('Form Tests', () => {
 		cy.get(errorSelector).should('not.exist')
 	})
 
-	it('should validation after blur', () => {
+	it('should run validation after blur', () => {
 		cy.mount(
 			<Form>
 				<Field name="field" validate={value => (value !== 'valencia' ? 'Value should be "valencia"' : null)} />
@@ -70,7 +70,7 @@ describe('Form Tests', () => {
 		cy.get(errorSelector).should('have.text', 'Value should be "valencia"')
 	})
 
-	it('should validation continually once blurred', () => {
+	it('should run validation continually once blurred', () => {
 		cy.mount(
 			<Form>
 				<Field name="field" validate={value => (value !== 'valencia' ? 'Value should be "valencia"' : null)} />
