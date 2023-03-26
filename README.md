@@ -26,10 +26,11 @@ Find the docs at [https://vjee.github.io/formulier/](https://vjee.github.io/form
 
 ```jsx
 import {
-  Form,
+  FormProvider,
   useCreateForm,
   useFormInstance,
   useFormField,
+  useSubmitHandler,
 } from '@formulier/react'
 
 function MyForm() {
@@ -40,18 +41,19 @@ function MyForm() {
     },
   })
 
-  const handleSubmit = values => {
+  const onSubmit = useSubmitHandler(form, values => {
     // handle form submission
     console.log(`${values.firstName} is ${values.age} years old.`)
-  }
+  })
 
   return (
-    <Form form={form} onSubmit={handleSubmit}>
-      <TextField name="firstName" placeholder="First name" />
-      <IntegerField name="age" placeholder="Age" />
-
-      <button type="submit">Submit</button>
-    </Form>
+    <form onSubmit={onSubmit}>
+      <FormProvider form={form}>
+        <TextField name="firstName" placeholder="First name" />
+        <IntegerField name="age" placeholder="Age" />
+        <button type="submit">Submit</button>
+      </FormProvider>
+    </form>
   )
 }
 

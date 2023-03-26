@@ -1,4 +1,4 @@
-import {Form, useCreateForm} from '@formulier/react'
+import {FormProvider, useCreateForm, useSubmitHandler} from '@formulier/react'
 import * as React from 'react'
 import * as Field from '../fields'
 
@@ -11,6 +11,10 @@ export function SwitchFieldTypeForm() {
 		initialValues: {
 			field: 7,
 		},
+	})
+
+	const onSubmit = useSubmitHandler(form, values => {
+		alert(JSON.stringify(values, null, 2))
 	})
 
 	const [type, setType] = React.useState<'text' | 'integer' | null>('integer')
@@ -28,22 +32,24 @@ export function SwitchFieldTypeForm() {
 		<div>
 			<h1>SwitchFieldTypeForm</h1>
 
-			<Form form={form} onSubmit={values => alert(JSON.stringify(values, null, 2))}>
-				<div className="column">
-					{type === 'text' && <Field.TextField name="field" label="Text field" />}
-					{type === 'integer' && <Field.IntegerField name="field" label="Integer field" />}
+			<form onSubmit={onSubmit}>
+				<FormProvider form={form}>
+					<div className="column">
+						{type === 'text' && <Field.TextField name="field" label="Text field" />}
+						{type === 'integer' && <Field.IntegerField name="field" label="Integer field" />}
 
-					<button type="button" onClick={hide}>
-						{type === null ? 'Show' : 'Hide'}
-					</button>
+						<button type="button" onClick={hide}>
+							{type === null ? 'Show' : 'Hide'}
+						</button>
 
-					<button type="button" onClick={toggleType}>
-						Toggle type
-					</button>
+						<button type="button" onClick={toggleType}>
+							Toggle type
+						</button>
 
-					<button type="submit">Submit</button>
-				</div>
-			</Form>
+						<button type="submit">Submit</button>
+					</div>
+				</FormProvider>
+			</form>
 		</div>
 	)
 }

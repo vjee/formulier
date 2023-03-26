@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {Form, useCreateForm, useFormField, useFormInstance} from '@formulier/react'
+import {FormProvider, useCreateForm, useFormField, useFormInstance, useSubmitHandler} from '@formulier/react'
 
 export default function Example() {
 	const form = useCreateForm({
@@ -10,19 +10,20 @@ export default function Example() {
 		},
 	})
 
-	return (
-		<Form
-			form={form}
-			onSubmit={values => {
-				alert(JSON.stringify(values, null, 2))
-			}}
-		>
-			<InputField name="firstName" label="First name" />
-			<InputField name="lastName" label="Last name" />
-			<InputField name="email" label="Email" type="email" />
+	const onSubmit = useSubmitHandler(form, values => {
+		alert(JSON.stringify(values, null, 2))
+	})
 
-			<button type="submit">Submit</button>
-		</Form>
+	return (
+		<form onSubmit={onSubmit}>
+			<FormProvider form={form}>
+				<InputField name="firstName" label="First name" />
+				<InputField name="lastName" label="Last name" />
+				<InputField name="email" label="Email" type="email" />
+
+				<button type="submit">Submit</button>
+			</FormProvider>
+		</form>
 	)
 }
 

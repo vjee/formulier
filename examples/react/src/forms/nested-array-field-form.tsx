@@ -1,4 +1,4 @@
-import {Form, useCreateForm, useFormFieldArray, useFormInstance} from '@formulier/react'
+import {FormProvider, useCreateForm, useFormFieldArray, useFormInstance, useSubmitHandler} from '@formulier/react'
 import * as Field from '../fields'
 
 interface FormState {
@@ -25,15 +25,21 @@ export function NestedArrayFieldForm() {
 		},
 	})
 
+	const onSubmit = useSubmitHandler(form, values => {
+		alert(JSON.stringify(values, null, 2))
+	})
+
 	return (
 		<div>
 			<h1>NestedArrayFieldForm</h1>
 
-			<Form form={form} onSubmit={values => alert(JSON.stringify(values, null, 2))}>
-				<Friends />
+			<form onSubmit={onSubmit}>
+				<FormProvider form={form}>
+					<Friends />
 
-				<button type="submit">Submit</button>
-			</Form>
+					<button type="submit">Submit</button>
+				</FormProvider>
+			</form>
 		</div>
 	)
 }

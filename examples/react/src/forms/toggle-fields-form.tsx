@@ -1,4 +1,4 @@
-import {Form, useCreateForm} from '@formulier/react'
+import {FormProvider, useCreateForm, useSubmitHandler} from '@formulier/react'
 import * as React from 'react'
 import * as Field from '../fields'
 
@@ -15,6 +15,10 @@ export function ToggleFieldsForm() {
 		},
 	})
 
+	const onSubmit = useSubmitHandler(form, values => {
+		alert(JSON.stringify(values, null, 2))
+	})
+
 	const [renderFieldA, setRenderFieldA] = React.useState(true)
 
 	const toggleField = () => {
@@ -25,21 +29,23 @@ export function ToggleFieldsForm() {
 		<div>
 			<h1>ToggleFieldsForm</h1>
 
-			<Form form={form} onSubmit={values => alert(JSON.stringify(values, null, 2))}>
-				<div className="column">
-					{renderFieldA ? (
-						<Field.TextField name="fieldA" label="Field A" />
-					) : (
-						<Field.TextField name="fieldB" label="Field B" />
-					)}
+			<form onSubmit={onSubmit}>
+				<FormProvider form={form}>
+					<div className="column">
+						{renderFieldA ? (
+							<Field.TextField name="fieldA" label="Field A" />
+						) : (
+							<Field.TextField name="fieldB" label="Field B" />
+						)}
 
-					<button type="button" onClick={toggleField}>
-						Toggle field
-					</button>
+						<button type="button" onClick={toggleField}>
+							Toggle field
+						</button>
 
-					<button type="submit">Submit</button>
-				</div>
-			</Form>
+						<button type="submit">Submit</button>
+					</div>
+				</FormProvider>
+			</form>
 		</div>
 	)
 }
