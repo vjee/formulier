@@ -38,7 +38,7 @@ importers:
 
   docs:
     specifiers:
-      '@formulier/react': workspace:0.0.17
+      '@formulier/react': workspace:0.0.18
       '@types/react': ^18.0.29
       '@types/react-dom': ^18.0.11
       react: ^18.2.0
@@ -56,7 +56,7 @@ importers:
 
   examples/react:
     specifiers:
-      '@formulier/react': workspace:0.0.17
+      '@formulier/react': workspace:0.0.18
       '@formulier/tsconfig': workspace:0.0.0
       '@types/react': ^18.0.29
       '@types/react-dom': ^18.0.11

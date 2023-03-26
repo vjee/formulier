@@ -1,5 +1,11 @@
 # @formulier/react
 
+## 0.0.18
+
+### Patch Changes
+
+- 1eec999: Use useEffect instead of useLayoutEffect for SSR
+
 ## 0.0.17
 
 ### Patch Changes
