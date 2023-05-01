@@ -59,6 +59,26 @@ export default defineConfig({
 							text: 'useCreateForm()',
 							link: '/react/api/use-create-form',
 						},
+						{
+							text: 'useFormInstance()',
+							link: '/react/api/use-form-instance',
+						},
+						{
+							text: 'useFormField()',
+							link: '/react/api/use-form-field',
+						},
+						{
+							text: 'useFormFieldValue()',
+							link: '/react/api/use-form-field-value',
+						},
+						{
+							text: 'useFormFieldArray()',
+							link: '/react/api/use-form-field-array',
+						},
+						{
+							text: 'useFormSelector()',
+							link: '/react/api/use-form-selector',
+						},
 					],
 				},
 			],
