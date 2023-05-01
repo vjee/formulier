@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,d as o}from"./app.d1138248.js";const i=JSON.parse('{"title":"useFormInstance()","description":"","frontmatter":{},"headers":[],"relativePath":"react/api/use-form-instance.md"}'),l={name:"react/api/use-form-instance.md"},p=o("",2),e=[p];function t(c,r,F,y,D,A){return a(),n("div",null,e)}const m=s(l,[["render",t]]);export{i as __pageData,m as default};
