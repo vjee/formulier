@@ -9,11 +9,11 @@
 	},
 	"devDependencies": {
 		"@formulier/react": "workspace:0.0.19",
-		"@types/react": "^18.0.29",
-		"@types/react-dom": "^18.0.11",
+		"@types/react": "^18.2.0",
+		"@types/react-dom": "^18.2.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"vitepress": "1.0.0-alpha.18",
+		"vitepress": "1.0.0-alpha.75",
 		"vue": "^3.2.47"
 	},
 	"packageManager": "pnpm@7.5.2"
