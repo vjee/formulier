@@ -121,6 +121,9 @@ importers:
       '@formulier/tsconfig':
         specifier: workspace:0.0.0
         version: link:../../config/tsconfig
+      '@types/shallow-clone':
+        specifier: ^3.0.0
+        version: 3.0.0
       '@vitest/coverage-istanbul':
         specifier: ^0.30.1
         version: 0.30.1(vitest@0.30.1)
@@ -158,6 +161,9 @@ importers:
       '@types/react':
         specifier: ^18.2.0
         version: 18.2.0
+      '@types/shallow-clone':
+        specifier: ^3.0.0
+        version: 3.0.0
       '@types/use-sync-external-store':
         specifier: ^0.0.3
         version: 0.0.3
@@ -1247,6 +1253,10 @@ packages:
 
   /@types/semver@7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/shallow-clone@3.0.0:
+    resolution: {integrity: sha512-ESigmHCAZngb4K79XfYKyNpLfcXWylctbDPHPE6UTmBI5YwzdzO5rINU13Y94KR9kfwKIjbBoz00q7aw+lzK4w==}
     dev: true
 
   /@types/sinonjs__fake-timers@8.1.1:

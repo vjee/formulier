@@ -66,6 +66,7 @@
 		"@formulier/tsconfig": "workspace:0.0.0",
 		"@testing-library/react": "^14.0.0",
 		"@types/react": "^18.2.0",
+		"@types/shallow-clone": "^3.0.0",
 		"@types/use-sync-external-store": "^0.0.3",
 		"@vitest/coverage-istanbul": "^0.30.1",
 		"cypress": "^12.11.0",
