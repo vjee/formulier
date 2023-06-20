@@ -80,6 +80,5 @@
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0"
-	},
-	"packageManager": "pnpm@7.5.2"
+	}
 }

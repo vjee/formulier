@@ -4,6 +4,5 @@
 	"version": "0.0.0",
 	"files": [
 		"base.json"
-	],
-	"packageManager": "pnpm@7.5.2"
+	]
 }

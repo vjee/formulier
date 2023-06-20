@@ -15,6 +15,5 @@
 		"react-dom": "^18.2.0",
 		"vitepress": "1.0.0-alpha.75",
 		"vue": "^3.2.47"
-	},
-	"packageManager": "pnpm@7.5.2"
+	}
 }
