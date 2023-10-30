@@ -2,6 +2,7 @@
 	"private": true,
 	"name": "@formulier/docs",
 	"version": "0.0.0",
+	"type": "module",
 	"scripts": {
 		"dev": "vitepress dev .",
 		"build": "vitepress build .",
@@ -9,11 +10,11 @@
 	},
 	"devDependencies": {
 		"@formulier/react": "workspace:0.0.19",
-		"@types/react": "^18.2.13",
-		"@types/react-dom": "^18.2.6",
+		"@types/react": "^18.2.33",
+		"@types/react-dom": "^18.2.14",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"vitepress": "1.0.0-alpha.75",
-		"vue": "^3.3.4"
+		"vitepress": "1.0.0-rc.24",
+		"vue": "^3.3.7"
 	}
 }

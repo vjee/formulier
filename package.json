@@ -16,7 +16,8 @@
 		"e2e": "turbo run e2e",
 		"docs:dev": "pnpm run --filter docs dev",
 		"docs:build": "pnpm run --filter docs build",
-		"docs:serve": "pnpm run --filter docs serve"
+		"docs:serve": "pnpm run --filter docs serve",
+		"update": "pnpm update --recursive --latest & pnpm dedupe"
 	},
 	"workspaces": [
 		"packages/*",
@@ -25,18 +26,18 @@
 		"docs"
 	],
 	"devDependencies": {
-		"@changesets/cli": "^2.26.1",
+		"@changesets/cli": "^2.26.2",
 		"@formulier/eslint-config": "workspace:0.0.0",
-		"@typescript-eslint/eslint-plugin": "^5.60.0",
-		"@typescript-eslint/parser": "^5.60.0",
-		"cypress": "^12.15.0",
-		"eslint": "^8.43.0",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-plugin-react": "7.32.2",
+		"@typescript-eslint/eslint-plugin": "^6.9.0",
+		"@typescript-eslint/parser": "^6.9.0",
+		"cypress": "^13.3.3",
+		"eslint": "^8.52.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-react": "7.33.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
-		"prettier": "^2.8.8",
-		"turbo": "^1.10.3",
-		"typescript": "^5.1.3"
+		"prettier": "^3.0.3",
+		"turbo": "^1.10.16",
+		"typescript": "^5.2.2"
 	},
 	"packageManager": "pnpm@8.10.0"
 }

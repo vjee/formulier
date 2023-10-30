@@ -27,3 +27,6 @@ yarn-error.log*
 
 # build
 dist
+
+# caches
+docs/.vitepress/cache
