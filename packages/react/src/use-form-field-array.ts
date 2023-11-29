@@ -21,10 +21,10 @@ export interface FormFieldArrayOptions<V extends Values, F extends string> {
 export type UseFormFieldArrayResult<Item, P extends Primitives = Primitives> = IsNever<Item> extends true
 	? [Items: never, arrayMethods: FieldArrayMethods<never>]
 	: Item extends P
-	? [Items: Item[], arrayMethods: FieldArrayMethods<Item>]
-	: Item extends Record<string, any>
-	? [Items: Item[], arrayMethods: FieldArrayMethods<Nullable<Item, P>>]
-	: [items: Item[], arrayMethods: FieldArrayMethods<Item>]
+	  ? [Items: Item[], arrayMethods: FieldArrayMethods<Item>]
+	  : Item extends Record<string, any>
+	    ? [Items: Item[], arrayMethods: FieldArrayMethods<Nullable<Item, P>>]
+	    : [items: Item[], arrayMethods: FieldArrayMethods<Item>]
 
 export function useFormFieldArray<V extends Values, F extends string, P extends Primitives>(
 	form: Formulier<V>,
