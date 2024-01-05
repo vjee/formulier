@@ -8,7 +8,7 @@ Below is a form that asks for a first name, last name and email address.
 <<< @/react-components/guide-getting-started-example.jsx
 <ReactComponent name="react-components/guide-getting-started-example.jsx" />
 
-## Quick Explination
+## Quick Explanation
 
 The first thing we need to set up a form is the `useCreateForm` hook.
 This hook creates a form store with initial values for its form fields.
