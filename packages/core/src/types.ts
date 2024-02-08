@@ -20,10 +20,6 @@ export interface FormulierState<V extends Values, P extends Primitives = Primiti
 	submitCount: number
 }
 
-export interface FormListener<V extends Values = Values, P extends Primitives = Primitives> {
-	(state: FormulierState<V, P>): void
-}
-
 export type GetFieldType<T, P extends string> = string extends P
 	? any
 	: P extends `${infer Left}.${infer Right}`

@@ -165,6 +165,9 @@ importers:
       '@types/react':
         specifier: ^18.2.46
         version: 18.2.46
+      '@types/react-dom':
+        specifier: ^18.2.18
+        version: 18.2.18
       '@types/shallow-clone':
         specifier: ^3.0.2
         version: 3.0.2

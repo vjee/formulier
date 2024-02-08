@@ -10,7 +10,7 @@ export function useSubmitHandler<V extends Values, P extends Primitives>(
 
 		const valid = form.validateFields()
 		if (valid) {
-			onSubmit(form.getState().values as V)
+			onSubmit(form.store.getState().values as V)
 		}
 
 		form.incrementSubmitCount()

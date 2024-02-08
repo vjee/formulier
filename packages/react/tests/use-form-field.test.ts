@@ -18,7 +18,7 @@ const {result, rerender} = renderHook((options: FieldOptions<FormState, string>)
 })
 
 it('renders hook', () => {
-	expect(result.current[0].id).toBe('a.b.c')
+	expect(result.current[0].name).toBe('a.b.c')
 	expect(result.current[0].value).toBe('c')
 	expect(result.current[1].error).toBe(null)
 	expect(result.current[1].touched).toBe(false)
@@ -47,7 +47,7 @@ it('runs validation during onChange if touched', () => {
 
 it('can change field name', () => {
 	rerender({name: 'a.b.d'})
-	expect(result.current[0].id).toBe('a.b.d')
+	expect(result.current[0].name).toBe('a.b.d')
 	expect(result.current[0].value).toBe('d')
 	expect(result.current[1].error).toBe(null)
 })

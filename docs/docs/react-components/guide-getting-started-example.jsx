@@ -37,9 +37,10 @@ function InputField({name, label, type = 'text'}) {
 				{label}
 			</label>
 			<input
+				{...field}
 				className="input"
 				type={type}
-				{...field}
+				name={name}
 				value={field.value || ''}
 				onChange={event => field.onChange(event.target.value)}
 			/>

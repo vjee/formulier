@@ -9,8 +9,15 @@ export function TextField({name, label}: {name: string; label: string}) {
 	const {error} = meta
 
 	return (
-		<Field name={name} label={label} error={error}>
-			<input type="text" id={id} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur} />
+		<Field id={id} label={label} error={error}>
+			<input
+				type="text"
+				id={id}
+				name={name}
+				value={value || ''}
+				onChange={event => onChange(event.target.value)}
+				onBlur={onBlur}
+			/>
 		</Field>
 	)
 }
@@ -23,11 +30,12 @@ export function IntegerField({name, label}: {name: string; label: string}) {
 	const {error} = meta
 
 	return (
-		<Field name={name} label={label} error={error}>
+		<Field id={id} label={label} error={error}>
 			<input
 				type="number"
 				step="1"
 				id={id}
+				name={name}
 				value={value || ''}
 				onChange={event => onChange(parseInt(event.target.value, 10))}
 				onBlur={onBlur}
@@ -44,8 +52,8 @@ export function SelectField({name, label, children}: {name: string; label: strin
 	const {error} = meta
 
 	return (
-		<Field name={name} label={label} error={error}>
-			<select id={id} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur}>
+		<Field id={id} label={label} error={error}>
+			<select id={id} name={name} value={value || ''} onChange={event => onChange(event.target.value)} onBlur={onBlur}>
 				{children}
 			</select>
 		</Field>
@@ -60,10 +68,11 @@ export function CheckboxField({name, label}: {name: string; label: string}) {
 	const {error} = meta
 
 	return (
-		<Field name={name} label={label} error={error} displayHorizontal>
+		<Field id={id} label={label} error={error} displayHorizontal>
 			<input
 				type="checkbox"
 				id={id}
+				name={name}
 				checked={value || false}
 				onChange={event => onChange(event.target.checked)}
 				onBlur={onBlur}
@@ -73,13 +82,13 @@ export function CheckboxField({name, label}: {name: string; label: string}) {
 }
 
 export function Field({
-	name,
+	id,
 	label,
 	error,
 	children,
 	displayHorizontal = false,
 }: {
-	name: string
+	id: string
 	label: string
 	error: string | null
 	children: React.ReactNode
@@ -87,7 +96,7 @@ export function Field({
 }) {
 	return (
 		<div className={`field ${displayHorizontal ? 'horizontal' : ''}`}>
-			<label className="field-label" htmlFor={name}>
+			<label className="field-label" htmlFor={id}>
 				{label}
 			</label>
 			<div className="field-input">{children}</div>

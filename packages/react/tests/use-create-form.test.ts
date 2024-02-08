@@ -7,21 +7,28 @@ interface FormState {
 	a: {b: {c: string; d: string}}
 }
 
-const {result} = renderHook(() => useCreateForm<FormState>({initialValues: {a: {b: {c: 'c', d: 'd'}}}}))
+const microtask = () => new Promise<void>(resolve => queueMicrotask(resolve))
+
+const {result: form} = renderHook(() => useCreateForm<FormState>({initialValues: {a: {b: {c: 'c', d: 'd'}}}}))
 
 it('renders hook', () => {
-	expect(result.current.getState).toBeDefined()
+	expect(form.current.store.getState).toBeDefined()
 })
 
-it('unregisters field values when unmounted', () => {
-	const {rerender: fieldRerender, unmount: fieldUnmount} = renderHook(
-		options => useFormField(result.current, options),
-		{initialProps: {name: 'a.b.c'}},
-	)
-	expect(result.current.getState().values.a.b.c).toBe('c')
-	fieldRerender({name: 'a.b.d'})
-	expect(result.current.getState().values.a.b.c).toBe(undefined)
-	expect(result.current.getState().values.a.b.d).toBe('d')
-	fieldUnmount()
-	expect(result.current.getState().values.a.b.d).toBe(undefined)
+it('unregisters field values when unmounted', async () => {
+	const {
+		result: field,
+		rerender: rerenderField,
+		unmount: unmountField,
+	} = renderHook(options => useFormField(form.current, options), {
+		initialProps: {name: 'a.b.c'},
+	})
+	expect(field.current[0].value).toBe('c')
+	rerenderField({name: 'a.b.d'})
+	await microtask()
+	expect(form.current.store.getState().values.a.b.c).toBe(undefined)
+	expect(field.current[0].value).toBe('d')
+	unmountField()
+	await microtask()
+	expect(form.current.store.getState().values.a.b.d).toBe(undefined)
 })

@@ -9,8 +9,8 @@ function TextInput({name, label}) {
 
   return (
     <>
-      <label htmlFor={name}>{label}</label>
-      <input id={name} type="text" {...fieldProps} />
+      <label htmlFor={field.id}>{label}</label>
+      <input name={name} type="text" {...field} />
       {meta.error && <span>{meta.error}</span>}
     </>
   )

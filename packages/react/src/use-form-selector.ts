@@ -10,5 +10,11 @@ export function useFormSelector<V extends Values, P extends Primitives, Result>(
 	selector: Selector<V, P, Result>,
 	equalityFn?: (a: Result, b: Result) => boolean,
 ) {
-	return useSyncExternalStoreWithSelector(form.subscribe, form.getState, form.getState, selector, equalityFn)
+	return useSyncExternalStoreWithSelector(
+		form.store.subscribe,
+		form.store.getState,
+		form.store.getState,
+		selector,
+		equalityFn,
+	)
 }
