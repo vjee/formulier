@@ -31,7 +31,9 @@
 		"./package.json": "./package.json"
 	},
 	"files": [
-		"dist"
+		"dist/index.js",
+		"dist/index.cjs",
+		"dist/index.d.ts"
 	],
 	"publishConfig": {
 		"access": "public",
