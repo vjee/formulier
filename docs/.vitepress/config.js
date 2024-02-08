@@ -1,5 +1,4 @@
 import {defineConfig} from 'vitepress'
-import tokyoNightStorm from './tokyo-night-storm.json'
 
 export default defineConfig({
 	lang: 'en-GB',
@@ -91,7 +90,7 @@ export default defineConfig({
 	},
 
 	markdown: {
-		theme: tokyoNightStorm,
+		theme: 'min-dark',
 	},
 
 	srcDir: 'docs',
