@@ -1,5 +1,11 @@
 # @formulier/react
 
+## 0.1.2
+
+### Patch Changes
+
+- Fix import
+
 ## 0.1.1
 
 ### Patch Changes
