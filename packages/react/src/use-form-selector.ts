@@ -1,5 +1,5 @@
 import {Formulier, FormulierState, Primitives, Values} from '@formulier/core'
-import {useSyncExternalStoreWithSelector} from 'use-sync-external-store/with-selector'
+import {useSyncExternalStoreWithSelector} from 'use-sync-external-store/with-selector.js'
 
 export interface Selector<V extends Values, P extends Primitives, Result> {
 	(state: FormulierState<V, P>): Result
