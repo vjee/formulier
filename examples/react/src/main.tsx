@@ -2,6 +2,7 @@ import * as React from 'react'
 import {createRoot} from 'react-dom/client'
 import {createBrowserRouter, RouterProvider, NavLink, Outlet, Navigate, RouteObject} from 'react-router-dom'
 import {PersonForm} from './forms/person-form'
+import {ValidationForm} from './forms/validation-form'
 import {SwitchFieldTypeForm} from './forms/switch-field-type-form'
 import {CheckboxForm} from './forms/checkbox-form'
 import {SelectForm} from './forms/select-form'
@@ -13,6 +14,7 @@ createRoot(document.querySelector('#root')!).render(<App />)
 
 const formRoutes: RouteObject[] = [
 	{path: 'person-form', element: <PersonForm />},
+	{path: 'validation-form', element: <ValidationForm />},
 	{path: 'switch-field-type-form', element: <SwitchFieldTypeForm />},
 	{path: 'checkbox-form', element: <CheckboxForm />},
 	{path: 'select-form', element: <SelectForm />},

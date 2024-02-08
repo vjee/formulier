@@ -1,9 +1,27 @@
 import {useFormInstance, useFormField} from '@formulier/react'
 import * as React from 'react'
 
-export function TextField({name, label, info = null}: {name: string; info?: string | null; label: string}) {
+export function TextField({
+	name,
+	label,
+	info = null,
+	required = false,
+}: {
+	name: string
+	info?: string | null
+	label: string
+	required?: boolean
+}) {
+	const validate = React.useCallback(
+		(value: unknown): string | null => {
+			if (required && !value) return 'This field is required'
+			return null
+		},
+		[required],
+	)
+
 	const form = useFormInstance()
-	const [field, meta] = useFormField(form, {name})
+	const [field, meta] = useFormField(form, {name, validate})
 
 	const {id, value, onChange, onBlur} = field
 	const {error} = meta
@@ -19,6 +37,7 @@ export function TextField({name, label, info = null}: {name: string; info?: stri
 				onBlur={onBlur}
 				aria-describedby={!error ? `${id}-info` : `${id}-info ${id}-error`}
 				aria-invalid={!!error}
+				aria-required={required ? true : undefined}
 			/>
 		</Field>
 	)
