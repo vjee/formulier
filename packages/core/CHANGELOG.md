@@ -1,5 +1,19 @@
 # @formulier/core
 
+## 0.1.0
+
+### Minor Changes
+
+- 38eeb88: Update Formulier, useFormField implementations
+
+### Patch Changes
+
+- 591de7d: Update dependencies
+- 0452841: Update dependencies
+- 3f118cc: Update dependencies
+- 8f6c940: Update dependencies
+- acf2bb0: Update dependencies
+
 ## 0.0.13
 
 ### Patch Changes
