@@ -1,7 +1,8 @@
 import {expect, it} from 'vitest'
 import {renderHook} from '@testing-library/react'
-import {useCreateForm} from '../src/use-create-form'
-import {useFormField} from '../src/use-form-field'
+
+import {useCreateForm} from '../src/form'
+import {useFormField} from '../src/field'
 
 interface FormState {
 	a: {b: {c: string; d: string}}

@@ -1,8 +1,12 @@
-export type Primitives = string | number | boolean | Date | File
+interface FormulierOptions<V extends Values, P extends Primitives> {
+	initialValues: Nullable<V, P>
+}
 
-export type Values = Record<string, any>
+type Primitives = string | number | boolean | Date | File
 
-export type Nullable<Values, P extends Primitives = Primitives> = {
+type Values = Record<string, any>
+
+type Nullable<Values, P extends Primitives = Primitives> = {
 	[Prop in keyof Values]: Values[Prop] extends P | null | undefined
 		? Values[Prop] | null
 		: Values[Prop] extends (infer A)[]
@@ -10,9 +14,9 @@ export type Nullable<Values, P extends Primitives = Primitives> = {
 			: Nullable<Values[Prop], P>
 }
 
-export type FieldValidator = (value: unknown) => string | null
+type FieldValidator = (value: unknown) => string | null
 
-export interface FormulierState<V extends Values, P extends Primitives = Primitives> {
+interface FormulierState<V extends Values, P extends Primitives = Primitives> {
 	values: Nullable<V, P>
 	validators: Record<string, FieldValidator | null>
 	errors: Record<string, string | null>
@@ -20,7 +24,7 @@ export interface FormulierState<V extends Values, P extends Primitives = Primiti
 	submitCount: number
 }
 
-export type GetFieldType<T, P extends string> = string extends P
+type GetFieldType<T, P extends string> = string extends P
 	? any
 	: P extends `${infer Left}.${infer Right}`
 		? Left extends keyof T
@@ -53,3 +57,5 @@ type GetIndexedField<T, K> = K extends keyof T
 type FieldWithPossiblyUndefined<T, Key extends string> =
 	| GetFieldType<Exclude<T, undefined>, Key>
 	| Extract<T, undefined>
+
+export type {FormulierOptions, Primitives, Values, Nullable, FieldValidator, FormulierState, GetFieldType}

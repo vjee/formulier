@@ -1,17 +1,17 @@
-export function push<T>(array: T[], item: T) {
+function push<T>(array: T[], item: T) {
 	return [...array, item]
 }
 
-export function insert<T>(array: T[], item: T, index: number) {
+function insert<T>(array: T[], item: T, index: number) {
 	if (index < 0 || index > array.length) return array
 	return [...array.slice(0, index), item, ...array.slice(index)]
 }
 
-export function remove<T>(array: T[], index: number) {
+function remove<T>(array: T[], index: number) {
 	return [...array.slice(0, index), ...array.slice(index + 1)]
 }
 
-export function move<T>(array: T[], fromIndex: number, toIndex: number) {
+function move<T>(array: T[], fromIndex: number, toIndex: number) {
 	const copy = [...array]
 	const value = copy[fromIndex]
 	copy.splice(fromIndex, 1)
@@ -19,8 +19,10 @@ export function move<T>(array: T[], fromIndex: number, toIndex: number) {
 	return copy
 }
 
-export function swap<T>(array: T[], fromIndex: number, toIndex: number) {
+function swap<T>(array: T[], fromIndex: number, toIndex: number) {
 	const copy = [...array]
 	;[copy[fromIndex], copy[toIndex]] = [copy[toIndex], copy[fromIndex]]
 	return copy
 }
+
+export {push, insert, remove, move, swap}

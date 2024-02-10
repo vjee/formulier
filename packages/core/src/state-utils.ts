@@ -1,10 +1,8 @@
 import clone from 'shallow-clone'
 import isEqual from 'fast-deep-equal'
 
-export {clone, isEqual}
-
 // Originally taken from https://github.com/jaredpalmer/formik/blob/master/packages/formik/src/utils.ts
-export function getPath(source: any, path: string | string[], fallback?: any) {
+function getPath(source: any, path: string | string[], fallback?: any) {
 	let p = 0
 	const pathArray = toPath(path)
 
@@ -17,7 +15,7 @@ export function getPath(source: any, path: string | string[], fallback?: any) {
 }
 
 // Originally taken from https://github.com/jaredpalmer/formik/blob/master/packages/formik/src/utils.ts
-export function setPath(obj: any, path: string, value: any): any {
+function setPath(obj: any, path: string, value: any): any {
 	const res = clone(obj)
 	let resVal: any = res
 	let i = 0
@@ -52,7 +50,7 @@ export function setPath(obj: any, path: string, value: any): any {
 	return res
 }
 
-export function setKey<T extends Record<string, unknown>>(source: T, key: string, value: unknown): T {
+function setKey<T extends Record<string, unknown>>(source: T, key: string, value: unknown): T {
 	if (isEqual(source[key], value)) {
 		return source
 	}
@@ -60,7 +58,7 @@ export function setKey<T extends Record<string, unknown>>(source: T, key: string
 	return {...source, [key]: value}
 }
 
-export function removeKey<T extends Record<string, unknown>>(source: T, key: string): T {
+function removeKey<T extends Record<string, unknown>>(source: T, key: string): T {
 	if (!Object.prototype.hasOwnProperty.call(source, key)) {
 		return source
 	}
@@ -69,7 +67,7 @@ export function removeKey<T extends Record<string, unknown>>(source: T, key: str
 }
 
 // Originally taken from https://github.com/lodash/lodash/blob/master/toPath.js
-export function toPath(path: string | string[]) {
+function toPath(path: string | string[]) {
 	if (Array.isArray(path)) return path
 
 	const result: string[] = []
@@ -83,9 +81,9 @@ export function toPath(path: string | string[]) {
 	path.replace(rePropName, (match, expression, quote, subString) => {
 		let key = match
 		if (quote) {
-			key = subString.replace(reEscapeChar, '$1')
+			key = (subString as string).replace(reEscapeChar, '$1')
 		} else if (expression) {
-			key = expression.trim()
+			key = (expression as string).trim()
 		}
 
 		result.push(key)
@@ -96,10 +94,12 @@ export function toPath(path: string | string[]) {
 	return result
 }
 
-export function isInteger(source: unknown): boolean {
+function isInteger(source: unknown): boolean {
 	return String(Math.floor(Number(source))) === source
 }
 
-export function isObject(source: unknown): source is Record<string, unknown> {
+function isObject(source: unknown): source is Record<string, unknown> {
 	return source !== null && typeof source === 'object'
 }
+
+export {clone, isEqual, getPath, setPath, setKey, removeKey, toPath, isInteger, isObject}

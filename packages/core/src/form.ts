@@ -1,11 +1,7 @@
-import {FieldValidator, FormulierState, Nullable, Primitives, Values} from './types'
+import type {FieldValidator, FormulierOptions, FormulierState, Primitives, Values} from './types'
 import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils'
 
-export interface FormulierOptions<V extends Values, P extends Primitives> {
-	initialValues: Nullable<V, P>
-}
-
-export class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
+class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 	store: Store<FormulierState<V, P>>
 	instances: Record<string, Set<string>> = {}
 
@@ -143,3 +139,5 @@ class Store<S> {
 		}
 	}
 }
+
+export {Formulier}
