@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.2.3
+
+### Patch Changes
+
+- Bump version to fix bad release
+
 ## 0.2.2
 
 ### Patch Changes
