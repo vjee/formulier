@@ -52,7 +52,7 @@ importers:
   docs:
     devDependencies:
       '@formulier/react':
-        specifier: workspace:0.2.3
+        specifier: workspace:0.2.4
         version: link:../packages/react
       '@types/react':
         specifier: ^18.2.55
@@ -76,7 +76,7 @@ importers:
   examples/react:
     dependencies:
       '@formulier/react':
-        specifier: workspace:0.2.3
+        specifier: workspace:0.2.4
         version: link:../../packages/react
       react:
         specifier: ^18.2.0
@@ -144,7 +144,7 @@ importers:
   packages/react:
     dependencies:
       '@formulier/core':
-        specifier: workspace:0.2.3
+        specifier: workspace:0.2.4
         version: link:../core
       use-sync-external-store:
         specifier: ^1.2.0

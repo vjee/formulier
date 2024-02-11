@@ -1,5 +1,13 @@
 # @formulier/react
 
+## 0.2.4
+
+### Patch Changes
+
+- Export types that should have been exported already
+- Updated dependencies
+  - @formulier/core@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes
