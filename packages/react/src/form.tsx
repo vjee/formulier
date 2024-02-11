@@ -2,10 +2,10 @@ import * as React from 'react'
 import {useSyncExternalStoreWithSelector} from 'use-sync-external-store/with-selector.js'
 
 import {Formulier} from '@formulier/core'
-import {invariant, useEvent} from './utils'
+import {invariant, useEvent} from './utils.js'
 
 import type {FormulierOptions, Primitives, Values} from '@formulier/core'
-import type {FormContext, FormProviderProps, Selector} from './types'
+import type {FormContext, FormProviderProps, Selector} from './types.js'
 
 const formContext = React.createContext<FormContext<Values, Primitives> | undefined>(undefined)
 

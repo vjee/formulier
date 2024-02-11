@@ -2,8 +2,8 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 import {arrayUtils, stateUtils} from '@formulier/core'
-import {invariant, useEvent} from './utils'
-import {useFormSelector} from './form'
+import {invariant, useEvent} from './utils.js'
+import {useFormSelector} from './form.js'
 
 import type {Formulier, Primitives, Values} from '@formulier/core'
 import type {
@@ -17,7 +17,7 @@ import type {
 	UseFormFieldArrayResult,
 	UseFormFieldResult,
 	UseFormFieldValueResult,
-} from './types'
+} from './types.js'
 
 const callCallback = (cb: CallableFunction) => void cb()
 

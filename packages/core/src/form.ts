@@ -1,5 +1,5 @@
-import type {FieldValidator, FormulierOptions, FormulierState, Primitives, Values} from './types'
-import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils'
+import type {FieldValidator, FormulierOptions, FormulierState, Primitives, Values} from './types.js'
+import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils.js'
 
 class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 	store: Store<FormulierState<V, P>>

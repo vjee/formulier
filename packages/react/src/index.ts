@@ -1,3 +1,3 @@
 export * from '@formulier/core'
-export * from './form'
-export * from './field'
+export * from './form.js'
+export * from './field.js'
