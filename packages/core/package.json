@@ -17,34 +17,25 @@
 	],
 	"type": "module",
 	"main": "./src/index.ts",
-	"module": "./src/index.ts",
 	"exports": {
-		".": {
-			"import": "./src/index.ts"
-		},
+		".": "./src/index.ts",
 		"./package.json": "./package.json"
 	},
 	"files": [
-		"dist/index.js",
-		"dist/index.cjs",
-		"dist/index.d.ts"
+		"dist"
 	],
 	"publishConfig": {
 		"access": "public",
 		"main": "./dist/index.js",
-		"module": "./dist/index.js",
 		"exports": {
-			".": {
-				"import": "./dist/index.js",
-				"require": "./dist/index.cjs",
-				"default": "./dist/index.js"
-			},
+			".": "./dist/index.js",
+			"types": "./dist/index.d.ts",
 			"./package.json": "./package.json"
 		},
 		"types": "./dist/index.d.ts"
 	},
 	"scripts": {
-		"build": "tsup",
+		"build": "tsc",
 		"dev": "tsup --watch",
 		"lint": "eslint src tests --ext .ts,.tsx --fix",
 		"typecheck": "tsc --noEmit",
@@ -62,7 +53,6 @@
 		"@vitest/coverage-istanbul": "^1.2.2",
 		"eslint": "^8.56.0",
 		"react": "^18.2.0",
-		"tsup": "^8.0.1",
 		"vitest": "^1.2.2"
 	}
 }
