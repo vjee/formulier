@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.2.1
+
+### Patch Changes
+
+- e69c5b4: Remove "types" export from package.json
+
 ## 0.2.0
 
 ### Minor Changes
