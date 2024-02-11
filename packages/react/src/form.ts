@@ -10,7 +10,8 @@ import type {FormContext, FormProviderProps, Selector} from './types.js'
 const formContext = React.createContext<FormContext<Values, Primitives> | undefined>(undefined)
 
 function FormProvider<V extends Values, P extends Primitives = Primitives>({form, children}: FormProviderProps<V, P>) {
-	return React.createElement(formContext.Provider, {value: {form: form as Formulier<Values>}}, children)
+	const value = React.useMemo(() => ({form: form as Formulier<Values>}), [form])
+	return React.createElement(formContext.Provider, {value}, children)
 }
 
 function useFormInstance<V extends Values, P extends Primitives = Primitives>() {
