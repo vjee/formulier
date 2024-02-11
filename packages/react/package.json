@@ -35,7 +35,6 @@
 		"main": "./dist/index.js",
 		"exports": {
 			".": "./dist/index.js",
-			"types": "./dist/index.d.ts",
 			"./package.json": "./package.json"
 		},
 		"types": "./dist/index.d.ts"
