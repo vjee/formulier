@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.2.0
+
+### Minor Changes
+
+- bc4888c: Don't bundle builds + target es2022
+
 ## 0.1.1
 
 ### Patch Changes

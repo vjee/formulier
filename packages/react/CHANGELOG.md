@@ -1,5 +1,17 @@
 # @formulier/react
 
+## 0.2.0
+
+### Minor Changes
+
+- bc4888c: Don't bundle builds + target es2022
+
+### Patch Changes
+
+- 66b26c3: Rename useMaybeFormInstance to useOptionalFormInstance
+- Updated dependencies [bc4888c]
+  - @formulier/core@0.2.0
+
 ## 0.1.2
 
 ### Patch Changes
