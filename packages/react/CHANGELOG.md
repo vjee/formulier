@@ -1,5 +1,12 @@
 # @formulier/react
 
+## 0.2.5
+
+### Patch Changes
+
+- c506195: Use React.createElement instead of JSX
+- 981a1e1: Memoize context value in FormProvider
+
 ## 0.2.4
 
 ### Patch Changes
