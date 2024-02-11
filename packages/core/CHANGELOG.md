@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.2.2
+
+### Patch Changes
+
+- cd5f33a: Add file extensions to relative imports
+
 ## 0.2.1
 
 ### Patch Changes
