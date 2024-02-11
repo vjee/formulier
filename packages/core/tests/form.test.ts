@@ -1,7 +1,7 @@
 import {expect, it, vi} from 'vitest'
 
-import {Formulier} from '../src/form'
-import {getPath} from '../src/state-utils'
+import {Formulier} from '../src/form.js'
+import {getPath} from '../src/state-utils.js'
 
 const INITIAL_VALUES = {a: {b: {c: 'c', d: 'd'}}}
 

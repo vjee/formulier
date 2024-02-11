@@ -1,6 +1,6 @@
 import {expect, it} from 'vitest'
 
-import {insert, move, push, remove, swap} from '../src/array-utils'
+import {insert, move, push, remove, swap} from '../src/array-utils.js'
 
 const [A, B, C, D] = ['a', 'b', 'c', 'd']
 

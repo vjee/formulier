@@ -1,6 +1,6 @@
 import {describe, expect, it} from 'vitest'
 
-import {getPath, isInteger, isObject, removeKey, setKey, setPath, toPath} from '../src/state-utils'
+import {getPath, isInteger, isObject, removeKey, setKey, setPath, toPath} from '../src/state-utils.js'
 
 const SOURCE = {
 	a: {b: {c: 'c'}},

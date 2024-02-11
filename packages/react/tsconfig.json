@@ -3,7 +3,7 @@
 	"files": ["src/index.ts"],
 	"compilerOptions": {
 		"outDir": "dist",
-		"jsx": "react-jsx",
-		"types": ["vitest/importMeta"]
+		"types": ["vitest/importMeta"],
+		"jsx": "react-jsx"
 	}
 }

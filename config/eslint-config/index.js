@@ -4,12 +4,14 @@ module.exports = {
 		ecmaVersion: 2019,
 		sourceType: 'module',
 	},
-	plugins: ['@typescript-eslint'],
+	plugins: ['@typescript-eslint', 'require-extensions'],
+
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended-type-checked',
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
+		'plugin:require-extensions/recommended',
 		'prettier',
 	],
 	rules: {
