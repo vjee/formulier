@@ -26,18 +26,18 @@
 		"docs"
 	],
 	"devDependencies": {
-		"@changesets/cli": "^2.27.1",
-		"@formulier/eslint-config": "workspace:0.0.0",
-		"@typescript-eslint/eslint-plugin": "^6.21.0",
-		"@typescript-eslint/parser": "^6.21.0",
-		"cypress": "^13.6.4",
-		"eslint": "^8.56.0",
+		"@changesets/cli": "^2.27.6",
+		"@formulier/eslint-config": "workspace:*",
+		"@typescript-eslint/eslint-plugin": "^7.13.1",
+		"@typescript-eslint/parser": "^7.13.1",
+		"cypress": "^13.12.0",
+		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-react": "7.33.2",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"prettier": "^3.2.5",
-		"turbo": "^1.12.3",
-		"typescript": "^5.3.3"
+		"eslint-plugin-react": "7.34.3",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"prettier": "^3.3.2",
+		"turbo": "^2.0.4",
+		"typescript": "^5.5.2"
 	},
 	"packageManager": "pnpm@8.15.1"
 }
