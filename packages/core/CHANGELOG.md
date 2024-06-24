@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.2.6
+
+### Patch Changes
+
+- Update build files
+
 ## 0.2.5
 
 ### Patch Changes

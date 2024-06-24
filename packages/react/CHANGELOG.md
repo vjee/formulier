@@ -1,5 +1,13 @@
 # @formulier/react
 
+## 0.2.7
+
+### Patch Changes
+
+- Update build files
+- Updated dependencies
+  - @formulier/core@0.2.6
+
 ## 0.2.6
 
 ### Patch Changes
