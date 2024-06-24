@@ -1,5 +1,12 @@
 # @formulier/core
 
+## 0.2.5
+
+### Patch Changes
+
+- a350fec: Update dependencies
+- 483e7d6: Replace 'fast-deep-equal' with 'lodash.isequal'
+
 ## 0.2.4
 
 ### Patch Changes

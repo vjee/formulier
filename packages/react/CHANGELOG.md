@@ -1,5 +1,14 @@
 # @formulier/react
 
+## 0.2.6
+
+### Patch Changes
+
+- a350fec: Update dependencies
+- Updated dependencies [a350fec]
+- Updated dependencies [483e7d6]
+  - @formulier/core@0.2.5
+
 ## 0.2.5
 
 ### Patch Changes

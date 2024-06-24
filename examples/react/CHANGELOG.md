@@ -1,5 +1,13 @@
 # @formulier/examples-react
 
+## 0.1.9
+
+### Patch Changes
+
+- a350fec: Update dependencies
+- Updated dependencies [a350fec]
+  - @formulier/react@0.2.6
+
 ## 0.1.8
 
 ### Patch Changes
