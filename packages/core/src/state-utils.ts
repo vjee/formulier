@@ -1,5 +1,5 @@
 import clone from 'shallow-clone'
-import isEqual from 'fast-deep-equal'
+import isEqual from 'lodash.isequal'
 
 // Originally taken from https://github.com/jaredpalmer/formik/blob/master/packages/formik/src/utils.ts
 function getPath(source: any, path: string | string[], fallback?: any) {
