@@ -1,5 +1,11 @@
 # @formulier/docs
 
+## 0.1.2
+
+### Patch Changes
+
+- 233733f: Update dependencies
+
 ## 0.1.1
 
 ### Patch Changes

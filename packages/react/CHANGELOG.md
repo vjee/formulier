@@ -1,5 +1,13 @@
 # @formulier/react
 
+## 0.2.8
+
+### Patch Changes
+
+- 233733f: Update dependencies
+- Updated dependencies [233733f]
+  - @formulier/core@0.2.7
+
 ## 0.2.7
 
 ### Patch Changes
