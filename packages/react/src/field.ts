@@ -19,7 +19,7 @@ import type {
 	UseFormFieldValueResult,
 } from './types.js'
 
-const callCallback = (cb: CallableFunction) => void cb()
+const callCallback = (cb: () => void) => void cb()
 
 function useFormField<V extends Values, P extends Primitives, F extends string>(
 	form: Formulier<V, P>,
@@ -97,7 +97,11 @@ function useFormFieldValue<V extends Values, P extends Primitives, F extends str
 	options?: FormFieldValueOptions<V, F>,
 ): UseFormFieldValueResult<V, F> {
 	const {fallback, equalityFn = stateUtils.isEqual} = options || {}
-	return useFormSelector(form, state => stateUtils.getPath(state.values, name, fallback), equalityFn)
+	return useFormSelector(
+		form,
+		state => stateUtils.getPath(state.values, name, fallback),
+		equalityFn,
+	) as UseFormFieldValueResult<V, F>
 }
 
 export {useFormField, useFormFieldArray, useFormFieldValue}

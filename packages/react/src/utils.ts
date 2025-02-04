@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-function useEvent<Handler extends CallableFunction>(handler: Handler) {
+function useEvent<Handler extends (...args: any[]) => void>(handler: Handler) {
 	const handlerRef = React.useRef(handler)
 	handlerRef.current = handler
 	return React.useCallback((...args: any[]) => {
