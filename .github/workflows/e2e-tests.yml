@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 22
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         id: pnpm-install
         with:
           version: 10
@@ -31,7 +31,7 @@ jobs:
           echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
 
       - name: Setup pnpm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -42,7 +42,7 @@ jobs:
         run: pnpm install
 
       - name: Test
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v6
         with:
           browser: chrome
           component: true
