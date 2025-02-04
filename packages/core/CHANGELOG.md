@@ -1,5 +1,11 @@
 # @formulier/core
 
+## 0.2.8
+
+### Patch Changes
+
+- 76302ae: Update dependencies
+
 ## 0.2.7
 
 ### Patch Changes
