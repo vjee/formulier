@@ -46,7 +46,7 @@
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage",
-		"e2e": "cypress run --component"
+		"e2e": "cypress run --component --browser chrome"
 	},
 	"dependencies": {
 		"@formulier/core": "workspace:*",
