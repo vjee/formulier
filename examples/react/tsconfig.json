@@ -1,5 +1,6 @@
 {
 	"extends": "@formulier/tsconfig/base",
+	"include": ["src/**/*"],
 	"compilerOptions": {
 		"jsx": "react-jsx"
 	}

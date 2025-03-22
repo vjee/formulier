@@ -1,5 +1,4 @@
 import {FormProvider, useCreateForm, useSubmitHandler} from '@formulier/react'
-import * as React from 'react'
 import * as Field from '../fields'
 
 interface FormState {

@@ -1,9 +1,9 @@
 {
 	"extends": "@formulier/tsconfig/base",
-	"include": ["src/**/*.ts", "src/**/*.tsx", "cypress/**/*.ts", "cypress/**/*.tsx"],
+	"include": ["src/**/*"],
 	"compilerOptions": {
 		"outDir": "dist",
-		"types": ["vitest/importMeta", "cypress"],
+		"types": ["vitest/importMeta"],
 		"jsx": "react-jsx"
 	}
 }

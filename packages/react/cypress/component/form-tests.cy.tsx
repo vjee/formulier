@@ -2,6 +2,10 @@ import * as React from 'react'
 
 import {FormProvider, useCreateForm, useFormField, useFormInstance} from '../../src/index.js'
 
+declare var describe: (name: string, cb: () => void) => void
+declare var it: (name: string, cb: () => void) => void
+declare var cy: any
+
 function Form({children}: {children: React.ReactNode}) {
 	const form = useCreateForm({
 		initialValues: {field: 'value'},

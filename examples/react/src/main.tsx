@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {createRoot} from 'react-dom/client'
-import {createBrowserRouter, RouterProvider, NavLink, Outlet, Navigate, RouteObject} from 'react-router-dom'
+import type {RouteObject} from 'react-router-dom'
+import {createBrowserRouter, RouterProvider, NavLink, Outlet, Navigate} from 'react-router-dom'
 import {PersonForm} from './forms/person-form'
 import {ValidationForm} from './forms/validation-form'
 import {SwitchFieldTypeForm} from './forms/switch-field-type-form'

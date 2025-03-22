@@ -2,7 +2,7 @@ import {FormProvider, useCreateForm, useSubmitHandler} from '@formulier/react'
 import * as Field from '../fields'
 
 interface FormState {
-	optionsAsObject: {a: Boolean; b: Boolean; c: boolean}
+	optionsAsObject: {a: boolean; b: boolean; c: boolean}
 	optionsAsArray: [a: boolean, c: boolean, d: boolean]
 }
 

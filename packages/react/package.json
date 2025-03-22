@@ -42,7 +42,6 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsup --watch",
-		"lint": "eslint src tests cypress --ext .ts,.tsx --fix",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage",
@@ -54,7 +53,6 @@
 	},
 	"devDependencies": {
 		"@formulier/core": "workspace:0.2.8",
-		"@formulier/eslint-config": "workspace:*",
 		"@formulier/tsconfig": "workspace:*",
 		"@testing-library/react": "^16.2.0",
 		"@types/react": "^19.0.12",
@@ -63,7 +61,6 @@
 		"@types/use-sync-external-store": "^0.0.6",
 		"@vitest/coverage-istanbul": "^3.0.9",
 		"cypress": "^14.2.0",
-		"eslint": "^8.57.1",
 		"jsdom": "^26.0.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",

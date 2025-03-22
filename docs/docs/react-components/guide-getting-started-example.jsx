@@ -1,4 +1,3 @@
-import * as React from 'react'
 import {FormProvider, useCreateForm, useFormField, useFormInstance, useSubmitHandler} from '@formulier/react'
 
 export default function Example() {

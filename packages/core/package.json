@@ -36,7 +36,6 @@
 	"scripts": {
 		"build": "tsc",
 		"dev": "tsup --watch",
-		"lint": "eslint src tests --ext .ts,.tsx --fix",
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage"
@@ -46,12 +45,10 @@
 		"shallow-clone": "^3.0.1"
 	},
 	"devDependencies": {
-		"@formulier/eslint-config": "workspace:*",
 		"@formulier/tsconfig": "workspace:*",
 		"@types/lodash.isequal": "^4.5.8",
 		"@types/shallow-clone": "^3.0.2",
 		"@vitest/coverage-istanbul": "^3.0.9",
-		"eslint": "^8.57.1",
 		"react": "^19.0.0",
 		"vitest": "^3.0.9"
 	}
