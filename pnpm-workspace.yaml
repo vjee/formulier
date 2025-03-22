@@ -1,5 +1,9 @@
 packages:
-  - 'packages/*'
-  - 'config/*'
-  - 'examples/*'
-  - 'docs'
+  - packages/*
+  - config/*
+  - examples/*
+  - docs
+onlyBuiltDependencies:
+  - cypress
+  - esbuild
+  - vue-demi
