@@ -29,6 +29,8 @@ function useCreateForm<V extends Values, P extends Primitives = Primitives>(
 	options: FormulierOptions<V, P>,
 ): Formulier<V, P> {
 	const [form] = React.useState(() => new Formulier(options))
+	if (!form.hasMounted) form.setValues(options.initialValues)
+
 	return form
 }
 

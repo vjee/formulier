@@ -1,9 +1,10 @@
-import type {FieldValidator, FormulierOptions, FormulierState, Primitives, Values} from './types.js'
+import type {FieldValidator, FormulierOptions, FormulierState, Nullable, Primitives, Values} from './types.js'
 import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils.js'
 
 class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 	store: Store<FormulierState<V, P>>
 	instances: Record<string, Set<string>> = {}
+	hasMounted = false
 
 	constructor({initialValues}: FormulierOptions<V, P>) {
 		this.store = new Store({
@@ -13,6 +14,10 @@ class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 			touched: {},
 			submitCount: 0,
 		})
+	}
+
+	setValues = (values: Nullable<V, P>): void => {
+		this.store.setState(state => ({...state, values}))
 	}
 
 	setFieldErrors = (fieldErrors: FormulierState<V, P>['errors']): void => {
@@ -67,6 +72,7 @@ class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
 	}
 
 	addInstance = (name: string, instanceId: string): (() => void) => {
+		this.hasMounted = true
 		this.instances[name] ||= new Set()
 		this.instances[name].add(instanceId)
 		return () => {

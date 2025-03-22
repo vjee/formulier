@@ -10,6 +10,7 @@ import {SelectForm} from './forms/select-form'
 import {ArrayFieldForm} from './forms/array-field-form'
 import {NestedArrayFieldForm} from './forms/nested-array-field-form'
 import {ToggleFieldsForm} from './forms/toggle-fields-form'
+import {DelayedInitialValuesForm} from './forms/delayed-initial-values-form'
 
 createRoot(document.querySelector('#root')!).render(<App />)
 
@@ -22,6 +23,7 @@ const formRoutes: RouteObject[] = [
 	{path: 'array-field-form', element: <ArrayFieldForm />},
 	{path: 'nested-array-field-form', element: <NestedArrayFieldForm />},
 	{path: 'toggle-fields-form', element: <ToggleFieldsForm />},
+	{path: 'delayed-initial-values-form', element: <DelayedInitialValuesForm />},
 ]
 
 const routes: RouteObject[] = [
