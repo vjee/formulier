@@ -8,15 +8,13 @@ import prettierPlugin from 'eslint-plugin-prettier/recommended'
 export default defineConfig([
 	{
 		name: 'global ignores',
-		ignores: ['**/coverage/**/*', '**/dist/**/*', 'docs/.vitepress/dist/**/*', 'docs/.vitepress/cache/**/*'],
+		ignores: ['**/coverage/**/*', '**/dist/**/*', 'docs/.vitepress/**/*'],
 	},
 
 	{
 		name: 'js recommended',
 		...jsPlugin.configs.recommended,
 	},
-
-	...tsPlugin.configs.recommendedTypeChecked,
 
 	{
 		name: 'react recommended',
@@ -28,38 +26,22 @@ export default defineConfig([
 		...reactPlugin.configs.flat['jsx-runtime'],
 	},
 
+	...tsPlugin.configs.recommendedTypeChecked,
+
 	prettierPlugin,
-
-	{
-		name: 'ts configuration',
-		files: ['**/*.{ts,tsx}'],
-		languageOptions: {
-			parserOptions: {
-				projectService: true,
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
-		rules: {
-			'no-unused-vars': 'off',
-
-			'@typescript-eslint/consistent-type-imports': 'error',
-			'@typescript-eslint/consistent-type-exports': 'error',
-			'@typescript-eslint/no-unused-vars': [
-				'error',
-				{
-					ignoreRestSiblings: true,
-					argsIgnorePattern: '^_',
-					destructuredArrayIgnorePattern: '^_',
-				},
-			],
-		},
-	},
 
 	{
 		name: 'global configuration',
 
 		languageOptions: {
 			...reactPlugin.configs.flat.recommended.languageOptions,
+
+			parserOptions: {
+				projectService: {
+					allowDefaultProject: ['eslint.config.mjs'],
+				},
+				tsconfigRootDir: import.meta.dirname,
+			},
 
 			globals: {
 				...globals.serviceworker,
@@ -76,9 +58,26 @@ export default defineConfig([
 		rules: {
 			'no-console': 'error',
 			'no-debugger': 'error',
+			'no-unused-vars': 'off',
 
 			'react/prop-types': 'off',
 			'react/display-name': 'off',
+
+			'@typescript-eslint/consistent-type-imports': 'error',
+			'@typescript-eslint/consistent-type-exports': 'error',
+			'@typescript-eslint/no-unsafe-assignment': 'off',
+			'@typescript-eslint/no-unsafe-member-access': 'off',
+			'@typescript-eslint/no-unsafe-return': 'off',
+			'@typescript-eslint/no-unsafe-argument': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					ignoreRestSiblings: true,
+					argsIgnorePattern: '^_',
+					destructuredArrayIgnorePattern: '^_',
+				},
+			],
 		},
 	},
 ])

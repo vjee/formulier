@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import {describe, expect, it} from 'vitest'
 
 import {getPath, isInteger, isObject, removeKey, setKey, setPath, toPath} from '../src/state-utils.js'

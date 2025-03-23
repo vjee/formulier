@@ -1,11 +1,6 @@
 import clone from 'shallow-clone'
 import isEqual from 'lodash.isequal'
 
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 // Originally taken from https://github.com/jaredpalmer/formik/blob/master/packages/formik/src/utils.ts
 function getPath(source: any, path: string | string[], fallback?: any) {
 	let p = 0
@@ -54,11 +49,6 @@ function setPath(obj: any, path: string, value: any): any {
 
 	return res
 }
-
-/* eslint-enable @typescript-eslint/no-unsafe-member-access */
-/* eslint-enable @typescript-eslint/no-unsafe-return */
-/* eslint-enable @typescript-eslint/no-unsafe-assignment */
-/* eslint-enable @typescript-eslint/no-explicit-any */
 
 function setKey<T extends Record<string, unknown>>(source: T, key: string, value: unknown): T {
 	if (isEqual(source[key], value)) {
