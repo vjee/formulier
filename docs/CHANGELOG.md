@@ -1,5 +1,12 @@
 # @formulier/docs
 
+## 0.1.4
+
+### Patch Changes
+
+- acc2987: Don't force `P` generic to extend `Primitives`
+- a1fe94e: Update dependencies
+
 ## 0.1.3
 
 ### Patch Changes

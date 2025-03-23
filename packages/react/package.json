@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.2.9",
+	"version": "0.3.0",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library for React",
@@ -51,7 +51,7 @@
 		"use-sync-external-store": "^1.4.0"
 	},
 	"devDependencies": {
-		"@formulier/core": "workspace:0.2.8",
+		"@formulier/core": "workspace:0.3.0",
 		"@formulier/tsconfig": "workspace:*",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.2.0",

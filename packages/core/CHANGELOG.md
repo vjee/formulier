@@ -1,5 +1,16 @@
 # @formulier/core
 
+## 0.3.0
+
+### Minor Changes
+
+- acc2987: Don't force `P` generic to extend `Primitives`
+
+### Patch Changes
+
+- a1fe94e: Update dependencies
+- 19e8074: Keep form state up-to-date with `initialValues` as long as no fields have mounted
+
 ## 0.2.8
 
 ### Patch Changes
