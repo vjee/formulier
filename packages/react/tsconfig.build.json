@@ -1,7 +1,9 @@
 {
 	"extends": "@formulier/tsconfig/base",
-	"include": ["src/**/*", "vite.config.ts"],
+	"include": ["src/**/*"],
 	"compilerOptions": {
+		"noEmit": false,
+		"outDir": "dist",
 		"jsx": "react-jsx"
 	}
 }

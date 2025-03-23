@@ -34,9 +34,9 @@
 		"types": "./dist/index.d.ts"
 	},
 	"scripts": {
-		"build": "tsc",
-		"dev": "tsup --watch",
-		"typecheck": "tsc --noEmit",
+		"build": "tsc --project tsconfig.build.json",
+		"dev": "tsup --project tsconfig.build.json --watch",
+		"typecheck": "tsc",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage"
 	},

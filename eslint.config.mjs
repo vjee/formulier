@@ -1,4 +1,4 @@
-import {defineConfig, globalIgnores} from 'eslint/config'
+import {defineConfig} from 'eslint/config'
 import globals from 'globals'
 import jsPlugin from '@eslint/js'
 import tsPlugin from 'typescript-eslint'
@@ -7,56 +7,43 @@ import prettierPlugin from 'eslint-plugin-prettier/recommended'
 
 export default defineConfig([
 	{
-		files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
-	},
-
-	globalIgnores(['**/coverage/**/*', '**/dist/**/*', 'docs/.vitepress/dist/**/*', 'docs/.vitepress/cache/**/*']),
-
-	jsPlugin.configs.recommended,
-
-	{
-		files: ['examples/react/**/*.{ts,tsx}'],
-		languageOptions: {
-			parserOptions: {
-				project: 'examples/react/tsconfig.eslint.json',
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
+		name: 'global ignores',
+		ignores: ['**/coverage/**/*', '**/dist/**/*', 'docs/.vitepress/dist/**/*', 'docs/.vitepress/cache/**/*'],
 	},
 
 	{
-		files: ['packages/core/**/*.{ts,tsx}'],
-		languageOptions: {
-			parserOptions: {
-				project: 'packages/core/tsconfig.eslint.json',
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
+		name: 'js recommended',
+		...jsPlugin.configs.recommended,
+	},
+
+	...tsPlugin.configs.recommendedTypeChecked,
+
+	{
+		name: 'react recommended',
+		...reactPlugin.configs.flat.recommended,
 	},
 
 	{
-		files: ['packages/react/**/*.{ts,tsx}'],
-		languageOptions: {
-			parserOptions: {
-				project: 'packages/react/tsconfig.eslint.json',
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
+		name: 'react jsx runtime',
+		...reactPlugin.configs.flat['jsx-runtime'],
 	},
 
-	...tsPlugin.configs.recommendedTypeChecked.map(config => ({
-		...config,
+	prettierPlugin,
+
+	{
+		name: 'ts configuration',
 		files: ['**/*.{ts,tsx}'],
+		languageOptions: {
+			parserOptions: {
+				projectService: true,
+				tsconfigRootDir: import.meta.dirname,
+			},
+		},
 		rules: {
 			'no-unused-vars': 'off',
 
 			'@typescript-eslint/consistent-type-imports': 'error',
 			'@typescript-eslint/consistent-type-exports': 'error',
-			'@typescript-eslint/no-unsafe-assignment': 'off',
-			'@typescript-eslint/no-unsafe-return': 'off',
-			'@typescript-eslint/no-unsafe-member-access': 'off',
-			'@typescript-eslint/no-unsafe-argument': 'off',
-			'@typescript-eslint/no-explicit-any': 'off',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
 				{
@@ -66,14 +53,11 @@ export default defineConfig([
 				},
 			],
 		},
-	})),
-
-	reactPlugin.configs.flat.recommended,
-	reactPlugin.configs.flat['jsx-runtime'],
-
-	prettierPlugin,
+	},
 
 	{
+		name: 'global configuration',
+
 		languageOptions: {
 			...reactPlugin.configs.flat.recommended.languageOptions,
 

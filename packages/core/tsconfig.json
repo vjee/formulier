@@ -1,8 +1,7 @@
 {
 	"extends": "@formulier/tsconfig/base",
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "tests/**/*", "vitest.config.ts"],
 	"compilerOptions": {
-		"outDir": "dist",
 		"types": ["vitest/importMeta"]
 	}
 }
