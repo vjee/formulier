@@ -1,12 +1,12 @@
-interface FormulierOptions<V extends Values, P extends Primitives> {
+export interface FormulierOptions<V extends Values, P> {
 	initialValues: Nullable<V, P>
 }
 
-type Primitives = string | number | boolean | Date | File
+export type Primitives = string | number | bigint | boolean | Date | File
 
-type Values = Record<string, any>
+export type Values = Record<string, any>
 
-type Nullable<Values, P extends Primitives = Primitives> = {
+export type Nullable<Values, P = Primitives> = {
 	[Prop in keyof Values]: Values[Prop] extends P | null | undefined
 		? Values[Prop] | null
 		: Values[Prop] extends (infer A)[]
@@ -14,9 +14,9 @@ type Nullable<Values, P extends Primitives = Primitives> = {
 			: Nullable<Values[Prop], P>
 }
 
-type FieldValidator = (value: unknown) => string | null
+export type FieldValidator = (value: unknown) => string | null
 
-interface FormulierState<V extends Values, P extends Primitives = Primitives> {
+export interface FormulierState<V extends Values, P = Primitives> {
 	values: Nullable<V, P>
 	validators: Record<string, FieldValidator | null>
 	errors: Record<string, string | null>
@@ -24,7 +24,7 @@ interface FormulierState<V extends Values, P extends Primitives = Primitives> {
 	submitCount: number
 }
 
-type GetFieldType<T, P extends string> = string extends P
+export type GetFieldType<T, P extends string> = string extends P
 	? any
 	: P extends `${infer Left}.${infer Right}`
 		? Left extends keyof T
@@ -42,6 +42,10 @@ type GetFieldType<T, P extends string> = string extends P
 					: undefined
 				: undefined
 
+////////////////////////////////////////////////////////////////////////////////
+// Util types that aren't exported
+////////////////////////////////////////////////////////////////////////////////
+
 type IndexedFieldWithPossiblyUndefined<T, Key> = GetIndexedField<Exclude<T, undefined>, Key> | Extract<T, undefined>
 
 type GetIndexedField<T, K> = K extends keyof T
@@ -57,5 +61,3 @@ type GetIndexedField<T, K> = K extends keyof T
 type FieldWithPossiblyUndefined<T, Key extends string> =
 	| GetFieldType<Exclude<T, undefined>, Key>
 	| Extract<T, undefined>
-
-export type {FormulierOptions, Primitives, Values, Nullable, FieldValidator, FormulierState, GetFieldType}

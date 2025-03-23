@@ -1,7 +1,7 @@
 # `useCreateForm()`
 
 ```ts
-function useCreateForm<V extends Values, P extends Primitives = Primitives>(
+function useCreateForm<V extends Values, P = Primitives>(
   options: FormulierOptions<V, P>,
 ): Formulier<V, P>
 ```

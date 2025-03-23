@@ -5,7 +5,7 @@ import {arrayUtils, stateUtils} from '@formulier/core'
 import {invariant, useEvent} from './utils.js'
 import {useFormSelector} from './form.js'
 
-import type {Formulier, Primitives, Values} from '@formulier/core'
+import type {Formulier, Values} from '@formulier/core'
 import type {
 	FieldArrayItem,
 	FieldArrayMethods,
@@ -21,7 +21,7 @@ import type {
 
 const callCallback = (cb: () => void) => void cb()
 
-function useFormField<V extends Values, P extends Primitives, F extends string>(
+function useFormField<V extends Values, P, F extends string>(
 	form: Formulier<V, P>,
 	options: FieldOptions<V, F>,
 ): UseFormFieldResult<V, F> {
@@ -69,7 +69,7 @@ function useFormField<V extends Values, P extends Primitives, F extends string>(
 	return [field, meta]
 }
 
-function useFormFieldArray<V extends Values, F extends string, P extends Primitives>(
+function useFormFieldArray<V extends Values, F extends string, P>(
 	form: Formulier<V>,
 	name: F,
 	options?: FormFieldArrayOptions<V, F>,
@@ -91,7 +91,7 @@ function useFormFieldArray<V extends Values, F extends string, P extends Primiti
 	return [items, arrayMethods] as any
 }
 
-function useFormFieldValue<V extends Values, P extends Primitives, F extends string>(
+function useFormFieldValue<V extends Values, P, F extends string>(
 	form: Formulier<V, P>,
 	name: F,
 	options?: FormFieldValueOptions<V, F>,

@@ -1,7 +1,7 @@
 import type {FieldValidator, FormulierOptions, FormulierState, Nullable, Primitives, Values} from './types.js'
 import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils.js'
 
-class Formulier<V extends Values = Values, P extends Primitives = Primitives> {
+class Formulier<V extends Values = Values, P = Primitives> {
 	store: Store<FormulierState<V, P>>
 	instances: Record<string, Set<string>> = {}
 	hasMounted = false

@@ -47,7 +47,7 @@ interface FormFieldArrayOptions<V extends Values, F extends string> {
 	valueOptions?: FormFieldValueOptions<V, F>
 }
 
-type UseFormFieldArrayResult<Item, P extends Primitives = Primitives> =
+type UseFormFieldArrayResult<Item, P = Primitives> =
 	IsNever<Item> extends true
 		? [Items: never, arrayMethods: FieldArrayMethods<never>]
 		: Item extends P
@@ -63,16 +63,16 @@ interface FormFieldValueOptions<V extends Values, F extends string> {
 
 type UseFormFieldValueResult<V extends Values, F extends string> = GetFieldType<V, F> | null | undefined
 
-interface FormContext<V extends Values, P extends Primitives> {
+interface FormContext<V extends Values, P> {
 	form: Formulier<V, P>
 }
 
-interface FormProviderProps<V extends Values, P extends Primitives> {
+interface FormProviderProps<V extends Values, P> {
 	form: Formulier<V, P>
 	children: React.ReactNode
 }
 
-interface Selector<V extends Values, P extends Primitives, Result> {
+interface Selector<V extends Values, P, Result> {
 	(state: FormulierState<V, P>): Result
 }
 

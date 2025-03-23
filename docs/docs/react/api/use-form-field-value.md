@@ -1,11 +1,7 @@
 # `useFormFieldValue()`
 
 ```ts
-function useFormFieldValue<
-  V extends Values,
-  P extends Primitives,
-  F extends string,
->(
+function useFormFieldValue<V extends Values, P, F extends string>(
   form: Formulier<V, P>,
   name: F,
   options?: FormFieldValueOptions<V, F>,
