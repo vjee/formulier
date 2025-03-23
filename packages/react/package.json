@@ -53,6 +53,7 @@
 	"devDependencies": {
 		"@formulier/core": "workspace:0.2.8",
 		"@formulier/tsconfig": "workspace:*",
+		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.2.0",
 		"@testing-library/user-event": "^14.6.1",
 		"@types/react": "^19.0.12",
