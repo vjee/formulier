@@ -14,7 +14,6 @@
 		"typecheck": "turbo run typecheck",
 		"test": "turbo run test",
 		"coverage": "turbo run coverage",
-		"e2e": "turbo run e2e",
 		"docs:dev": "pnpm run --filter docs dev",
 		"docs:build": "pnpm run --filter docs build",
 		"docs:serve": "pnpm run --filter docs serve",
@@ -29,7 +28,6 @@
 	"devDependencies": {
 		"@changesets/cli": "^2.28.1",
 		"@eslint/js": "^9.23.0",
-		"cypress": "^14.2.0",
 		"eslint": "^9.23.0",
 		"eslint-config-prettier": "^10.1.1",
 		"eslint-plugin-prettier": "^5.2.3",

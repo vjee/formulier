@@ -44,8 +44,7 @@
 		"dev": "tsup --project tsconfig.build.json --watch",
 		"typecheck": "tsc",
 		"test": "vitest run",
-		"coverage": "vitest run --coverage",
-		"e2e": "cypress run --component --browser chrome"
+		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@formulier/core": "workspace:*",
@@ -55,16 +54,15 @@
 		"@formulier/core": "workspace:0.2.8",
 		"@formulier/tsconfig": "workspace:*",
 		"@testing-library/react": "^16.2.0",
+		"@testing-library/user-event": "^14.6.1",
 		"@types/react": "^19.0.12",
 		"@types/react-dom": "^19.0.4",
 		"@types/shallow-clone": "^3.0.2",
 		"@types/use-sync-external-store": "^0.0.6",
 		"@vitest/coverage-istanbul": "^3.0.9",
-		"cypress": "^14.2.0",
 		"jsdom": "^26.0.0",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
-		"vite": "^6.2.2",
 		"vitest": "^3.0.9"
 	},
 	"peerDependencies": {

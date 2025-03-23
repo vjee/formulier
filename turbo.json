@@ -16,9 +16,6 @@
 		},
 		"coverage": {
 			"outputs": []
-		},
-		"e2e": {
-			"outputs": []
 		}
 	}
 }
