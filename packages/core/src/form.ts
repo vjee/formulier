@@ -1,4 +1,13 @@
-import type {FieldValidator, FormulierOptions, FormulierState, Nullable, Primitives, Values} from './types.js'
+import type {
+	ValuesKeys,
+	FieldValidator,
+	FormulierOptions,
+	FormulierState,
+	Nullable,
+	Primitives,
+	Values,
+	FieldName,
+} from './types.js'
 import {getPath, isEqual, removeKey, setKey, setPath} from './state-utils.js'
 
 class Formulier<V extends Values = Values, P = Primitives> {
@@ -98,6 +107,10 @@ class Formulier<V extends Values = Values, P = Primitives> {
 
 	incrementSubmitCount = (): void => {
 		this.store.setState(state => ({...state, submitCount: state.submitCount + 1}))
+	}
+
+	field = (fieldName: ValuesKeys<V, P>): FieldName => {
+		return fieldName as unknown as FieldName
 	}
 }
 

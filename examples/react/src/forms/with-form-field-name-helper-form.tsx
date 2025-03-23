@@ -3,15 +3,13 @@ import * as Field from '../fields'
 
 interface FormState {
 	firstName: string
-	lastName: string
 	age: number
 }
 
-export function ValidationForm() {
+export function WithFormFieldNameHelperForm() {
 	const form = useCreateForm<FormState>({
 		initialValues: {
 			firstName: 'John',
-			lastName: null,
 			age: 20,
 		},
 	})
@@ -22,14 +20,13 @@ export function ValidationForm() {
 
 	return (
 		<div>
-			<h1>ValidationForm</h1>
+			<h1>WithFormFieldNameHelperForm</h1>
 
 			<form onSubmit={onSubmit}>
 				<FormProvider form={form}>
 					<div className="column">
-						<Field.TextField name="firstName" label="First name" required />
-						<Field.TextField name="lastName" label="Last name" info="Some extra info about this field" required />
-						<Field.IntegerField name="age" label="Age" />
+						<Field.TextField name={form.field('firstName')} label="First name" />
+						<Field.IntegerField name={form.field('age')} label="Age" />
 
 						<button type="submit">Submit</button>
 					</div>
