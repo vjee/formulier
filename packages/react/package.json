@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/react",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library for React",
@@ -41,30 +41,31 @@
 	},
 	"scripts": {
 		"build": "tsc --project tsconfig.build.json",
-		"dev": "tsup --project tsconfig.build.json --watch",
+		"dev": "tsup src/index.ts --tsconfig tsconfig.build.json --watch",
 		"typecheck": "tsc",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@formulier/core": "workspace:*",
-		"use-sync-external-store": "^1.4.0"
+		"use-sync-external-store": "^1.5.0"
 	},
 	"devDependencies": {
-		"@formulier/core": "workspace:0.3.0",
+		"@formulier/core": "workspace:0.3.1",
 		"@formulier/tsconfig": "workspace:*",
-		"@testing-library/jest-dom": "^6.6.3",
-		"@testing-library/react": "^16.2.0",
+		"@testing-library/jest-dom": "^6.7.0",
+		"@testing-library/react": "^16.3.0",
 		"@testing-library/user-event": "^14.6.1",
-		"@types/react": "^19.0.12",
-		"@types/react-dom": "^19.0.4",
+		"@types/react": "^19.1.10",
+		"@types/react-dom": "^19.1.7",
 		"@types/shallow-clone": "^3.0.2",
-		"@types/use-sync-external-store": "^0.0.6",
-		"@vitest/coverage-istanbul": "^3.0.9",
-		"jsdom": "^26.0.0",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"vitest": "^3.0.9"
+		"@types/use-sync-external-store": "^1.5.0",
+		"@vitest/coverage-istanbul": "^3.2.4",
+		"jsdom": "^26.1.0",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"tsup": "^8.5.0",
+		"vitest": "^3.2.4"
 	},
 	"peerDependencies": {
 		"react": ">=16.8.0"

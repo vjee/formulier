@@ -9,7 +9,7 @@
 		"isolatedModules": true,
 		"lib": ["dom", "es2022"],
 		"module": "es2022",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"noEmit": true,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,

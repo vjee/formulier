@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {useSyncExternalStoreWithSelector} from 'use-sync-external-store/with-selector.js'
+import {useSyncExternalStoreWithSelector} from 'use-sync-external-store/with-selector'
 
 import {Formulier} from '@formulier/core'
 import {invariant, useEvent} from './utils.js'

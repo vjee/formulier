@@ -26,17 +26,17 @@
 		"docs"
 	],
 	"devDependencies": {
-		"@changesets/cli": "^2.28.1",
-		"@eslint/js": "^9.23.0",
-		"eslint": "^9.23.0",
-		"eslint-config-prettier": "^10.1.1",
-		"eslint-plugin-prettier": "^5.2.3",
-		"eslint-plugin-react": "^7.37.4",
-		"globals": "^16.0.0",
-		"prettier": "^3.5.3",
-		"turbo": "^2.4.4",
-		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.27.0"
+		"@changesets/cli": "^2.29.5",
+		"@eslint/js": "^9.33.0",
+		"eslint": "^9.33.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.4",
+		"eslint-plugin-react": "^7.37.5",
+		"globals": "^16.3.0",
+		"prettier": "^3.6.2",
+		"turbo": "^2.5.5",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.39.1"
 	},
-	"packageManager": "pnpm@10.6.5"
+	"packageManager": "pnpm@10.14.0"
 }

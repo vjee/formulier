@@ -1,7 +1,7 @@
 {
 	"private": false,
 	"name": "@formulier/core",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"license": "MIT",
 	"author": "Jasper Van Gestel <vjee2e@gmail.com> (https://github.com/vjee)",
 	"description": "Simple, performant form library",
@@ -35,7 +35,7 @@
 	},
 	"scripts": {
 		"build": "tsc --project tsconfig.build.json",
-		"dev": "tsup --project tsconfig.build.json --watch",
+		"dev": "tsup src/index.ts --tsconfig tsconfig.build.json --watch",
 		"typecheck": "tsc",
 		"test": "vitest run",
 		"coverage": "vitest run --coverage"
@@ -48,8 +48,9 @@
 		"@formulier/tsconfig": "workspace:*",
 		"@types/lodash.isequal": "^4.5.8",
 		"@types/shallow-clone": "^3.0.2",
-		"@vitest/coverage-istanbul": "^3.0.9",
-		"react": "^19.0.0",
-		"vitest": "^3.0.9"
+		"@vitest/coverage-istanbul": "^3.2.4",
+		"react": "^19.1.1",
+		"tsup": "^8.5.0",
+		"vitest": "^3.2.4"
 	}
 }
